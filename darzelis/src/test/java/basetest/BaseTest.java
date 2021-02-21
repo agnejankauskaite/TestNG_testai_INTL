@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeMethod;
 public class BaseTest {
     protected static WebDriver driver;
 
-    @BeforeClass
+    @BeforeClass (alwaysRun = true)
     public static void setUp() {
     	System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
         driver = new ChromeDriver();
@@ -17,14 +17,10 @@ public class BaseTest {
         driver.get("http://akademijait.vtmc.lt:8181/darzelis/");
     }
 
-//    @BeforeMethod
-//    public void openLoginPage() {
-//        driver.get("http://akademijait.vtmc.lt:8181/darzelis/");
-//    }
 
-    @AfterClass
+    @AfterClass (alwaysRun = true)
     public static void closeBrowser() {
         driver.manage().deleteAllCookies();
-//        driver.close();
+        driver.close();
     }
 }

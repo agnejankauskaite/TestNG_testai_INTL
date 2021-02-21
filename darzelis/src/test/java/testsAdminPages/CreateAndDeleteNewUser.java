@@ -10,7 +10,7 @@ public class CreateAndDeleteNewUser extends BaseTest{
 	
   private String adminLogin = "admin@admin.lt";	
 	
-  @Test
+  @Test (groups = {"smoke", "regression"}, priority = 1) 
   public void successfullyCreateAndDeleteNewAdmin() {
 	  
 	  //login as admin
@@ -49,7 +49,7 @@ public class CreateAndDeleteNewUser extends BaseTest{
 	  createNewUserPage.clickOKButtonUserIsDeleted();
   }
   
-  @Test
+  @Test (groups = {"smoke", "regression"}, priority = 2)
   public void successfullyCreateAndDeleteNewKindergartenSpecialist() {
 	   
       // select user role (švietimo specialistas)
@@ -81,7 +81,7 @@ public class CreateAndDeleteNewUser extends BaseTest{
 	  createNewUserPage.clickOKButtonUserIsDeleted();
   }
   
-  @Test
+  @Test (groups = {"smoke", "regression"}, priority = 3)
   public void successfullyCreateAndDeleteNewParent() {
 	   
       // select user role (vaiko atstovas)

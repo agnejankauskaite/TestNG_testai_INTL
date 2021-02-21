@@ -12,7 +12,7 @@ public class AdminLoginLogout extends BaseTest {
 	  private static String adminLogin = "admin@admin.lt";
 	  private static String expectedErrorMessage= "Neteisingas prisijungimo vardas ir/arba slaptažodis!";
 	  
-	  @Test
+	  @Test (groups = {"smoke", "regression"})
 	  public void successfulAdminLoginAndLogout() {
 		  
 		  // login
@@ -26,7 +26,7 @@ public class AdminLoginLogout extends BaseTest {
 		  loginPage.doLogout();
 	  }
 	  
-	 @Test
+	 @Test (groups = "regression")
 	 public void unsuccessfulAdminLoginAndLogout() {
 		 
 		 // wait for the login page to load
