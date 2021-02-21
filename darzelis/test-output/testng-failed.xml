@@ -6,7 +6,7 @@
       <class name="testsAdminPages.CreateNewUser">
         <methods>
           <include name="setUp"/>
-          <include name="successfulNewAdminCreateAndDelete"/>
+          <include name="successfullyCreateAndDeleteNewParent"/>
           <include name="closeBrowser"/>
         </methods>
       </class> <!-- testsAdminPages.CreateNewUser -->
