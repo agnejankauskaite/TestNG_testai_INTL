@@ -35,9 +35,6 @@ public class CreateAndDeleteNewUserPage extends AbstractObjectPage {
 	@FindBy (xpath = "//div[4]//button")
 	public WebElement okButtonUserIsCreated;
 	
-	@FindBy (xpath = "//*/div[2]/div/button")
-	public WebElement okButtonUserIsDeleted;
-	
 	public void enterEmail (String value) {
 		inputEmail.sendKeys(value);
 	}
@@ -70,6 +67,11 @@ public class CreateAndDeleteNewUserPage extends AbstractObjectPage {
 		okButtonUserIsCreated.click();
 	}
 	
+	public Boolean userIsCreatedMessage() {
+		  WebDriverWait wait = new WebDriverWait(driver, 10);
+		  	return wait.until(ExpectedConditions.textToBe(By.xpath("//div[2]/div/div[3]"), "Naujas naudotojas buvo sėkmingai sukurtas."));
+	}
+	
 	public void clickDeleteUserButton () {
 		 WebDriverWait wait = new WebDriverWait(driver, 10);
 		  WebElement deleteUserButton = wait.until(
@@ -77,19 +79,20 @@ public class CreateAndDeleteNewUserPage extends AbstractObjectPage {
 		deleteUserButton.click();
 	}
 	
-	public void clickOKButtonUserIsDeleted () {
-		okButtonUserIsDeleted.click();
+	public void waitToAgreeToDeleteUserPopUp () {
+		 WebDriverWait wait = new WebDriverWait(driver, 10);
+		  WebElement agreeToDeleteUser = wait.until(
+				  ExpectedConditions.presenceOfElementLocated(By.xpath("//*/div[2]/button")));
+		agreeToDeleteUser.click();
 	}
 	
-	public Boolean userIsCreatedMessage() {
-		  WebDriverWait wait = new WebDriverWait(driver, 10);
-		  	return wait.until(ExpectedConditions.textToBe(By.xpath("//div[2]/div/div[3]"), "Naujas naudotojas buvo sėkmingai sukurtas."));
-		}
+	public void waitToPressOKWhenUserIsDeletedPopUp() {
+		 WebDriverWait wait = new WebDriverWait(driver, 10);
+		  WebElement popUpClickOK = wait.until(
+				  ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.swal-overlay.swal-overlay--show-modal > div > div.swal-footer > div > button")));
+		  popUpClickOK.click();
+	}
 	
-	public Boolean userWasDeletedMessage() {
-		  WebDriverWait wait = new WebDriverWait(driver, 10);
-		  	return wait.until(ExpectedConditions.textToBe(By.xpath("//body/div[2]/div/div[1]"), "Naudotojas panaikintas sėkmingai"));
-		}
 		
 	// constructor
 	public CreateAndDeleteNewUserPage(WebDriver driver) {

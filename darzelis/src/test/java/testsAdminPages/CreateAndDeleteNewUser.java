@@ -42,11 +42,9 @@ public class CreateAndDeleteNewUser extends BaseTest{
 	  // delete the new user
 	  createNewUserPage.clickDeleteUserButton();
 
-	  // check success message that user was deleted
-	  createNewUserPage.userWasDeletedMessage();
-	  
-	  // click "Gerai" button
-	  createNewUserPage.clickOKButtonUserIsDeleted();
+	  // agree to delete user (pop up)
+	  createNewUserPage.waitToAgreeToDeleteUserPopUp();
+	  createNewUserPage.waitToPressOKWhenUserIsDeletedPopUp();	  
   }
   
   @Test (groups = {"smoke", "regression"}, priority = 2)
@@ -70,15 +68,13 @@ public class CreateAndDeleteNewUser extends BaseTest{
 	  // check success message
 	  createNewUserPage.userIsCreatedMessage();
 	  createNewUserPage.clickOKButtonUserIsCreated();
-	  
+
 	  // delete the new user
 	  createNewUserPage.clickDeleteUserButton();
 
-	  // check success message that user was deleted
-	  createNewUserPage.userWasDeletedMessage();
-	  
-	  // click "Gerai" button
-	  createNewUserPage.clickOKButtonUserIsDeleted();
+	  // agree to delete user (pop up)
+	  createNewUserPage.waitToAgreeToDeleteUserPopUp();
+	  createNewUserPage.waitToPressOKWhenUserIsDeletedPopUp();	
   }
   
   @Test (groups = {"smoke", "regression"}, priority = 3)
@@ -109,14 +105,8 @@ public class CreateAndDeleteNewUser extends BaseTest{
 	  // delete the new user
 	  createNewUserPage.clickDeleteUserButton();
 
-	  // check success message that user was deleted
-	  createNewUserPage.userWasDeletedMessage();
-	  
-	  // click "Gerai" button
-	  createNewUserPage.clickOKButtonUserIsDeleted();
+	  // agree to delete user (pop up)
+	  createNewUserPage.waitToAgreeToDeleteUserPopUp();
+	  createNewUserPage.waitToPressOKWhenUserIsDeletedPopUp();	
   }
-  
-  
-  
-
 }

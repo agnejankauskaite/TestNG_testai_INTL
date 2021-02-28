@@ -9,15 +9,15 @@ import pages.LoginPage;
 
 public class AdminLoginLogout extends BaseTest {
  
-	  private static String adminLogin = "admin@admin.lt";
+	  private static String userLogins = "admin@admin.lt";
 	  private static String expectedErrorMessage= "Neteisingas prisijungimo vardas ir/arba slaptažodis!";
 	  
 	  @Test (groups = {"smoke", "regression"})
-	  public void successfulAdminLoginAndLogout() {
+	  public void successfulLoginAndLogout() {
 		  
 		  // login
 		  LoginPage loginPage = new LoginPage(driver);
-	      loginPage.doLogin(adminLogin, adminLogin);
+	      loginPage.doLogin(userLogins, userLogins);
 		  
 		  // check if admin is logged in and can see the user list 
 		  loginPage.verifyIfAdminIsLoggedIn();
@@ -27,7 +27,7 @@ public class AdminLoginLogout extends BaseTest {
 	  }
 	  
 	 @Test (groups = "regression")
-	 public void unsuccessfulAdminLoginAndLogout() {
+	 public void unsuccessfulLoginAndLogout() {
 		 
 		 // wait for the login page to load
 		 WebDriverWait waitForLoginPageToLoad = new WebDriverWait(driver, 10);

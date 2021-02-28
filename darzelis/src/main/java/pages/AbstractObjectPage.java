@@ -32,7 +32,12 @@ public abstract class AbstractObjectPage {
 	
 	public Boolean verifyIfAdminIsLoggedIn() {
 		  WebDriverWait wait = new WebDriverWait(driver, 10);
-		  	return wait.until(ExpectedConditions.textToBe(By.id("navAdminUserList"), "Naudotojų sąrašas"));
+		  return wait.until(ExpectedConditions.textToBe(By.id("navAdminUserList"), "Naudotojų sąrašas"));
+		}
+	
+	public Boolean verifyIfSpecialistIsLoggedIn() {
+		  WebDriverWait wait = new WebDriverWait(driver, 10);
+		  return wait.until(ExpectedConditions.textToBe(By.id("navManagerKindergartenList"), "Darželių sąrašas"));
 		}
 	
 	

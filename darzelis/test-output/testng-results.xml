@@ -1,106 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="10" passed="9" failed="0" skipped="0">
+<testng-results ignored="1" total="12" passed="11" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-02-21T15:57:22 EET" name="Tests" finished-at="2021-02-21T15:58:19 EET" duration-ms="57642">
+  <suite started-at="2021-02-28T23:55:31 EET" name="Tests" finished-at="2021-02-28T23:56:25 EET" duration-ms="53330">
     <groups>
       <group name="regression">
-        <method signature="AdminLoginLogout.successfulAdminLoginAndLogout()[pri:0, instance:loginPage.AdminLoginLogout@10959ece]" name="successfulAdminLoginAndLogout" class="loginPage.AdminLoginLogout"/>
-        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewAdmin()[pri:1, instance:testsAdminPages.CreateAndDeleteNewUser@3a6bb9bf]" name="successfullyCreateAndDeleteNewAdmin" class="testsAdminPages.CreateAndDeleteNewUser"/>
-        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewKindergartenSpecialist()[pri:2, instance:testsAdminPages.CreateAndDeleteNewUser@3a6bb9bf]" name="successfullyCreateAndDeleteNewKindergartenSpecialist" class="testsAdminPages.CreateAndDeleteNewUser"/>
-        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewParent()[pri:3, instance:testsAdminPages.CreateAndDeleteNewUser@3a6bb9bf]" name="successfullyCreateAndDeleteNewParent" class="testsAdminPages.CreateAndDeleteNewUser"/>
-        <method signature="AdminLoginLogout.successfulAdminLoginAndLogout()[pri:0, instance:loginPage.AdminLoginLogout@693fe6c9]" name="successfulAdminLoginAndLogout" class="loginPage.AdminLoginLogout"/>
-        <method signature="AdminLoginLogout.unsuccessfulAdminLoginAndLogout()[pri:0, instance:loginPage.AdminLoginLogout@693fe6c9]" name="unsuccessfulAdminLoginAndLogout" class="loginPage.AdminLoginLogout"/>
-        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewAdmin()[pri:1, instance:testsAdminPages.CreateAndDeleteNewUser@34f5090e]" name="successfullyCreateAndDeleteNewAdmin" class="testsAdminPages.CreateAndDeleteNewUser"/>
-        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewKindergartenSpecialist()[pri:2, instance:testsAdminPages.CreateAndDeleteNewUser@34f5090e]" name="successfullyCreateAndDeleteNewKindergartenSpecialist" class="testsAdminPages.CreateAndDeleteNewUser"/>
-        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewParent()[pri:3, instance:testsAdminPages.CreateAndDeleteNewUser@34f5090e]" name="successfullyCreateAndDeleteNewParent" class="testsAdminPages.CreateAndDeleteNewUser"/>
+        <method signature="AdminLoginLogout.successfulLoginAndLogout()[pri:0, instance:loginPage.AdminLoginLogout@34f7cfd9]" name="successfulLoginAndLogout" class="loginPage.AdminLoginLogout"/>
+        <method signature="CreateAndDeleteNewKindergarten.successfullyCreateUpdateDeleteNewKindergarten()[pri:0, instance:testsSpecialistPages.CreateAndDeleteNewKindergarten@59af0466]" name="successfullyCreateUpdateDeleteNewKindergarten" class="testsSpecialistPages.CreateAndDeleteNewKindergarten"/>
+        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewAdmin()[pri:1, instance:testsAdminPages.CreateAndDeleteNewUser@65f095f8]" name="successfullyCreateAndDeleteNewAdmin" class="testsAdminPages.CreateAndDeleteNewUser"/>
+        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewKindergartenSpecialist()[pri:2, instance:testsAdminPages.CreateAndDeleteNewUser@65f095f8]" name="successfullyCreateAndDeleteNewKindergartenSpecialist" class="testsAdminPages.CreateAndDeleteNewUser"/>
+        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewParent()[pri:3, instance:testsAdminPages.CreateAndDeleteNewUser@65f095f8]" name="successfullyCreateAndDeleteNewParent" class="testsAdminPages.CreateAndDeleteNewUser"/>
+        <method signature="AdminLoginLogout.successfulLoginAndLogout()[pri:0, instance:loginPage.AdminLoginLogout@a2431d0]" name="successfulLoginAndLogout" class="loginPage.AdminLoginLogout"/>
+        <method signature="AdminLoginLogout.unsuccessfulLoginAndLogout()[pri:0, instance:loginPage.AdminLoginLogout@a2431d0]" name="unsuccessfulLoginAndLogout" class="loginPage.AdminLoginLogout"/>
+        <method signature="CreateAndDeleteNewKindergarten.successfullyCreateUpdateDeleteNewKindergarten()[pri:0, instance:testsSpecialistPages.CreateAndDeleteNewKindergarten@1a4013]" name="successfullyCreateUpdateDeleteNewKindergarten" class="testsSpecialistPages.CreateAndDeleteNewKindergarten"/>
+        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewAdmin()[pri:1, instance:testsAdminPages.CreateAndDeleteNewUser@1cbb87f3]" name="successfullyCreateAndDeleteNewAdmin" class="testsAdminPages.CreateAndDeleteNewUser"/>
+        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewKindergartenSpecialist()[pri:2, instance:testsAdminPages.CreateAndDeleteNewUser@1cbb87f3]" name="successfullyCreateAndDeleteNewKindergartenSpecialist" class="testsAdminPages.CreateAndDeleteNewUser"/>
+        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewParent()[pri:3, instance:testsAdminPages.CreateAndDeleteNewUser@1cbb87f3]" name="successfullyCreateAndDeleteNewParent" class="testsAdminPages.CreateAndDeleteNewUser"/>
       </group> <!-- regression -->
       <group name="smoke">
-        <method signature="AdminLoginLogout.successfulAdminLoginAndLogout()[pri:0, instance:loginPage.AdminLoginLogout@10959ece]" name="successfulAdminLoginAndLogout" class="loginPage.AdminLoginLogout"/>
-        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewAdmin()[pri:1, instance:testsAdminPages.CreateAndDeleteNewUser@3a6bb9bf]" name="successfullyCreateAndDeleteNewAdmin" class="testsAdminPages.CreateAndDeleteNewUser"/>
-        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewKindergartenSpecialist()[pri:2, instance:testsAdminPages.CreateAndDeleteNewUser@3a6bb9bf]" name="successfullyCreateAndDeleteNewKindergartenSpecialist" class="testsAdminPages.CreateAndDeleteNewUser"/>
-        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewParent()[pri:3, instance:testsAdminPages.CreateAndDeleteNewUser@3a6bb9bf]" name="successfullyCreateAndDeleteNewParent" class="testsAdminPages.CreateAndDeleteNewUser"/>
-        <method signature="AdminLoginLogout.successfulAdminLoginAndLogout()[pri:0, instance:loginPage.AdminLoginLogout@693fe6c9]" name="successfulAdminLoginAndLogout" class="loginPage.AdminLoginLogout"/>
-        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewAdmin()[pri:1, instance:testsAdminPages.CreateAndDeleteNewUser@34f5090e]" name="successfullyCreateAndDeleteNewAdmin" class="testsAdminPages.CreateAndDeleteNewUser"/>
-        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewKindergartenSpecialist()[pri:2, instance:testsAdminPages.CreateAndDeleteNewUser@34f5090e]" name="successfullyCreateAndDeleteNewKindergartenSpecialist" class="testsAdminPages.CreateAndDeleteNewUser"/>
-        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewParent()[pri:3, instance:testsAdminPages.CreateAndDeleteNewUser@34f5090e]" name="successfullyCreateAndDeleteNewParent" class="testsAdminPages.CreateAndDeleteNewUser"/>
+        <method signature="AdminLoginLogout.successfulLoginAndLogout()[pri:0, instance:loginPage.AdminLoginLogout@34f7cfd9]" name="successfulLoginAndLogout" class="loginPage.AdminLoginLogout"/>
+        <method signature="CreateAndDeleteNewKindergarten.successfullyCreateUpdateDeleteNewKindergarten()[pri:0, instance:testsSpecialistPages.CreateAndDeleteNewKindergarten@59af0466]" name="successfullyCreateUpdateDeleteNewKindergarten" class="testsSpecialistPages.CreateAndDeleteNewKindergarten"/>
+        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewAdmin()[pri:1, instance:testsAdminPages.CreateAndDeleteNewUser@65f095f8]" name="successfullyCreateAndDeleteNewAdmin" class="testsAdminPages.CreateAndDeleteNewUser"/>
+        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewKindergartenSpecialist()[pri:2, instance:testsAdminPages.CreateAndDeleteNewUser@65f095f8]" name="successfullyCreateAndDeleteNewKindergartenSpecialist" class="testsAdminPages.CreateAndDeleteNewUser"/>
+        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewParent()[pri:3, instance:testsAdminPages.CreateAndDeleteNewUser@65f095f8]" name="successfullyCreateAndDeleteNewParent" class="testsAdminPages.CreateAndDeleteNewUser"/>
+        <method signature="AdminLoginLogout.successfulLoginAndLogout()[pri:0, instance:loginPage.AdminLoginLogout@a2431d0]" name="successfulLoginAndLogout" class="loginPage.AdminLoginLogout"/>
+        <method signature="CreateAndDeleteNewKindergarten.successfullyCreateUpdateDeleteNewKindergarten()[pri:0, instance:testsSpecialistPages.CreateAndDeleteNewKindergarten@1a4013]" name="successfullyCreateUpdateDeleteNewKindergarten" class="testsSpecialistPages.CreateAndDeleteNewKindergarten"/>
+        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewAdmin()[pri:1, instance:testsAdminPages.CreateAndDeleteNewUser@1cbb87f3]" name="successfullyCreateAndDeleteNewAdmin" class="testsAdminPages.CreateAndDeleteNewUser"/>
+        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewKindergartenSpecialist()[pri:2, instance:testsAdminPages.CreateAndDeleteNewUser@1cbb87f3]" name="successfullyCreateAndDeleteNewKindergartenSpecialist" class="testsAdminPages.CreateAndDeleteNewUser"/>
+        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewParent()[pri:3, instance:testsAdminPages.CreateAndDeleteNewUser@1cbb87f3]" name="successfullyCreateAndDeleteNewParent" class="testsAdminPages.CreateAndDeleteNewUser"/>
       </group> <!-- smoke -->
     </groups>
-    <test started-at="2021-02-21T15:57:22 EET" name="smoke" finished-at="2021-02-21T15:57:51 EET" duration-ms="29393">
+    <test started-at="2021-02-28T23:55:31 EET" name="smoke" finished-at="2021-02-28T23:55:58 EET" duration-ms="26234">
       <class name="loginPage.AdminLoginLogout">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:loginPage.AdminLoginLogout@10959ece]" started-at="2021-02-21T15:57:22 EET" name="setUp" finished-at="2021-02-21T15:57:27 EET" duration-ms="4970" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:loginPage.AdminLoginLogout@34f7cfd9]" started-at="2021-02-28T23:55:31 EET" name="setUp" finished-at="2021-02-28T23:55:36 EET" duration-ms="4071" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="successfulAdminLoginAndLogout()[pri:0, instance:loginPage.AdminLoginLogout@10959ece]" started-at="2021-02-21T15:57:27 EET" name="successfulAdminLoginAndLogout" finished-at="2021-02-21T15:57:29 EET" duration-ms="2368" status="PASS">
+        <test-method signature="successfulLoginAndLogout()[pri:0, instance:loginPage.AdminLoginLogout@34f7cfd9]" started-at="2021-02-28T23:55:36 EET" name="successfulLoginAndLogout" finished-at="2021-02-28T23:55:37 EET" duration-ms="1208" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- successfulAdminLoginAndLogout -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:loginPage.AdminLoginLogout@10959ece]" started-at="2021-02-21T15:57:29 EET" name="closeBrowser" finished-at="2021-02-21T15:57:29 EET" duration-ms="240" status="PASS">
+        </test-method> <!-- successfulLoginAndLogout -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:loginPage.AdminLoginLogout@34f7cfd9]" started-at="2021-02-28T23:55:37 EET" name="closeBrowser" finished-at="2021-02-28T23:55:37 EET" duration-ms="164" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- loginPage.AdminLoginLogout -->
       <class name="testsAdminPages.CreateAndDeleteNewUser">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testsAdminPages.CreateAndDeleteNewUser@3a6bb9bf]" started-at="2021-02-21T15:57:29 EET" name="setUp" finished-at="2021-02-21T15:57:34 EET" duration-ms="4963" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testsAdminPages.CreateAndDeleteNewUser@65f095f8]" started-at="2021-02-28T23:55:37 EET" name="setUp" finished-at="2021-02-28T23:55:40 EET" duration-ms="3517" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="successfullyCreateAndDeleteNewAdmin()[pri:1, instance:testsAdminPages.CreateAndDeleteNewUser@3a6bb9bf]" started-at="2021-02-21T15:57:34 EET" name="successfullyCreateAndDeleteNewAdmin" finished-at="2021-02-21T15:57:41 EET" duration-ms="6707" status="PASS">
+        <test-method signature="successfullyCreateAndDeleteNewAdmin()[pri:1, instance:testsAdminPages.CreateAndDeleteNewUser@65f095f8]" started-at="2021-02-28T23:55:40 EET" name="successfullyCreateAndDeleteNewAdmin" finished-at="2021-02-28T23:55:44 EET" duration-ms="3790" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- successfullyCreateAndDeleteNewAdmin -->
-        <test-method signature="successfullyCreateAndDeleteNewKindergartenSpecialist()[pri:2, instance:testsAdminPages.CreateAndDeleteNewUser@3a6bb9bf]" started-at="2021-02-21T15:57:41 EET" name="successfullyCreateAndDeleteNewKindergartenSpecialist" finished-at="2021-02-21T15:57:46 EET" duration-ms="4523" status="PASS">
+        <test-method signature="successfullyCreateAndDeleteNewKindergartenSpecialist()[pri:2, instance:testsAdminPages.CreateAndDeleteNewUser@65f095f8]" started-at="2021-02-28T23:55:44 EET" name="successfullyCreateAndDeleteNewKindergartenSpecialist" finished-at="2021-02-28T23:55:47 EET" duration-ms="2550" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- successfullyCreateAndDeleteNewKindergartenSpecialist -->
-        <test-method signature="successfullyCreateAndDeleteNewParent()[pri:3, instance:testsAdminPages.CreateAndDeleteNewUser@3a6bb9bf]" started-at="2021-02-21T15:57:46 EET" name="successfullyCreateAndDeleteNewParent" finished-at="2021-02-21T15:57:51 EET" duration-ms="5341" status="PASS">
+        <test-method signature="successfullyCreateAndDeleteNewParent()[pri:3, instance:testsAdminPages.CreateAndDeleteNewUser@65f095f8]" started-at="2021-02-28T23:55:47 EET" name="successfullyCreateAndDeleteNewParent" finished-at="2021-02-28T23:55:50 EET" duration-ms="2963" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- successfullyCreateAndDeleteNewParent -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testsAdminPages.CreateAndDeleteNewUser@3a6bb9bf]" started-at="2021-02-21T15:57:51 EET" name="closeBrowser" finished-at="2021-02-21T15:57:51 EET" duration-ms="189" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testsAdminPages.CreateAndDeleteNewUser@65f095f8]" started-at="2021-02-28T23:55:50 EET" name="closeBrowser" finished-at="2021-02-28T23:55:50 EET" duration-ms="178" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- testsAdminPages.CreateAndDeleteNewUser -->
-    </test> <!-- smoke -->
-    <test started-at="2021-02-21T15:57:51 EET" name="regression" finished-at="2021-02-21T15:58:19 EET" duration-ms="28141">
-      <class name="loginPage.AdminLoginLogout">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:loginPage.AdminLoginLogout@693fe6c9]" started-at="2021-02-21T15:57:51 EET" name="setUp" finished-at="2021-02-21T15:57:55 EET" duration-ms="3531" status="PASS">
+      <class name="testsSpecialistPages.CreateAndDeleteNewKindergarten">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testsSpecialistPages.CreateAndDeleteNewKindergarten@59af0466]" started-at="2021-02-28T23:55:50 EET" name="setUp" finished-at="2021-02-28T23:55:53 EET" duration-ms="3341" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="successfulAdminLoginAndLogout()[pri:0, instance:loginPage.AdminLoginLogout@693fe6c9]" started-at="2021-02-21T15:57:55 EET" name="successfulAdminLoginAndLogout" finished-at="2021-02-21T15:57:57 EET" duration-ms="2374" status="PASS">
+        <test-method signature="successfullyCreateUpdateDeleteNewKindergarten()[pri:0, instance:testsSpecialistPages.CreateAndDeleteNewKindergarten@59af0466]" started-at="2021-02-28T23:55:53 EET" name="successfullyCreateUpdateDeleteNewKindergarten" finished-at="2021-02-28T23:55:57 EET" duration-ms="4183" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- successfulAdminLoginAndLogout -->
-        <test-method signature="unsuccessfulAdminLoginAndLogout()[pri:0, instance:loginPage.AdminLoginLogout@693fe6c9]" started-at="2021-02-21T15:57:57 EET" name="unsuccessfulAdminLoginAndLogout" finished-at="2021-02-21T15:58:00 EET" duration-ms="2497" status="PASS">
+        </test-method> <!-- successfullyCreateUpdateDeleteNewKindergarten -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testsSpecialistPages.CreateAndDeleteNewKindergarten@59af0466]" started-at="2021-02-28T23:55:57 EET" name="closeBrowser" finished-at="2021-02-28T23:55:58 EET" duration-ms="182" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- unsuccessfulAdminLoginAndLogout -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:loginPage.AdminLoginLogout@693fe6c9]" started-at="2021-02-21T15:58:00 EET" name="closeBrowser" finished-at="2021-02-21T15:58:00 EET" duration-ms="170" status="PASS">
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- testsSpecialistPages.CreateAndDeleteNewKindergarten -->
+    </test> <!-- smoke -->
+    <test started-at="2021-02-28T23:55:58 EET" name="regression" finished-at="2021-02-28T23:56:25 EET" duration-ms="27000">
+      <class name="loginPage.AdminLoginLogout">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:loginPage.AdminLoginLogout@a2431d0]" started-at="2021-02-28T23:55:58 EET" name="setUp" finished-at="2021-02-28T23:56:01 EET" duration-ms="3322" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="successfulLoginAndLogout()[pri:0, instance:loginPage.AdminLoginLogout@a2431d0]" started-at="2021-02-28T23:56:01 EET" name="successfulLoginAndLogout" finished-at="2021-02-28T23:56:02 EET" duration-ms="1077" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- successfulLoginAndLogout -->
+        <test-method signature="unsuccessfulLoginAndLogout()[pri:0, instance:loginPage.AdminLoginLogout@a2431d0]" started-at="2021-02-28T23:56:02 EET" name="unsuccessfulLoginAndLogout" finished-at="2021-02-28T23:56:05 EET" duration-ms="2451" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- unsuccessfulLoginAndLogout -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:loginPage.AdminLoginLogout@a2431d0]" started-at="2021-02-28T23:56:05 EET" name="closeBrowser" finished-at="2021-02-28T23:56:05 EET" duration-ms="171" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- loginPage.AdminLoginLogout -->
-      <class name="testsAdminPages.CreateAndDeleteNewUser">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testsAdminPages.CreateAndDeleteNewUser@34f5090e]" started-at="2021-02-21T15:58:00 EET" name="setUp" finished-at="2021-02-21T15:58:03 EET" duration-ms="3124" status="PASS">
+      <class name="testsSpecialistPages.CreateAndDeleteNewKindergarten">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testsSpecialistPages.CreateAndDeleteNewKindergarten@1a4013]" started-at="2021-02-28T23:56:17 EET" name="setUp" finished-at="2021-02-28T23:56:21 EET" duration-ms="3273" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="successfullyCreateAndDeleteNewAdmin()[pri:1, instance:testsAdminPages.CreateAndDeleteNewUser@34f5090e]" started-at="2021-02-21T15:58:03 EET" name="successfullyCreateAndDeleteNewAdmin" finished-at="2021-02-21T15:58:10 EET" duration-ms="6947" status="PASS">
+        <test-method signature="successfullyCreateUpdateDeleteNewKindergarten()[pri:0, instance:testsSpecialistPages.CreateAndDeleteNewKindergarten@1a4013]" started-at="2021-02-28T23:56:21 EET" name="successfullyCreateUpdateDeleteNewKindergarten" finished-at="2021-02-28T23:56:25 EET" duration-ms="3956" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- successfullyCreateUpdateDeleteNewKindergarten -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testsSpecialistPages.CreateAndDeleteNewKindergarten@1a4013]" started-at="2021-02-28T23:56:25 EET" name="closeBrowser" finished-at="2021-02-28T23:56:25 EET" duration-ms="214" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- testsSpecialistPages.CreateAndDeleteNewKindergarten -->
+      <class name="testsAdminPages.CreateAndDeleteNewUser">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testsAdminPages.CreateAndDeleteNewUser@1cbb87f3]" started-at="2021-02-28T23:56:05 EET" name="setUp" finished-at="2021-02-28T23:56:08 EET" duration-ms="3442" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="successfullyCreateAndDeleteNewAdmin()[pri:1, instance:testsAdminPages.CreateAndDeleteNewUser@1cbb87f3]" started-at="2021-02-28T23:56:08 EET" name="successfullyCreateAndDeleteNewAdmin" finished-at="2021-02-28T23:56:12 EET" duration-ms="3530" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- successfullyCreateAndDeleteNewAdmin -->
-        <test-method signature="successfullyCreateAndDeleteNewKindergartenSpecialist()[pri:2, instance:testsAdminPages.CreateAndDeleteNewUser@34f5090e]" started-at="2021-02-21T15:58:10 EET" name="successfullyCreateAndDeleteNewKindergartenSpecialist" finished-at="2021-02-21T15:58:14 EET" duration-ms="4260" status="PASS">
+        <test-method signature="successfullyCreateAndDeleteNewKindergartenSpecialist()[pri:2, instance:testsAdminPages.CreateAndDeleteNewUser@1cbb87f3]" started-at="2021-02-28T23:56:12 EET" name="successfullyCreateAndDeleteNewKindergartenSpecialist" finished-at="2021-02-28T23:56:14 EET" duration-ms="2500" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- successfullyCreateAndDeleteNewKindergartenSpecialist -->
-        <test-method signature="successfullyCreateAndDeleteNewParent()[pri:3, instance:testsAdminPages.CreateAndDeleteNewUser@34f5090e]" started-at="2021-02-21T15:58:14 EET" name="successfullyCreateAndDeleteNewParent" finished-at="2021-02-21T15:58:19 EET" duration-ms="5030" status="PASS">
+        <test-method signature="successfullyCreateAndDeleteNewParent()[pri:3, instance:testsAdminPages.CreateAndDeleteNewUser@1cbb87f3]" started-at="2021-02-28T23:56:14 EET" name="successfullyCreateAndDeleteNewParent" finished-at="2021-02-28T23:56:17 EET" duration-ms="2914" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- successfullyCreateAndDeleteNewParent -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testsAdminPages.CreateAndDeleteNewUser@34f5090e]" started-at="2021-02-21T15:58:19 EET" name="closeBrowser" finished-at="2021-02-21T15:58:19 EET" duration-ms="187" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testsAdminPages.CreateAndDeleteNewUser@1cbb87f3]" started-at="2021-02-28T23:56:17 EET" name="closeBrowser" finished-at="2021-02-28T23:56:17 EET" duration-ms="134" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
