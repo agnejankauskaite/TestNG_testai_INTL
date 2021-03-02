@@ -3,8 +3,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import basetest.BaseTest;
-import pages.CreateAndDeleteNewKindergartenPage;
 import pages.LoginPage;
+import specialistPages.CreateAndDeleteNewKindergartenPage;
 
 public class CreateAndDeleteNewKindergarten extends BaseTest{
 

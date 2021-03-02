@@ -2,8 +2,9 @@ package testsAdminPages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
+
+import adminPages.CreateAndDeleteNewUserPage;
 import basetest.BaseTest;
-import pages.CreateAndDeleteNewUserPage;
 import pages.LoginPage;
 
 public class CreateAndDeleteNewUser extends BaseTest{
