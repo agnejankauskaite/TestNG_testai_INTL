@@ -65,7 +65,7 @@ public class UpdateUserDetailsAdmin extends BaseTest{
   @Test (groups = "regression", priority = 3) 
   public void successfullyResetAdminPasswordToOriginal() {	  
       
-	  // go to login page and click on "Pamiršau slaptažodį" button
+	// go to login page and click on "Pamiršau slaptažodį" button
       UpdateUserDetailsAdminPage resetPassword = new UpdateUserDetailsAdminPage(driver);
       resetPassword.clickUserForgotPasswordButton();
       

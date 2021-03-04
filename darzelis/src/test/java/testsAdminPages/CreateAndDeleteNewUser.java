@@ -27,7 +27,7 @@ public class CreateAndDeleteNewUser extends BaseTest{
 	  
 	  // enter email
 	  CreateAndDeleteNewUserPage createNewUserPage = new CreateAndDeleteNewUserPage(driver);
-	  createNewUserPage.enterEmail("email@adminas.lt");
+	  createNewUserPage.enterEmail("emailtestinis@adminas.lt");
 	  
 	  // enter name and surname  
 	  createNewUserPage.enterName("Vardas");
@@ -57,7 +57,7 @@ public class CreateAndDeleteNewUser extends BaseTest{
 	  
 	  // enter email
 	  CreateAndDeleteNewUserPage createNewUserPage = new CreateAndDeleteNewUserPage(driver);
-	  createNewUserPage.enterEmail("specialist@manager.lt");
+	  createNewUserPage.enterEmail("emailtestinis@manager.lt");
 	  
 	  // enter name and surname  
 	  createNewUserPage.enterName("Vardas");
@@ -87,13 +87,13 @@ public class CreateAndDeleteNewUser extends BaseTest{
 	  
 	  // enter email
 	  CreateAndDeleteNewUserPage createNewUserPage = new CreateAndDeleteNewUserPage(driver);
-	  createNewUserPage.enterEmail("parent@parents.lt");
+	  createNewUserPage.enterEmail("emailtestinis@parents.lt");
 	  
 	  // enter user details  
 	  createNewUserPage.enterName("Vardas");
 	  createNewUserPage.enterSurname("Pavardė");
 	  createNewUserPage.enterPersonalCode("12345678911");
-	  createNewUserPage.enterPhoneNumber("61212123");
+	  createNewUserPage.enterPhoneNumber("+37061212123");
 	  createNewUserPage.enterAddress("Adreso g. 8");
 	  
 	  // create the user

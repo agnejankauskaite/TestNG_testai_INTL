@@ -36,7 +36,7 @@ public class AdminLoginLogout extends BaseTest {
 		  
 		 //login with incorrect data
 		 LoginPage loginPage = new LoginPage(driver);
-	     loginPage.doLogin("admin2@admin.lt", "admin2@admin.lt");
+	     loginPage.doLogin("adminNeteisingas@admin.lt", "adminNeteisingas@admin.lt");
 	     
 	     // check if an error message appears 
 	     checkErrorMessage();

@@ -34,7 +34,7 @@ public class CreateAndDeleteNewUserPage extends AbstractObjectPage {
 	@FindBy (id = "btnCreate")
 	public WebElement createButton;
 	
-	@FindBy (xpath = "//div[4]//button")
+	@FindBy (xpath = "//div[2]/div/button")
 	public WebElement okButtonUserIsCreated;
 	
 	public void enterEmail (String value) {
@@ -71,7 +71,7 @@ public class CreateAndDeleteNewUserPage extends AbstractObjectPage {
 	
 	public Boolean userIsCreatedMessage() {
 		  WebDriverWait wait = new WebDriverWait(driver, 10);
-		  	return wait.until(ExpectedConditions.textToBe(By.xpath("//div[2]/div/div[3]"), "Naujas naudotojas buvo sėkmingai sukurtas."));
+		  	return wait.until(ExpectedConditions.textToBe(By.xpath("//body/div[2]/div/div[1]"), "Naujas naudotojas buvo sėkmingai sukurtas."));
 	}
 	
 	public void clickDeleteUserButton () {
