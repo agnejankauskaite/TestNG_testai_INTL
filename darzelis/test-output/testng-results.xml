@@ -2,37 +2,37 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-03-02T21:11:14 EET" name="Default suite" finished-at="2021-03-02T21:11:29 EET" duration-ms="14370">
+  <suite started-at="2021-03-07T15:24:51 EET" name="Default suite" finished-at="2021-03-07T15:25:05 EET" duration-ms="14421">
     <groups>
       <group name="regression">
-        <method signature="UpdateUserDetailsAdmin.successfullyChangeAdminDetails()[pri:1, instance:testsAdminPages.UpdateUserDetailsAdmin@5fa07e12]" name="successfullyChangeAdminDetails" class="testsAdminPages.UpdateUserDetailsAdmin"/>
-        <method signature="UpdateUserDetailsAdmin.successfullyChangeAdminPassword()[pri:2, instance:testsAdminPages.UpdateUserDetailsAdmin@5fa07e12]" name="successfullyChangeAdminPassword" class="testsAdminPages.UpdateUserDetailsAdmin"/>
-        <method signature="UpdateUserDetailsAdmin.successfullyResetAdminPasswordToOriginal()[pri:3, instance:testsAdminPages.UpdateUserDetailsAdmin@5fa07e12]" name="successfullyResetAdminPasswordToOriginal" class="testsAdminPages.UpdateUserDetailsAdmin"/>
+        <method signature="UpdateAdminDetails.successfullyChangeAdminDetails()[pri:1, instance:testsAdminPages.UpdateAdminDetails@5fa07e12]" name="successfullyChangeAdminDetails" class="testsAdminPages.UpdateAdminDetails"/>
+        <method signature="UpdateAdminDetails.successfullyChangeAdminPassword()[pri:2, instance:testsAdminPages.UpdateAdminDetails@5fa07e12]" name="successfullyChangeAdminPassword" class="testsAdminPages.UpdateAdminDetails"/>
+        <method signature="UpdateAdminDetails.successfullyResetAdminPasswordToOriginal()[pri:3, instance:testsAdminPages.UpdateAdminDetails@5fa07e12]" name="successfullyResetAdminPasswordToOriginal" class="testsAdminPages.UpdateAdminDetails"/>
       </group> <!-- regression -->
     </groups>
-    <test started-at="2021-03-02T21:11:14 EET" name="Default test" finished-at="2021-03-02T21:11:29 EET" duration-ms="14370">
-      <class name="testsAdminPages.UpdateUserDetailsAdmin">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:testsAdminPages.UpdateUserDetailsAdmin@5fa07e12]" started-at="2021-03-02T21:11:14 EET" name="setUp" finished-at="2021-03-02T21:11:18 EET" duration-ms="4128" status="PASS">
+    <test started-at="2021-03-07T15:24:51 EET" name="Default test" finished-at="2021-03-07T15:25:05 EET" duration-ms="14421">
+      <class name="testsAdminPages.UpdateAdminDetails">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:testsAdminPages.UpdateAdminDetails@5fa07e12]" started-at="2021-03-07T15:24:51 EET" name="setUp" finished-at="2021-03-07T15:24:54 EET" duration-ms="3810" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="successfullyChangeAdminDetails()[pri:1, instance:testsAdminPages.UpdateUserDetailsAdmin@5fa07e12]" started-at="2021-03-02T21:11:19 EET" name="successfullyChangeAdminDetails" finished-at="2021-03-02T21:11:21 EET" duration-ms="2578" status="PASS">
+        <test-method signature="successfullyChangeAdminDetails()[pri:1, instance:testsAdminPages.UpdateAdminDetails@5fa07e12]" started-at="2021-03-07T15:24:54 EET" name="successfullyChangeAdminDetails" finished-at="2021-03-07T15:24:57 EET" duration-ms="2664" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- successfullyChangeAdminDetails -->
-        <test-method signature="successfullyChangeAdminPassword()[pri:2, instance:testsAdminPages.UpdateUserDetailsAdmin@5fa07e12]" started-at="2021-03-02T21:11:21 EET" name="successfullyChangeAdminPassword" finished-at="2021-03-02T21:11:24 EET" duration-ms="3390" status="PASS">
+        <test-method signature="successfullyChangeAdminPassword()[pri:2, instance:testsAdminPages.UpdateAdminDetails@5fa07e12]" started-at="2021-03-07T15:24:57 EET" name="successfullyChangeAdminPassword" finished-at="2021-03-07T15:25:00 EET" duration-ms="3331" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- successfullyChangeAdminPassword -->
-        <test-method signature="successfullyResetAdminPasswordToOriginal()[pri:3, instance:testsAdminPages.UpdateUserDetailsAdmin@5fa07e12]" started-at="2021-03-02T21:11:24 EET" name="successfullyResetAdminPasswordToOriginal" finished-at="2021-03-02T21:11:29 EET" duration-ms="4212" status="PASS">
+        <test-method signature="successfullyResetAdminPasswordToOriginal()[pri:3, instance:testsAdminPages.UpdateAdminDetails@5fa07e12]" started-at="2021-03-07T15:25:00 EET" name="successfullyResetAdminPasswordToOriginal" finished-at="2021-03-07T15:25:05 EET" duration-ms="4397" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- successfullyResetAdminPasswordToOriginal -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testsAdminPages.UpdateUserDetailsAdmin@5fa07e12]" started-at="2021-03-02T21:11:29 EET" name="closeBrowser" finished-at="2021-03-02T21:11:29 EET" duration-ms="10" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:testsAdminPages.UpdateAdminDetails@5fa07e12]" started-at="2021-03-07T15:25:05 EET" name="closeBrowser" finished-at="2021-03-07T15:25:05 EET" duration-ms="167" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- testsAdminPages.UpdateUserDetailsAdmin -->
+      </class> <!-- testsAdminPages.UpdateAdminDetails -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

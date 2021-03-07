@@ -1,8 +1,12 @@
 eclipse.preferences.version=1
 encoding//src/main/java/adminPages/CreateAndDeleteNewUserPage.java=UTF-8
-encoding//src/main/java/adminPages/UpdateUserDetailsAdminPage.java=UTF-8
+encoding//src/main/java/adminPages/UpdateAdminDetailsPage.java=UTF-8
 encoding//src/main/java/pages/AbstractObjectPage.java=UTF-8
+encoding//src/main/java/pages/ChangeAndResetUserAccountFieldsAndPasswordPage.java=UTF-8
+encoding//src/main/java/pages/LoginPage.java=UTF-8
 encoding//src/main/java/specialistPages/CreateAndDeleteNewKindergartenPage.java=UTF-8
+encoding//src/main/java/specialistPages/UpdateSpacialistDetailsPage.java=UTF-8
 encoding//src/test/java/loginPage/AdminLoginLogout.java=UTF-8
 encoding//src/test/java/testsAdminPages/CreateAndDeleteNewUser.java=UTF-8
-encoding//src/test/java/testsAdminPages/UpdateUserDetailsAdmin.java=UTF-8
+encoding//src/test/java/testsAdminPages/UpdateAdminDetails.java=UTF-8
+encoding//src/test/java/testsSpecialistPages/UpdateSpecialistDetails.java=UTF-8
