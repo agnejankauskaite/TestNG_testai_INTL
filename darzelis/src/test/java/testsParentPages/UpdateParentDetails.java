@@ -1,4 +1,4 @@
-package testsAdminPages;
+package testsParentPages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -6,25 +6,30 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import basetest.BaseTest;
 import pages.LoginPage;
+import parentPages.UpdateParentDetailsPage;
 import pages.ChangeAndResetUserAccountFieldsAndPasswordPage;
 
-public class UpdateAdminDetails extends BaseTest{
+public class UpdateParentDetails extends BaseTest{
 	
-  private String userLogin = "admin2@admin.lt";
+  private String userLogin = "user2@user.lt";
 	
   @Test (groups = "regression", priority = 1) 
   public void successfullyChangeAdminDetails() {
 	  
-	  //login as admin
+	  //login as parent/ guardian
 	  LoginPage loginPage = new LoginPage(driver);
       loginPage.doLogin(userLogin, userLogin);
       
       // go to "Mano paskyra" page
-      clickNavButtonAdminMyAccount();
+      clickNavButtonMyAccountParent();
 
-      // change kindergarten specialist details
+      // change parent details
       ChangeAndResetUserAccountFieldsAndPasswordPage changeDetails = new ChangeAndResetUserAccountFieldsAndPasswordPage(driver);
       changeDetails.inputUserDetails();
+      UpdateParentDetailsPage inputDetails = new UpdateParentDetailsPage(driver);
+      inputDetails.inputPersonalCode("37505073214");
+      inputDetails.inputTelephoneNumber("+37060809123");
+      inputDetails.inputUserAddress("Adreso g. 99");
       changeDetails.clickChangeUserDetails();
   	  }
   
@@ -40,10 +45,10 @@ public class UpdateAdminDetails extends BaseTest{
 		  reset.resetUserPassword(userLogin);
 	  }
 	  
-	public void clickNavButtonAdminMyAccount () {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-			WebElement navMyAccountAdmin = wait.until(
-				ExpectedConditions.presenceOfElementLocated(By.id("navAdminMyAccount")));
-		navMyAccountAdmin.click();
+	  public void clickNavButtonMyAccountParent () {
+	  WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebElement navMyAccountParent = wait.until(
+			ExpectedConditions.presenceOfElementLocated(By.id("navUserMyAccount")));
+	  navMyAccountParent.click();
 	}
 }

@@ -1,11 +1,12 @@
 package testsSpecialistPages;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-
-import adminPages.UpdateAdminDetailsPage;
 import basetest.BaseTest;
 import pages.LoginPage;
 import pages.ChangeAndResetUserAccountFieldsAndPasswordPage;
-import specialistPages.UpdateSpacialistDetailsPage;
 
 public class UpdateSpecialistDetails extends BaseTest{
 	
@@ -14,13 +15,12 @@ public class UpdateSpecialistDetails extends BaseTest{
   @Test  (groups = "regression", priority = 1) 
   public void successfullyChangeKindergartenSpecialistDetails() {
 	  
-	  //login as švietimo specialistas
+	  //login as kindergarten specialist
 	  LoginPage loginPage = new LoginPage(driver);
       loginPage.doLogin(userLogin, userLogin);
       
       // go to "Mano paskyra" page
-      UpdateSpacialistDetailsPage updateDetails = new UpdateSpacialistDetailsPage(driver);
-      updateDetails.clickNavButtonSpecialistMyAccount();
+      clickNavButtonSpecialistMyAccount();
       
       // change kindergarten specialist details
       ChangeAndResetUserAccountFieldsAndPasswordPage changeDetails = new ChangeAndResetUserAccountFieldsAndPasswordPage(driver);
@@ -38,5 +38,12 @@ public class UpdateSpecialistDetails extends BaseTest{
   public void successfullyResetSpecialistPasswordToOriginal () {	  
 	  ChangeAndResetUserAccountFieldsAndPasswordPage resetPassword = new ChangeAndResetUserAccountFieldsAndPasswordPage(driver);
 	  resetPassword.resetUserPassword(userLogin); 
+  }
+  
+  public void clickNavButtonSpecialistMyAccount () {
+	  WebDriverWait wait = new WebDriverWait(driver, 10);
+		 WebElement navMyAccountSpecialist = wait.until(
+			ExpectedConditions.presenceOfElementLocated(By.id("navManagerMyAccount")));
+	  navMyAccountSpecialist.click();
   }
 }

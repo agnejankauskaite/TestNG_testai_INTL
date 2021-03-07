@@ -7,8 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import specialistPages.UpdateSpacialistDetailsPage;
-
 public class ChangeAndResetUserAccountFieldsAndPasswordPage extends AbstractObjectPage{
 	// input fields
 	@FindBy (id="txtName")
@@ -140,7 +138,8 @@ public class ChangeAndResetUserAccountFieldsAndPasswordPage extends AbstractObje
 	
 	public Boolean assertThatUserPasswordWasUpdated() {
 		  WebDriverWait wait = new WebDriverWait(driver, 10);
-		  	return wait.until(ExpectedConditions.textToBe(By.xpath("//body/div[2]/div/div[1]"), "Naudotojo slaptažodis atnaujintas sėkmingai"));
+		  	return wait.until(ExpectedConditions.textToBe
+		  			(By.xpath("//body/div[2]/div/div[1]"), "Naudotojo slaptažodis atnaujintas sėkmingai"));
 	}
 	
 	public void clickOkButtonPasswordChanged () {
@@ -149,7 +148,8 @@ public class ChangeAndResetUserAccountFieldsAndPasswordPage extends AbstractObje
 	
 	public Boolean assertThatUserInformationWasUpdated() {
 		  WebDriverWait wait = new WebDriverWait(driver, 10);
-		  	return wait.until(ExpectedConditions.textToBe(By.xpath("//body/div[2]/div/div[1]"), "Naudotojo duomenys buvo sėkmingai atnaujinti"));
+		  	return wait.until(ExpectedConditions.textToBe
+		  			(By.xpath("//body/div[2]/div/div[1]"), "Naudotojo duomenys buvo sėkmingai atnaujinti"));
 	}
 	
 	public void clickOkButtonUserDetailsUpdated () {
