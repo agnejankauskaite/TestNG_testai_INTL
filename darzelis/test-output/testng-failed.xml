@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testsAdminPages.UpdateAdminDetails">
+      <class name="testsParentPages.UpdateParentDetails">
         <methods>
           <include name="setUp"/>
-          <include name="successfullyChangeAdminPassword"/>
           <include name="successfullyResetAdminPasswordToOriginal"/>
           <include name="closeBrowser"/>
         </methods>
-      </class> <!-- testsAdminPages.UpdateAdminDetails -->
+      </class> <!-- testsParentPages.UpdateParentDetails -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
