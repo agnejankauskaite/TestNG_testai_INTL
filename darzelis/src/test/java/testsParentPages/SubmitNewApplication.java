@@ -1,6 +1,9 @@
 package testsParentPages;
 import java.io.IOException;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import basetest.BaseTest;
 import pages.LoginPage;
@@ -23,7 +26,14 @@ public class SubmitNewApplication extends BaseTest{
       
       // check all priorities
       newApplication.clickPriorityOne();
+      newApplication.clickPriorityTwo();
+      newApplication.clickPriorityThree();
+      newApplication.clickPriorityFour();
+      newApplication.clickPriorityFive();
       
+      // choose a kindergarten from the list
+//    Select dropdownUserRole = new Select(driver.findElement(By.xpath("//*/form/div[3]//div[3]/div")));
+//	  dropdownUserRole.selectByIndex(3);
   	  }
   
 }

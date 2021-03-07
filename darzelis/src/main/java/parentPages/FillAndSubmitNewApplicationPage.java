@@ -1,11 +1,11 @@
 package parentPages;
-
 import java.io.IOException;
 import java.util.List;
-
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -50,6 +50,18 @@ public class FillAndSubmitNewApplicationPage extends AbstractObjectPage{
 	// checkbox (child priorities)
 	@FindBy (id= "chkLivesInVilnius")
 	public WebElement priorityOne;
+	
+	@FindBy (id= "chkChildIsAdopted")
+	public WebElement priorityTwo;
+	
+	@FindBy (id= "chkFamilyHasThreeOrMoreChildrenInSchools")
+	public WebElement priorityThree;
+	
+	@FindBy (id= "chkGuardianInSchool")
+	public WebElement priorityFour;
+	
+	@FindBy (id= "chkGuardianDisability")
+	public WebElement priorityFive;
 	
 	// buttons
 	@FindBy (id= "btnEnableAdditionalGuardian")
@@ -96,12 +108,34 @@ public class FillAndSubmitNewApplicationPage extends AbstractObjectPage{
 	}
 	
 	public void inputChildDateOfBirth (String value) {
-	childDateOfBirth.clear();
-	childDateOfBirth.sendKeys(value);
+		childDateOfBirth.click();
+		// delete default date value manually
+		for (int i= 0; i< 10; i++){
+			childDateOfBirth.sendKeys(Keys.BACK_SPACE);
+		}
+		// input date of birth
+		childDateOfBirth.sendKeys(value);
+		childDateOfBirth.sendKeys(Keys.ENTER);
 	}
 	
 	public void clickPriorityOne () {
 		priorityOne.click();
+	}
+	
+	public void clickPriorityTwo () {
+		priorityTwo.click();
+	}
+	
+	public void clickPriorityThree () {
+		priorityThree.click();
+	}
+	
+	public void clickPriorityFour () {
+		priorityFour.click();
+	}
+	
+	public void clickPriorityFive () {
+		priorityFive.click();
 	}
 	
 	// fill in the form with second parent and child details
