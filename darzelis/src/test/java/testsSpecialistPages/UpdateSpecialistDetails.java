@@ -10,14 +10,14 @@ import pages.ChangeAndResetUserAccountFieldsAndPasswordPage;
 
 public class UpdateSpecialistDetails extends BaseTest{
 	
-  private String userLogin = "manager2@manager.lt";
+  private String specialistLogin = "manager2@manager.lt";
 	
   @Test  (groups = "regression", priority = 1) 
   public void successfullyChangeKindergartenSpecialistDetails() {
 	  
 	  //login as kindergarten specialist
 	  LoginPage loginPage = new LoginPage(driver);
-      loginPage.doLogin(userLogin, userLogin);
+      loginPage.doLogin(specialistLogin, specialistLogin);
       
       // go to "Mano paskyra" page
       clickNavButtonSpecialistMyAccount();
@@ -31,13 +31,13 @@ public class UpdateSpecialistDetails extends BaseTest{
   @Test (groups = "regression", priority = 2) 
   public void successfullyChangeSpecialistPassword() {	  
 	  ChangeAndResetUserAccountFieldsAndPasswordPage changePassword = new ChangeAndResetUserAccountFieldsAndPasswordPage(driver);
-	  changePassword.changeUserPassword(userLogin);
+	  changePassword.changeUserPassword(specialistLogin);
   }
   
   @Test (groups = "regression", priority = 3) 
   public void successfullyResetSpecialistPasswordToOriginal () {	  
 	  ChangeAndResetUserAccountFieldsAndPasswordPage resetPassword = new ChangeAndResetUserAccountFieldsAndPasswordPage(driver);
-	  resetPassword.resetUserPassword(userLogin); 
+	  resetPassword.resetUserPassword(specialistLogin); 
   }
   
   public void clickNavButtonSpecialistMyAccount () {

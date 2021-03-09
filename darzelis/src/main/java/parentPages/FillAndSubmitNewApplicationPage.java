@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -62,6 +61,10 @@ public class FillAndSubmitNewApplicationPage extends AbstractObjectPage{
 	
 	@FindBy (id= "chkGuardianDisability")
 	public WebElement priorityFive;
+	
+	// choose kindergarten priorities
+	@FindBy (id = "selKindergartenId1")
+	public WebElement kindergartenPriorityOne;
 	
 	// buttons
 	@FindBy (id= "btnEnableAdditionalGuardian")
@@ -138,6 +141,21 @@ public class FillAndSubmitNewApplicationPage extends AbstractObjectPage{
 		priorityFive.click();
 	}
 	
+	public void openKindergartenListDropdownPriorityOne() {
+		kindergartenPriorityOne.click();
+	}
+	
+	@FindBy (xpath= "//*[@id=\"selKindergartenId1\"]/input")
+	public WebElement dropdownElement;
+	
+	public void chooseKindergartenFromDropdownList(){
+		openKindergartenListDropdownPriorityOne();
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebElement dropdown = wait.until(
+			ExpectedConditions.elementToBeClickable(dropdownElement));
+		dropdown.sendKeys(Keys.ENTER);
+	}
+	
 	// fill in the form with second parent and child details
 	public void fillInTheApplication () throws IOException {
 		// go to "Sukurti prašymą" page
@@ -150,7 +168,7 @@ public class FillAndSubmitNewApplicationPage extends AbstractObjectPage{
 		applicationFormSecondParentDetails();
 		
 		// fill in child details into the form
-		applicationFormChildDetails();
+		applicationFormChildDetailsOne();
 	}
 	
 	public void applicationFormSecondParentDetails () throws IOException {
@@ -169,7 +187,7 @@ public class FillAndSubmitNewApplicationPage extends AbstractObjectPage{
 		inputSecondParentAddress(secondParentAddress);
 	}
 	
-	public void applicationFormChildDetails () throws IOException {
+	public void applicationFormChildDetailsOne () throws IOException {
 		List<String> formData = FileReaderUtils.getTestData("src/test/resources/parentAndChildDetails.txt");
 		String childName = formData.get(6);
 		String childSurname = formData.get(7);
@@ -187,6 +205,7 @@ public class FillAndSubmitNewApplicationPage extends AbstractObjectPage{
 		ExpectedConditions.presenceOfElementLocated(By.id("navUserNewApplication")));
 	navNewApplication.click();
 	}
+	
 	
 	// constructor
 	public FillAndSubmitNewApplicationPage(WebDriver driver) {

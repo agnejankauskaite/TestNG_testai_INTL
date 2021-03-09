@@ -33,10 +33,9 @@ public class LoginPage extends AbstractObjectPage {
 	}
 	
 	public void doLogin(String username, String password) {
-		 LoginPage loginPage = new LoginPage(driver);
-		 loginPage.enterUsername(username);
-	     loginPage.enterPassword(password);
-		 loginPage.clickLoginButton();
+		enterUsername(username);
+	    enterPassword(password);
+		clickLoginButton();
 	 }
 	
 	public void doLogout() {
