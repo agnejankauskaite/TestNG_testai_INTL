@@ -18,13 +18,6 @@ public class CheckIfRegistrationIsOpen extends AbstractObjectPage{
 	@FindBy (id= "btnStopRegistration")
 	public WebElement stopRegistrationButton;
 	
-	public void clickNavButtonApplicationQueue () {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		WebElement navApplicationQueue = wait.until(
-			ExpectedConditions.presenceOfElementLocated(By.id("navManagerApplicationQueue")));
-		navApplicationQueue.click();
-		}
-	
 	public void clickStartRegistration() {
 		startRegistrationButton.click();
 	}
@@ -47,11 +40,15 @@ public class CheckIfRegistrationIsOpen extends AbstractObjectPage{
 	    	clickStartRegistration();
 	    } else {
 	    	driver.findElement(By.id("btnLogout")).click();
-	    }
-	    
-	    
+	    }  
 	}
 
+	public void clickNavButtonApplicationQueue () {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebElement navApplicationQueue = wait.until(
+			ExpectedConditions.presenceOfElementLocated(By.id("navManagerApplicationQueue")));
+		navApplicationQueue.click();
+		}
 	
 	// constructor
 	public CheckIfRegistrationIsOpen(WebDriver driver) {

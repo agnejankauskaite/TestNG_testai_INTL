@@ -1,12 +1,17 @@
 package parentPages;
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import pages.AbstractObjectPage;
@@ -61,10 +66,6 @@ public class FillAndSubmitNewApplicationPage extends AbstractObjectPage{
 	
 	@FindBy (id= "chkGuardianDisability")
 	public WebElement priorityFive;
-	
-	// choose kindergarten priorities
-	@FindBy (id = "selKindergartenId1")
-	public WebElement kindergartenPriorityOne;
 	
 	// buttons
 	@FindBy (id= "btnEnableAdditionalGuardian")
@@ -141,20 +142,23 @@ public class FillAndSubmitNewApplicationPage extends AbstractObjectPage{
 		priorityFive.click();
 	}
 	
+	// choose kindergarten priorities
+	@FindBy (id = "selKindergartenId1")
+	public WebElement kindergartenPriorityOne;
+	
 	public void openKindergartenListDropdownPriorityOne() {
 		kindergartenPriorityOne.click();
+//		WebDriverWait wait = new WebDriverWait(driver, 10);
+//		WebElement navApplicationQueue = wait.until(
+//			ExpectedConditions.visibilityOfElementLocated(By.xpath("//*/input[@name='kindergartenId1']")));
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click();", kindergartenPriorityOne);
+		js.executeScript("arguments[0].value='1 Adarželis (Adresas A)'", kindergartenPriorityOne);
+		
 	}
 	
 	@FindBy (xpath= "//*[@id=\"selKindergartenId1\"]/input")
-	public WebElement dropdownElement;
-	
-	public void chooseKindergartenFromDropdownList(){
-		openKindergartenListDropdownPriorityOne();
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		WebElement dropdown = wait.until(
-			ExpectedConditions.elementToBeClickable(dropdownElement));
-		dropdown.sendKeys(Keys.ENTER);
-	}
+	public WebElement dropdownElement;	
 	
 	// fill in the form with second parent and child details
 	public void fillInTheApplication () throws IOException {

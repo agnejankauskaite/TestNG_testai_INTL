@@ -8,13 +8,20 @@
       </run>
     </groups>
     <classes>
-      <class name="testsSpecialistPages.UpdateUserDetailsSpecialist">
+      <class name="testsAdminPages.UpdateAdminDetails">
         <methods>
           <include name="setUp"/>
-          <include name="successfullyChangeAdminPassword"/>
+          <include name="successfullyResetAdminPasswordToOriginal"/>
           <include name="closeBrowser"/>
         </methods>
-      </class> <!-- testsSpecialistPages.UpdateUserDetailsSpecialist -->
+      </class> <!-- testsAdminPages.UpdateAdminDetails -->
+      <class name="testsSpecialistPages.UpdateSpecialistDetails">
+        <methods>
+          <include name="setUp"/>
+          <include name="successfullyResetSpecialistPasswordToOriginal"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- testsSpecialistPages.UpdateSpecialistDetails -->
     </classes>
   </test> <!-- regression(failed) -->
 </suite> <!-- Failed suite [Tests] -->

@@ -33,6 +33,7 @@ public class LoginPage extends AbstractObjectPage {
 	}
 	
 	public void doLogin(String username, String password) {
+		waitForLoginToLoad();
 		enterUsername(username);
 	    enterPassword(password);
 		clickLoginButton();
