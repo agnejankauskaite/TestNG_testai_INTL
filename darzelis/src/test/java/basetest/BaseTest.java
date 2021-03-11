@@ -1,10 +1,9 @@
 package basetest;
 
+import org.testng.annotations.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 
 public class BaseTest {
     protected static WebDriver driver;
@@ -21,6 +20,6 @@ public class BaseTest {
     @AfterClass (alwaysRun = true)
     public static void closeBrowser() {
         driver.manage().deleteAllCookies();
-//        driver.close();
+//      driver.close();
     }
 }

@@ -78,7 +78,7 @@ public class CreateAndDeleteNewKindergartenPage extends AbstractObjectPage {
 		buttonSaveKindergarten.click();
 	}
 	
-	public void clickOKWhenKindergartenIsDeletedPopUp() {
+	public void clickOKPopUp() {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		WebElement popUpClickOK = wait.until(
 			ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[2]/div/div[2]/div/button")));
@@ -91,7 +91,7 @@ public class CreateAndDeleteNewKindergartenPage extends AbstractObjectPage {
 	
 	public Boolean newKindergartenSearchResult () {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		return wait.until(ExpectedConditions.textToBe(By.xpath("//*//td[1]"), "Testinis darželis"));
+		return wait.until(ExpectedConditions.textToBe(By.xpath("//*//td[1]"), "Žvirbliukas"));
 	}
 	
 	public void clickButtonUpdateKindergarten () {

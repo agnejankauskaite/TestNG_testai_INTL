@@ -1,11 +1,7 @@
 package adminPages;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import pages.AbstractObjectPage;
 
@@ -68,33 +64,6 @@ public class CreateAndDeleteNewUserPage extends AbstractObjectPage {
 	public void clickOKButtonUserIsCreated () {
 		okButtonUserIsCreated.click();
 	}
-	
-	public Boolean userIsCreatedMessage() {
-		  WebDriverWait wait = new WebDriverWait(driver, 10);
-		  	return wait.until(ExpectedConditions.textToBe(By.xpath("//body/div[2]/div/div[1]"), "Naujas naudotojas buvo sėkmingai sukurtas."));
-	}
-	
-	public void clickDeleteUserButton () {
-		 WebDriverWait wait = new WebDriverWait(driver, 10);
-		  WebElement deleteUserButton = wait.until(
-				  ExpectedConditions.presenceOfElementLocated(By.id("btnDeleteUser")));
-		deleteUserButton.click();
-	}
-	
-	public void waitToAgreeToDeleteUserPopUp () {
-		 WebDriverWait wait = new WebDriverWait(driver, 10);
-		  WebElement agreeToDeleteUser = wait.until(
-				  ExpectedConditions.presenceOfElementLocated(By.xpath("//*/div[2]/button")));
-		agreeToDeleteUser.click();
-	}
-	
-	public void waitToPressOKWhenUserIsDeletedPopUp() {
-		 WebDriverWait wait = new WebDriverWait(driver, 10);
-		  WebElement popUpClickOK = wait.until(
-				  ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.swal-overlay.swal-overlay--show-modal > div > div.swal-footer > div > button")));
-		  popUpClickOK.click();
-	}
-	
 		
 	// constructor
 	public CreateAndDeleteNewUserPage(WebDriver driver) {
