@@ -3,10 +3,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import basetest.BaseTest;
+import generalTests.GeneralTests;
 import pages.LoginPage;
 import specialistPages.CreateAndDeleteNewKindergartenPage;
 
-public class CreateAndDeleteNewKindergarten extends BaseTest{
+public class CreateAndDeleteNewKindergarten extends GeneralTests{
 
   private static String specialistLogin = "manager@manager.lt";	
 	
@@ -14,11 +15,10 @@ public class CreateAndDeleteNewKindergarten extends BaseTest{
   public void successfullyCreateUpdateDeleteNewKindergarten () {
 	  
 	  // login as kindergarten specialist (švietimo atstovas)
-	  LoginPage loginPage = new LoginPage(driver);
-      loginPage.doLogin(specialistLogin, specialistLogin);
+      doLogin(specialistLogin, specialistLogin);
       
       // wait for the page to load and check if the kindergarten specialist is logged in
-      loginPage.verifyIfSpecialistIsLoggedIn();
+      verifyIfSpecialistIsLoggedIn();
       
       // input new kindergarten details     
       CreateAndDeleteNewKindergartenPage createNewKindergarten = new CreateAndDeleteNewKindergartenPage(driver);

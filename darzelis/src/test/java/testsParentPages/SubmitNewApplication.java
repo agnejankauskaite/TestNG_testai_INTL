@@ -9,11 +9,12 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import basetest.BaseTest;
+import generalTests.GeneralTests;
 import pages.LoginPage;
 import parentPages.FillAndSubmitNewApplicationPage;
 import specialistPages.CheckIfRegistrationIsOpen;
 
-public class SubmitNewApplication extends BaseTest{
+public class SubmitNewApplication extends GeneralTests{
 	
   private String userLogin = "user2@user.lt";
 	
@@ -25,28 +26,30 @@ public class SubmitNewApplication extends BaseTest{
 //	openRegistration.openRegistrationIfNeeded();
 
 	//login as parent/ guardian
-	LoginPage loginPage = new LoginPage(driver);
-	loginPage.doLogin(userLogin, userLogin);
+	doLogin(userLogin, userLogin);
 
 	// add second parent/ guardian's information and fill in child details
 	FillAndSubmitNewApplicationPage newApplication = new FillAndSubmitNewApplicationPage(driver); 
 	newApplication.fillInTheApplication();
   
+	// choose a kindergarten from the list
+	newApplication.openKindergartenListDropdownPriorityOne();
+//	driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div/div/div/form/div[5]/button")).click();
+	Thread.sleep(3000);
+	WebDriverWait wait = new WebDriverWait(driver, 5);
+	
 	// check priorities
-//	newApplication.clickPriorityOne();
+	newApplication.clickPriorityOne();
 //	newApplication.clickPriorityTwo();
 //	newApplication.clickPriorityThree();
 //	newApplication.clickPriorityFour();
-	
-      
-	// choose a kindergarten from the list
-	newApplication.openKindergartenListDropdownPriorityOne();
-	driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div/div/div/form/div[5]/button")).click();
-	Thread.sleep(3000);
-	newApplication.clickPriorityFive();
-	
-	Thread.sleep(3000);
-	driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div/div/div/form/div[5]/button")).click();
+//	newApplication.clickPriorityFive();
+
+//	WebDriverWait wait = new WebDriverWait(driver, 10);
+//	WebElement navApplicationQueue = wait.until(
+//		ExpectedConditions.elementToBeClickable(By.cssSelector("div:nth-child(5) > button")));
+//	navApplicationQueue.click();
+
   	}
   
   

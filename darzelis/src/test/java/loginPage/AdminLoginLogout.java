@@ -5,25 +5,22 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import basetest.BaseTest;
+import generalTests.GeneralTests;
 import pages.LoginPage;
 
-public class AdminLoginLogout extends BaseTest {
- 
-	  private static String userLogins = "admin@admin.lt";
-	  private static String expectedErrorMessage= "Neteisingas prisijungimo vardas ir/arba slaptažodis!";
+public class AdminLoginLogout extends GeneralTests {
 	  
 	  @Test (groups = {"smoke", "regression"})
 	  public void successfulLoginAndLogout() {
 		  
 		  // login
-		  LoginPage loginPage = new LoginPage(driver);
-	      loginPage.doLogin(userLogins, userLogins);
+	      doLoginAsAdmin();
 		  
 		  // check if admin is logged in and can see the user list 
-		  loginPage.verifyIfAdminIsLoggedIn();
+		  verifyIfAdminIsLoggedIn();
 		
 		  // logout
-		  loginPage.doLogout();
+		  doLogout();
 	  }
 	  
 	 @Test (groups = "regression")
@@ -36,16 +33,10 @@ public class AdminLoginLogout extends BaseTest {
 		  
 		 //login with incorrect data
 		 LoginPage loginPage = new LoginPage(driver);
-	     loginPage.doLogin("adminNeteisingas@admin.lt", "adminNeteisingas@admin.lt");
+	     doLogin("adminNeteisingas@admin.lt", "adminNeteisingas@admin.lt");
 	     
 	     // check if an error message appears 
 	     checkErrorMessage();
 	 }
-	 
-	 private Boolean checkErrorMessage() {
-		  WebDriverWait wait = new WebDriverWait(driver, 10);
-		  	return wait.until(ExpectedConditions.textToBe(By.id("incorrectLoginData"), expectedErrorMessage));
-		}
-	  
-	 
+
 }

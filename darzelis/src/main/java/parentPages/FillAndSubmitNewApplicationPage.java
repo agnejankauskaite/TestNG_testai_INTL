@@ -148,13 +148,9 @@ public class FillAndSubmitNewApplicationPage extends AbstractObjectPage{
 	
 	public void openKindergartenListDropdownPriorityOne() {
 		kindergartenPriorityOne.click();
-//		WebDriverWait wait = new WebDriverWait(driver, 10);
-//		WebElement navApplicationQueue = wait.until(
-//			ExpectedConditions.visibilityOfElementLocated(By.xpath("//*/input[@name='kindergartenId1']")));
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();", kindergartenPriorityOne);
-		js.executeScript("arguments[0].value='1 Adarželis (Adresas A)'", kindergartenPriorityOne);
-		
+		js.executeScript("arguments[0].value='1 Adarželis (Adresas A)'", kindergartenPriorityOne);		
 	}
 	
 	@FindBy (xpath= "//*[@id=\"selKindergartenId1\"]/input")

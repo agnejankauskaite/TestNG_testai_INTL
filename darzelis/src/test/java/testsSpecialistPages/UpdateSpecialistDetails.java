@@ -1,14 +1,8 @@
 package testsSpecialistPages;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-import basetest.BaseTest;
-import pages.LoginPage;
-import pages.ChangeAndResetUserAccountFieldsAndPasswordPage;
+import generalTests.GeneralTests;
 
-public class UpdateSpecialistDetails extends BaseTest{
+public class UpdateSpecialistDetails extends GeneralTests {
 	
   private String specialistLogin = "manager2@manager.lt";
 	
@@ -16,34 +10,24 @@ public class UpdateSpecialistDetails extends BaseTest{
   public void successfullyChangeKindergartenSpecialistDetails() {
 	  
 	  //login as kindergarten specialist
-	  LoginPage loginPage = new LoginPage(driver);
-      loginPage.doLogin(specialistLogin, specialistLogin);
+      doLogin(specialistLogin, specialistLogin);
       
       // go to "Mano paskyra" page
       clickNavButtonSpecialistMyAccount();
       
       // change kindergarten specialist details
-      ChangeAndResetUserAccountFieldsAndPasswordPage changeDetails = new ChangeAndResetUserAccountFieldsAndPasswordPage(driver);
-      changeDetails.inputUserDetails();
-      changeDetails.clickChangeUserDetails();
+      inputUserDetails();
+      clickChangeUserDetails();
   }
   
   @Test (groups = "regression", priority = 2) 
   public void successfullyChangeSpecialistPassword() {	  
-	  ChangeAndResetUserAccountFieldsAndPasswordPage changePassword = new ChangeAndResetUserAccountFieldsAndPasswordPage(driver);
-	  changePassword.changeUserPassword(specialistLogin);
+	  changeUserPassword(specialistLogin);
   }
   
   @Test (groups = "regression", priority = 3) 
   public void successfullyResetSpecialistPasswordToOriginal () {	  
-	  ChangeAndResetUserAccountFieldsAndPasswordPage resetPassword = new ChangeAndResetUserAccountFieldsAndPasswordPage(driver);
-	  resetPassword.resetUserPassword(specialistLogin); 
+	  resetUserPassword(specialistLogin); 
   }
   
-  public void clickNavButtonSpecialistMyAccount () {
-	  WebDriverWait wait = new WebDriverWait(driver, 10);
-		 WebElement navMyAccountSpecialist = wait.until(
-			ExpectedConditions.presenceOfElementLocated(By.id("navManagerMyAccount")));
-	  navMyAccountSpecialist.click();
-  }
 }
