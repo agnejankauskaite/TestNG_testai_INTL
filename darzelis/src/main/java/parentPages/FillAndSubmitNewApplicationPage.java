@@ -1,9 +1,12 @@
 package parentPages;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import pages.AbstractObjectPage;
 
@@ -38,7 +41,7 @@ public class FillAndSubmitNewApplicationPage extends AbstractObjectPage{
 	@FindBy (id= "txtChildPersonalCode")
 	public WebElement childPersonalCode;
 	
-	@FindBy (xpath= "//div[5]//div[5]//input")
+	@FindBy (xpath= "//*//div[5]/div[1]/div/input")
 	public WebElement childDateOfBirth;
 	
 	// checkbox (child priorities)
@@ -60,6 +63,9 @@ public class FillAndSubmitNewApplicationPage extends AbstractObjectPage{
 	// buttons
 	@FindBy (id= "btnEnableAdditionalGuardian")
 	public WebElement addAdditionalGuardianButton;
+	
+	@FindBy (xpath= "//*/form/div[2]//button")
+	public WebElement buttonSubmitApplication;
 	
 	// dropdown
 	@FindBy (xpath= "//*[@id=\"selKindergartenId1\"]/input")
@@ -144,9 +150,15 @@ public class FillAndSubmitNewApplicationPage extends AbstractObjectPage{
 		kindergartenPriorityOne.click();
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();", kindergartenPriorityOne);
-//		js.executeScript("return document.getElementById('react-select-2-input').selectedIndex = '0'");
 		js.executeScript("document.getElementById('react-select-2-input').click()");
-//		js.executeScript("arguments[0].value='1 Adarželis (Adresas A)'", kindergartenPriorityOne);	
+	}
+	
+
+	public void clickButtonSubmitApplication () {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebElement submitButton = wait.until(
+				ExpectedConditions.elementToBeClickable(buttonSubmitApplication));
+			submitButton.click();
 	}
 	
 	// constructor

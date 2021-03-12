@@ -6,7 +6,7 @@ import generalTests.GeneralMethods;
 
 public class AdminLoginLogout extends GeneralMethods {
 
-	@Test (groups = {"smoke", "regression"})
+	@Test (groups = "smoke")
 	  public void successfulLoginAndLogout() {
 		  // login
 	      doLoginAsAdmin();

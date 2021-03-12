@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="loginPage.AdminLoginLogout">
+      <class name="parentTests.SubmitNewApplication">
         <methods>
           <include name="setUp"/>
-          <include name="unsuccessfulLoginAndLogout"/>
+          <include name="successfullySubmitNewApplication"/>
           <include name="closeBrowser"/>
-          <include name="successfulLoginAndLogout"/>
         </methods>
-      </class> <!-- loginPage.AdminLoginLogout -->
+      </class> <!-- parentTests.SubmitNewApplication -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

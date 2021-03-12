@@ -1,12 +1,8 @@
 package parentTests;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import generalTests.GeneralMethods;
@@ -14,40 +10,56 @@ import parentPages.FillAndSubmitNewApplicationPage;
 
 public class SubmitNewApplication extends GeneralMethods {
 	
-	@Test (groups = {"smoke, regression"}, priority = 1) 
-	  public void successfullyFillSubmitDeleteNewApplication() throws IOException, InterruptedException{
+	@Test (groups = "regression", priority = 1) 
+	  public void successfullySubmitNewApplication() throws IOException {
 		  
+		successfullyCreateNewKindergarten();
+		
 		// check if registration is open (as kindergarten specialist)
-//		CheckIfRegistrationIsOpen openRegistration = new CheckIfRegistrationIsOpen(driver);
-//		openRegistration.openRegistrationIfNeeded();
+		openRegistrationIfNeeded();
+		doLogout();
 
 		// create a new user (parent) for this test
-//		createNewParent(2);
-//		doLogout();
+		createNewParent(2);
+		doLogout();
 		doLogin(createNewUserParentEmail, createNewUserParentEmail);
+	
+		// fill in the application and submit it
+		submitApplication();
 
+		// go to parent's applications and delete it
+//		deleteApplication();
+		
+		// delete the kindergarten that was created for the test
+//		deleteNewKindergarten();
+	}
+	
+	public void deleteApplication () {
+		clickNavButtonParentApplications();
+		clickDeleteApplication();
+		waitToAgreePopUp();
+		waitToPressOKPopUp();
+	}
+	
+	public void submitApplication () throws IOException {
 		// add second parent/ guardian's information and fill in child details
 		FillAndSubmitNewApplicationPage newApplication = new FillAndSubmitNewApplicationPage(driver); 
 		fillInTheApplication();
-
-		// choose a kindergarten from the list
-		newApplication.openKindergartenListDropdownPriorityOne();
-		driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/div/div/div/form/div[5]/button")).click();
-		Thread.sleep(3000);
-		
 		
 		// check priorities
 		newApplication.clickPriorityOne();
 		newApplication.clickPriorityTwo();
-//		newApplication.clickPriorityThree();
-//		newApplication.clickPriorityFour();
-//		newApplication.clickPriorityFive();
-
-//		WebDriverWait wait = new WebDriverWait(driver, 10);
-//		WebElement navApplicationQueue = wait.until(
-//			ExpectedConditions.elementToBeClickable(By.cssSelector("div:nth-child(5) > button")));
-//		navApplicationQueue.click();
-
-	  	}
+		newApplication.clickPriorityThree();
+		newApplication.clickPriorityFour();
+		newApplication.clickPriorityFive();
+		
+		// choose a kindergarten from the list
+		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		newApplication.openKindergartenListDropdownPriorityOne();
+		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+		
+		// submit application
+		newApplication.clickButtonSubmitApplication();
+	}
   
 }

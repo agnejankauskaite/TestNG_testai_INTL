@@ -57,7 +57,7 @@ public class GeneralMethods extends BaseTest {
 	
 	public Boolean verifyIfAdminIsLoggedIn() {
 		  WebDriverWait wait = new WebDriverWait(driver, 10);
-		  return wait.until(ExpectedConditions.textToBe(By.id("navAdminUserList"), "Naudotojų sąrašas"));
+		  return wait.until(ExpectedConditions.textToBe(By.id("navAdminUserList"), "Naudotojai"));
 		}
 	
 	public Boolean verifyIfSpecialistIsLoggedIn() {
@@ -133,8 +133,8 @@ public class GeneralMethods extends BaseTest {
 	public void deleteNewUser () {
 		clickDeleteUserButton();
 		// agree to delete user (pop up)
-		waitToAgreeToDeleteUserPopUp();
-		waitToPressOKWhenUserIsDeletedPopUp();
+		waitToAgreePopUp();
+		waitToPressOKPopUp();
 		
 		// logout after deleting the user
 		doLogout();
@@ -150,8 +150,6 @@ public class GeneralMethods extends BaseTest {
 		changeAccountDetails.changeUserSurname(changedUserSurname);
 		changeAccountDetails.changeUserEmail(changedUserEmail);
 	}
-	
-	
 	
 	public void changeUserPassword (String userLogin) {  
 		ChangeAndResetUserAccountFieldsAndPasswordPage changeAccountDetails = new ChangeAndResetUserAccountFieldsAndPasswordPage(driver);
@@ -263,19 +261,24 @@ public class GeneralMethods extends BaseTest {
 	// REGISTRATION TO KINDERGARTEN METHODS
 	
 	public void openRegistrationIfNeeded () {
-		// login as kindergarten specialist
-		String specialistLogin = "manager@manager.lt";
-		LoginPage loginPage = new LoginPage(driver);
-	    doLogin(specialistLogin, specialistLogin);
-	    
 	    // go to Prasymu eile page
 	    clickNavButtonApplicationQueue();
 	    
 	    // check if registration is open
+	    if (registrationClosed()) {
+	    	driver.findElement(By.id("btnStartRegistration")).click();
+	    } else {
+	    	driver.findElement(By.id("navManagerApplicationQueue")).click();
+	    }
+	}
 	
-	    // TODO
-	    
-	    
+	public boolean registrationClosed () {
+	    try {
+	        driver.findElement(By.id("btnStartRegistration"));
+	        return true;
+	    } catch (org.openqa.selenium.NoSuchElementException e) {
+	        return false;
+	    }
 	}
 	
 	public void fillInTheApplication () throws IOException {
@@ -336,6 +339,11 @@ public class GeneralMethods extends BaseTest {
 	
 	// WAIT TO ASSERT MESSAGES
 	
+	public Boolean applicationSuccessful() {
+		  WebDriverWait wait = new WebDriverWait(driver, 10);
+		  	return wait.until(ExpectedConditions.textToBe(By.cssSelector("div.swal-overlay.swal-overlay--show-modal > div > div.swal-text"), "Prašymas sukurtas sėkmingai"));
+	}
+	
 	public Boolean userIsCreatedMessage() {
 		  WebDriverWait wait = new WebDriverWait(driver, 10);
 		  	return wait.until(ExpectedConditions.textToBe(By.xpath("//body/div[2]/div/div[1]"), "Naujas naudotojas buvo sėkmingai sukurtas."));
@@ -359,10 +367,24 @@ public class GeneralMethods extends BaseTest {
 	
 	// WAIT TO CLICK BUTTONS
 	
+	public void clickDeleteApplication () {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebElement delete = wait.until(
+				ExpectedConditions.presenceOfElementLocated(By.id("btnDeleteApplication")));
+			delete.click();
+	}
+	
 	public void clickNavButtonAdminMyAccount () {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 			WebElement navMyAccountAdmin = wait.until(
 				ExpectedConditions.presenceOfElementLocated(By.id("navAdminMyAccount")));
+		navMyAccountAdmin.click();
+	}
+	
+	public void clickNavButtonParentApplications () {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebElement navMyAccountAdmin = wait.until(
+				ExpectedConditions.presenceOfElementLocated(By.id("navUserMyApplications")));
 		navMyAccountAdmin.click();
 	}
 	
@@ -373,14 +395,14 @@ public class GeneralMethods extends BaseTest {
 		  navMyAccountParent.click();
 		}
 	
-	public void waitToAgreeToDeleteUserPopUp () {
+	public void waitToAgreePopUp () {
 		 WebDriverWait wait = new WebDriverWait(driver, 10);
 		  WebElement agreeToDeleteUser = wait.until(
 				  ExpectedConditions.presenceOfElementLocated(By.xpath("//*/div[2]/button")));
 		agreeToDeleteUser.click();
 	}
 	
-	public void waitToPressOKWhenUserIsDeletedPopUp() {
+	public void waitToPressOKPopUp() {
 		 WebDriverWait wait = new WebDriverWait(driver, 10);
 		  WebElement popUpClickOK = wait.until(
 				  ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.swal-overlay.swal-overlay--show-modal > div > div.swal-footer > div > button")));
