@@ -1,8 +1,7 @@
-package generalTests;
+package generalMethods;
 import java.io.IOException;
 import java.util.List;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -12,6 +11,7 @@ import basetest.BaseTest;
 import pages.ChangeAndResetUserAccountFieldsAndPasswordPage;
 import pages.LoginPage;
 import parentPages.FillAndSubmitNewApplicationPage;
+import parentPages.UploadMedicalDocumentPDFPage;
 import specialistPages.CreateAndDeleteNewKindergartenPage;
 import utilities.FileReaderUtils;
 
@@ -29,6 +29,7 @@ public class GeneralMethods extends BaseTest {
 	private String changedUserSurname = "Pakeistas";
 	private String changedUserEmail = "pakeistas@email.lt";
 	private String expectedErrorMessage= "Neteisingas prisijungimo vardas ir/arba slaptažodis!";
+	private String pdfFileLocation = "C:\\Users\\Vardas\\git\\TestNG_testai_INTL\\darzelis\\src\\test\\resources\\Testas.pdf";
 	
 	// LOGIN/ LOGOUT METHODS
 	
@@ -325,6 +326,24 @@ public class GeneralMethods extends BaseTest {
 		newApplication.inputChildDateOfBirth(childDateOfBirth);
 	}
 	
+	// UPLOAD USER MEDICAL DOCUMENTS (PDF)
+	
+	public void uploadPDF() {
+		UploadMedicalDocumentPDFPage uploadDocument = new UploadMedicalDocumentPDFPage(driver);
+		uploadDocument.clickUploadDocumentButton();
+		uploadDocument.buttonInputDocument.sendKeys(pdfFileLocation);
+		uploadDocument.clickUploadDocumentButton();
+		waitToPressOKPopUp();
+	}
+	
+	public void deletePDF() {
+		UploadMedicalDocumentPDFPage uploadDocument = new UploadMedicalDocumentPDFPage(driver);
+		uploadDocument.clickDeleteDocumentButton();
+		waitToAgreePopUp();
+		waitToPressOKPopUp();
+	}
+	
+	
 	// WAIT FOR PAGES TO LOAD
 	
 	public Boolean waitForLoginToLoad() {
@@ -365,6 +384,12 @@ public class GeneralMethods extends BaseTest {
 		  			(By.xpath("//body/div[2]/div/div[1]"), "Naudotojo slaptažodis atnaujintas sėkmingai"));
 	}
 	
+	public Boolean assertThatMyDocumentsPageLoaded () {
+		  WebDriverWait wait = new WebDriverWait(driver, 10);
+		  	return wait.until(ExpectedConditions.textToBe
+		  			(By.xpath("//*/div[1]//h6"), "Mano pažymos"));
+	}
+	
 	// WAIT TO CLICK BUTTONS
 	
 	public void clickDeleteApplication () {
@@ -379,6 +404,13 @@ public class GeneralMethods extends BaseTest {
 			WebElement navMyAccountAdmin = wait.until(
 				ExpectedConditions.presenceOfElementLocated(By.id("navAdminMyAccount")));
 		navMyAccountAdmin.click();
+	}
+	
+	public void clickNavButtonMyDocumentsParent () {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		WebElement navMyDocuments = wait.until(
+			ExpectedConditions.presenceOfElementLocated(By.id("navUserDocuments")));
+		navMyDocuments.click();
 	}
 	
 	public void clickNavButtonParentApplications () {

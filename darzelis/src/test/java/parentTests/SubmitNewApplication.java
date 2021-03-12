@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.testng.annotations.Test;
 
-import generalTests.GeneralMethods;
+import generalMethods.GeneralMethods;
 import parentPages.FillAndSubmitNewApplicationPage;
 
 public class SubmitNewApplication extends GeneralMethods {
@@ -18,7 +18,7 @@ public class SubmitNewApplication extends GeneralMethods {
 		// check if registration is open (as kindergarten specialist)
 		openRegistrationIfNeeded();
 		doLogout();
-
+		
 		// create a new user (parent) for this test
 		createNewParent(2);
 		doLogout();

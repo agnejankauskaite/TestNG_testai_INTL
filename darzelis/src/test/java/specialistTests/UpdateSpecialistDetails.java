@@ -2,7 +2,7 @@ package specialistTests;
 
 import org.testng.annotations.Test;
 
-import generalTests.GeneralMethods;
+import generalMethods.GeneralMethods;
 
 public class UpdateSpecialistDetails extends GeneralMethods {
 	

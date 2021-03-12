@@ -2,7 +2,7 @@ package login;
 
 import org.testng.annotations.Test;
 
-import generalTests.GeneralMethods;
+import generalMethods.GeneralMethods;
 
 public class AdminLoginLogout extends GeneralMethods {
 

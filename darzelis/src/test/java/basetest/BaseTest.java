@@ -20,6 +20,6 @@ public class BaseTest {
     @AfterClass (alwaysRun = true)
     public static void closeBrowser() {
         driver.manage().deleteAllCookies();
-//      driver.close();
+        driver.close();
     }
 }

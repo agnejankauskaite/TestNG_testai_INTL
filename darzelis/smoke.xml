@@ -17,18 +17,4 @@
 		</packages>
 	</test>
 	
-	<test name="regression">
-		<groups>
-			<run>
-				<include name="regression"/>
-			</run>
-		</groups>
-		<packages>
-			<package name= "login"/>
-			<package name= "adminTests" />
-			<package name= "parentTests" />
-			<package name= "specialistTests" />
-		</packages>
-	</test>
-	
 </suite>

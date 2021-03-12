@@ -2,7 +2,7 @@ package adminTests;
 
 import org.testng.annotations.Test;
 
-import generalTests.GeneralMethods;
+import generalMethods.GeneralMethods;
 
 public class UpdateAdminDetails extends GeneralMethods{
   @Test (groups = "regression", priority = 1) 

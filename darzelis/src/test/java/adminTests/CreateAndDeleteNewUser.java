@@ -3,7 +3,7 @@ package adminTests;
 import org.testng.annotations.Test;
 
 import adminPages.CreateAndDeleteNewUserPage;
-import generalTests.GeneralMethods;
+import generalMethods.GeneralMethods;
 
 public class CreateAndDeleteNewUser extends GeneralMethods {
   @Test (groups = {"smoke", "regression"}) 
