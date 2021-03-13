@@ -154,10 +154,7 @@ public class FillAndSubmitNewApplicationPage extends AbstractObjectPage{
 	
 
 	public void clickButtonSubmitApplication () {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-			WebElement submitButton = wait.until(
-				ExpectedConditions.elementToBeClickable(buttonSubmitApplication));
-			submitButton.click();
+		buttonSubmitApplication.click();
 	}
 	
 	// constructor

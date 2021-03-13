@@ -29,8 +29,11 @@ public class LoginPage extends AbstractObjectPage {
 	}
 	
 	public void clickLoginButton() {
-	buttonLogin.click();
-	}
+		  WebDriverWait wait = new WebDriverWait(driver, 10);
+		  WebElement login = wait.until(
+				  ExpectedConditions.elementToBeClickable(buttonLogin));
+		  login.click();  
+	 }
 	
 	// constructor
 	public LoginPage(WebDriver driver) {

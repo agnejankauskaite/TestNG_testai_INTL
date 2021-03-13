@@ -1,6 +1,8 @@
 package generalMethods;
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -294,6 +296,12 @@ public class GeneralMethods extends BaseTest {
 				
 		// fill in child details into the form
 		applicationFormChildDetailsOne();
+		
+		// child priorities and first kindergarten priority
+		checkPrioritiesAndChooseAKindergarten();
+		
+		// submit application
+		newApplication.clickButtonSubmitApplication();
 	}
 	
 	public void applicationFormSecondParentDetails () throws IOException {
@@ -325,6 +333,24 @@ public class GeneralMethods extends BaseTest {
 		newApplication.inputChildPersonalCode(childPersonalCode);
 		newApplication.inputChildDateOfBirth(childDateOfBirth);
 	}
+	
+	public void checkPrioritiesAndChooseAKindergarten () throws IOException {
+		FillAndSubmitNewApplicationPage newApplication = new FillAndSubmitNewApplicationPage(driver); 
+		fillInTheApplication();
+		
+		// check priorities
+		newApplication.clickPriorityOne();
+		newApplication.clickPriorityTwo();
+		newApplication.clickPriorityThree();
+		newApplication.clickPriorityFour();
+		newApplication.clickPriorityFive();
+		
+		// choose a kindergarten from the list
+		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		newApplication.openKindergartenListDropdownPriorityOne();
+		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+	}
+	
 	
 	// UPLOAD USER MEDICAL DOCUMENTS (PDF)
 	

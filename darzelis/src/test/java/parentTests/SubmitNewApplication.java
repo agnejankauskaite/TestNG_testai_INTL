@@ -1,17 +1,12 @@
 package parentTests;
-
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
-
 import org.testng.annotations.Test;
-
 import generalMethods.GeneralMethods;
-import parentPages.FillAndSubmitNewApplicationPage;
 
 public class SubmitNewApplication extends GeneralMethods {
 	
 	@Test (groups = "regression", priority = 1) 
-	  public void successfullySubmitNewApplication() throws IOException {
+	  public void successfullySubmitNewApplication() throws IOException{
 		  
 		successfullyCreateNewKindergarten();
 		
@@ -25,7 +20,7 @@ public class SubmitNewApplication extends GeneralMethods {
 		doLogin(createNewUserParentEmail, createNewUserParentEmail);
 	
 		// fill in the application and submit it
-		submitApplication();
+		fillInTheApplication();
 
 		// go to parent's applications and delete it
 //		deleteApplication();
@@ -39,27 +34,6 @@ public class SubmitNewApplication extends GeneralMethods {
 		clickDeleteApplication();
 		waitToAgreePopUp();
 		waitToPressOKPopUp();
-	}
-	
-	public void submitApplication () throws IOException {
-		// add second parent/ guardian's information and fill in child details
-		FillAndSubmitNewApplicationPage newApplication = new FillAndSubmitNewApplicationPage(driver); 
-		fillInTheApplication();
-		
-		// check priorities
-		newApplication.clickPriorityOne();
-		newApplication.clickPriorityTwo();
-		newApplication.clickPriorityThree();
-		newApplication.clickPriorityFour();
-		newApplication.clickPriorityFive();
-		
-		// choose a kindergarten from the list
-		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
-		newApplication.openKindergartenListDropdownPriorityOne();
-		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-		
-		// submit application
-		newApplication.clickButtonSubmitApplication();
 	}
   
 }
