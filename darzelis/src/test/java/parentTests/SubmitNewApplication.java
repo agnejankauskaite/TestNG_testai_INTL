@@ -2,6 +2,7 @@ package parentTests;
 import java.io.IOException;
 import org.testng.annotations.Test;
 import generalMethods.GeneralMethods;
+import specialistPages.CreateAndDeleteNewKindergartenPage;
 
 public class SubmitNewApplication extends GeneralMethods {
 	
@@ -21,27 +22,31 @@ public class SubmitNewApplication extends GeneralMethods {
 	 */
 	
 	@Test (groups = "regression", priority = 1) 
-	  public void successfullySubmitNewApplication() throws IOException{
+	  public void successfullySubmitAndDeleteNewApplication() throws IOException{
 		  
-//		successfullyCreateNewKindergarten();
+		successfullyCreateNewKindergarten();
 		
 		// check if registration is open (as kindergarten specialist)
-//		openRegistrationIfNeeded();
-//		doLogout();
-//		
+		openRegistrationIfNeeded();
+		doLogout();
+		
 		// create a new user (parent) for this test
-//		createNewParent(2);
-//		doLogout();
+		createNewParent(2);
+		doLogout();
 		doLogin(createNewUserParentEmail, createNewUserParentEmail);
 	
 		// fill in the application and submit it
 		fillInTheApplication();
+		waitToAgreePopUp();
 		
 		// go to parent's applications and delete it
-//		deleteApplication();
+		deleteApplication();
 		
 		// delete the kindergarten that was created for the test
-//		deleteNewKindergarten();
+		doLogin(createNewUserSpecialistEmail, createNewUserSpecialistEmail);
+		CreateAndDeleteNewKindergartenPage createNewKindergarten = new CreateAndDeleteNewKindergartenPage(driver);
+		createNewKindergarten.searchForTheNewlyCreatedKindergarten("Žvirbliukas");
+		deleteNewKindergarten();
 	}
 	
 	public void deleteApplication () {
@@ -49,6 +54,7 @@ public class SubmitNewApplication extends GeneralMethods {
 		clickDeleteApplication();
 		waitToAgreePopUp();
 		waitToPressOKPopUp();
+		doLogout();
 	}
   
 }
