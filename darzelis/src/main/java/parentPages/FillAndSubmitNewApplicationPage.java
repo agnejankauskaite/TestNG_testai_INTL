@@ -1,11 +1,17 @@
 package parentPages;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.google.common.base.Predicate;
 
 import pages.AbstractObjectPage;
 
@@ -154,7 +160,17 @@ public class FillAndSubmitNewApplicationPage extends AbstractObjectPage{
 	
 
 	public void clickButtonSubmitApplication () {
-		buttonSubmitApplication.click();
+		waitToClickSubmitButton();
+//		driver.manage().timeouts().setScriptTimeout(25, TimeUnit.SECONDS);
+//		JavascriptExecutor js = (JavascriptExecutor)driver;	
+//		js.executeScript("arguments[0].click();", buttonSubmitApplication);
+	}
+	
+	public void waitToClickSubmitButton () {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebElement clickButton = wait.until(
+				ExpectedConditions.elementToBeClickable(By.cssSelector("div:nth-child(2) > div.col-7 > button")));
+			clickButton.click();
 	}
 	
 	// constructor

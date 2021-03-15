@@ -2,9 +2,11 @@ package generalMethods;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -289,7 +291,7 @@ public class GeneralMethods extends BaseTest {
 		clickNavButtonNewApplication();
 				    
 		// add additional parent/ guardian
-		newApplication.addAdditionalGuardianButton.click();
+		newApplication.clickAddAdditionalGuardianButton();
 				
 		// fill in additional parent/ guardian details into the form
 		applicationFormSecondParentDetails();
@@ -302,6 +304,9 @@ public class GeneralMethods extends BaseTest {
 		
 		// submit application
 		newApplication.clickButtonSubmitApplication();
+		
+		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+		driver.findElement(By.xpath("//form/div[2]/div[2]/button")).click();
 	}
 	
 	public void applicationFormSecondParentDetails () throws IOException {
@@ -336,7 +341,6 @@ public class GeneralMethods extends BaseTest {
 	
 	public void checkPrioritiesAndChooseAKindergarten () throws IOException {
 		FillAndSubmitNewApplicationPage newApplication = new FillAndSubmitNewApplicationPage(driver); 
-		fillInTheApplication();
 		
 		// check priorities
 		newApplication.clickPriorityOne();
@@ -346,11 +350,10 @@ public class GeneralMethods extends BaseTest {
 		newApplication.clickPriorityFive();
 		
 		// choose a kindergarten from the list
-		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 		newApplication.openKindergartenListDropdownPriorityOne();
-		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+//		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 	}
-	
 	
 	// UPLOAD USER MEDICAL DOCUMENTS (PDF)
 	

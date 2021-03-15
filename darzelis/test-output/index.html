@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">15 methods, 1 failed,   14 passed</span>
+                    <span class="method-stats">15 methods, 3 failed,   12 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -102,6 +102,16 @@
                       <a href="#" panel-name="suite-Tests" class="show-methods failed suite-Tests"> (show)</a> <!-- show-methods failed suite-Tests -->
                     </span>
                     <div class="method-list-content failed suite-Tests">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Tests" title="adminTests.UpdateAdminDetails" class="method navigator-link" hash-for-method="successfullyResetAdminPasswordToOriginal">successfullyResetAdminPasswordToOriginal</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Tests" title="parentTests.UpdateParentDetails" class="method navigator-link" hash-for-method="successfullyResetParentPasswordToOriginal">successfullyResetParentPasswordToOriginal</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-Tests" title="parentTests.SubmitNewApplication" class="method navigator-link" hash-for-method="successfullySubmitNewApplication">successfullySubmitNewApplication</a> <!-- method navigator-link -->
@@ -163,16 +173,6 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Tests" title="adminTests.UpdateAdminDetails" class="method navigator-link" hash-for-method="successfullyResetAdminPasswordToOriginal">successfullyResetAdminPasswordToOriginal</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Tests" title="parentTests.UpdateParentDetails" class="method navigator-link" hash-for-method="successfullyResetParentPasswordToOriginal">successfullyResetParentPasswordToOriginal</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Tests" title="specialistTests.UpdateSpecialistDetails" class="method navigator-link" hash-for-method="successfullyResetSpecialistPasswordToOriginal">successfullyResetSpecialistPasswordToOriginal</a> <!-- method navigator-link -->
                       </span>
                       <br/>
@@ -201,21 +201,69 @@
           <div class="suite-Tests-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">parentTests.SubmitNewApplication</span>
+              <span class="class-name">adminTests.UpdateAdminDetails</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="successfullySubmitNewApplication">
-                  </a> <!-- successfullySubmitNewApplication -->
-                  <span class="method-name">successfullySubmitNewApplication</span>
-                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary float-right&quot; id=&quot;btnLogin&quot;&gt;...&lt;/button&gt; is not clickable at point (944, 471). Other element would receive the click: &lt;div class=&quot;swal-overlay swal-overlay--show-modal&quot; tabindex=&quot;-1&quot;&gt;...&lt;/div&gt;
+                  <a name="successfullyResetAdminPasswordToOriginal">
+                  </a> <!-- successfullyResetAdminPasswordToOriginal -->
+                  <span class="method-name">successfullyResetAdminPasswordToOriginal</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.className: btn-secondary (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at generalMethods.GeneralMethods.clickResetPasswordButton(GeneralMethods.java:489)
+	at generalMethods.GeneralMethods.resetUserPassword(GeneralMethods.java:199)
+	at adminTests.UpdateAdminDetails.successfullyResetAdminPasswordToOriginal(UpdateAdminDetails.java:30)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;.btn\-secondary&quot;}
   (Session info: chrome=89.0.4389.82)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;DESKTOP-H43V1DC&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.82, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Vardas\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:60443}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: cb1871448e3e52d18a80a6d231409791
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.82, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Vardas\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51928}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 3bf8f637314cfbfc02345d2f857b205d
+*** Element info: {Using=class name, value=btn-secondary}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByClassName(RemoteWebDriver.java:412)
+	at org.openqa.selenium.By$ByClassName.findElement(By.java:389)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:182)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:179)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 31 more
+... Removed 31 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Tests-class-failed -->
+          <div class="suite-Tests-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">parentTests.UpdateParentDetails</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="successfullyResetParentPasswordToOriginal">
+                  </a> <!-- successfullyResetParentPasswordToOriginal -->
+                  <span class="method-name">successfullyResetParentPasswordToOriginal</span>
+                  <div class="stack-trace">org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=89.0.4389.82)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-H43V1DC&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.82, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Vardas\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51949}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 7bc4f3e8a64eff759dfbd9cd59d85ef3
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -224,14 +272,57 @@ Session ID: cb1871448e3e52d18a80a6d231409791
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
 	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy12.click(Unknown Source)
-	at pages.LoginPage.clickLoginButton(LoginPage.java:32)
-	at generalMethods.GeneralMethods.doLoginAsAdmin(GeneralMethods.java:49)
-	at generalMethods.GeneralMethods.createNewParent(GeneralMethods.java:113)
+	at generalMethods.GeneralMethods.doLogout(GeneralMethods.java:60)
+	at parentTests.UpdateParentDetails.successfullyResetParentPasswordToOriginal(UpdateParentDetails.java:42)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Tests-class-failed -->
+          <div class="suite-Tests-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">parentTests.SubmitNewApplication</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="successfullySubmitNewApplication">
+                  </a> <!-- successfullySubmitNewApplication -->
+                  <span class="method-name">successfullySubmitNewApplication</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.id: navUserNewApplication (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at generalMethods.GeneralMethods.clickNavButtonNewApplication(GeneralMethods.java:510)
+	at generalMethods.GeneralMethods.fillInTheApplication(GeneralMethods.java:291)
 	at parentTests.SubmitNewApplication.successfullySubmitNewApplication(SubmitNewApplication.java:23)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 36 stack frames
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#navUserNewApplication&quot;}
+  (Session info: chrome=89.0.4389.82)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-H43V1DC&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.82, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Vardas\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51912}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 7b4a957a81dec92aa16de79b7d3e2b0a
+*** Element info: {Using=id, value=navUserNewApplication}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+	at org.openqa.selenium.By$ById.findElement(By.java:188)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:182)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:179)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 31 more
+... Removed 31 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -255,13 +346,6 @@ Session ID: cb1871448e3e52d18a80a6d231409791
                   <a name="successfullyChangeAdminPassword">
                   </a> <!-- successfullyChangeAdminPassword -->
                   <span class="method-name">successfullyChangeAdminPassword</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="successfullyResetAdminPasswordToOriginal">
-                  </a> <!-- successfullyResetAdminPasswordToOriginal -->
-                  <span class="method-name">successfullyResetAdminPasswordToOriginal</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -301,13 +385,6 @@ Session ID: cb1871448e3e52d18a80a6d231409791
                   <span class="method-name">successfullyChangeParentPassword</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="successfullyResetParentPasswordToOriginal">
-                  </a> <!-- successfullyResetParentPasswordToOriginal -->
-                  <span class="method-name">successfullyResetParentPasswordToOriginal</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Tests-class-passed -->
           <div class="suite-Tests-class-passed">
@@ -321,35 +398,6 @@ Session ID: cb1871448e3e52d18a80a6d231409791
                   <a name="successfullyUploadAndDeletePDF">
                   </a> <!-- successfullyUploadAndDeletePDF -->
                   <span class="method-name">successfullyUploadAndDeletePDF</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Tests-class-passed -->
-          <div class="suite-Tests-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">adminTests.CreateAndDeleteNewUser</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="successfullyCreateAndDeleteNewAdmin">
-                  </a> <!-- successfullyCreateAndDeleteNewAdmin -->
-                  <span class="method-name">successfullyCreateAndDeleteNewAdmin</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="successfullyCreateAndDeleteNewKindergartenSpecialist">
-                  </a> <!-- successfullyCreateAndDeleteNewKindergartenSpecialist -->
-                  <span class="method-name">successfullyCreateAndDeleteNewKindergartenSpecialist</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="successfullyCreateAndDeleteNewParent">
-                  </a> <!-- successfullyCreateAndDeleteNewParent -->
-                  <span class="method-name">successfullyCreateAndDeleteNewParent</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -379,6 +427,35 @@ Session ID: cb1871448e3e52d18a80a6d231409791
                   <a name="successfullyResetSpecialistPasswordToOriginal">
                   </a> <!-- successfullyResetSpecialistPasswordToOriginal -->
                   <span class="method-name">successfullyResetSpecialistPasswordToOriginal</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Tests-class-passed -->
+          <div class="suite-Tests-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">adminTests.CreateAndDeleteNewUser</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="successfullyCreateAndDeleteNewAdmin">
+                  </a> <!-- successfullyCreateAndDeleteNewAdmin -->
+                  <span class="method-name">successfullyCreateAndDeleteNewAdmin</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="successfullyCreateAndDeleteNewKindergartenSpecialist">
+                  </a> <!-- successfullyCreateAndDeleteNewKindergartenSpecialist -->
+                  <span class="method-name">successfullyCreateAndDeleteNewKindergartenSpecialist</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="successfullyCreateAndDeleteNewParent">
+                  </a> <!-- successfullyCreateAndDeleteNewParent -->
+                  <span class="method-name">successfullyCreateAndDeleteNewParent</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -535,65 +612,65 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(15);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'successfullyUploadAndDeletePDF')
-data.setCell(0, 2, 'parentTests.UploadMedicalDocumentPDF')
-data.setCell(0, 3, 9034);
+data.setCell(0, 1, 'successfullyResetAdminPasswordToOriginal')
+data.setCell(0, 2, 'adminTests.UpdateAdminDetails')
+data.setCell(0, 3, 12490);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'successfullyResetSpecialistPasswordToOriginal')
-data.setCell(1, 2, 'specialistTests.UpdateSpecialistDetails')
-data.setCell(1, 3, 6782);
+data.setCell(1, 1, 'successfullySubmitNewApplication')
+data.setCell(1, 2, 'parentTests.SubmitNewApplication')
+data.setCell(1, 3, 11612);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'successfullyResetParentPasswordToOriginal')
-data.setCell(2, 2, 'parentTests.UpdateParentDetails')
-data.setCell(2, 3, 6696);
+data.setCell(2, 1, 'successfullyUploadAndDeletePDF')
+data.setCell(2, 2, 'parentTests.UploadMedicalDocumentPDF')
+data.setCell(2, 3, 8631);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'successfullyChangeParentDetails')
 data.setCell(3, 2, 'parentTests.UpdateParentDetails')
-data.setCell(3, 3, 6587);
+data.setCell(3, 3, 7378);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'successfullyResetAdminPasswordToOriginal')
-data.setCell(4, 2, 'adminTests.UpdateAdminDetails')
-data.setCell(4, 3, 6566);
+data.setCell(4, 1, 'successfullyResetParentPasswordToOriginal')
+data.setCell(4, 2, 'parentTests.UpdateParentDetails')
+data.setCell(4, 3, 7044);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'successfullySubmitNewApplication')
-data.setCell(5, 2, 'parentTests.SubmitNewApplication')
-data.setCell(5, 3, 5918);
+data.setCell(5, 1, 'successfullyResetSpecialistPasswordToOriginal')
+data.setCell(5, 2, 'specialistTests.UpdateSpecialistDetails')
+data.setCell(5, 3, 6829);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'successfullyChangeSpecialistDetails')
-data.setCell(6, 2, 'specialistTests.UpdateSpecialistDetails')
-data.setCell(6, 3, 5606);
+data.setCell(6, 1, 'successfullyChangeAdminDetails')
+data.setCell(6, 2, 'adminTests.UpdateAdminDetails')
+data.setCell(6, 3, 5787);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'successfullyChangeAdminDetails')
-data.setCell(7, 2, 'adminTests.UpdateAdminDetails')
-data.setCell(7, 3, 5448);
+data.setCell(7, 1, 'successfullyChangeSpecialistDetails')
+data.setCell(7, 2, 'specialistTests.UpdateSpecialistDetails')
+data.setCell(7, 3, 5663);
 data.setCell(8, 0, 8)
 data.setCell(8, 1, 'successfullyCreateAndDeleteNewParent')
 data.setCell(8, 2, 'adminTests.CreateAndDeleteNewUser')
-data.setCell(8, 3, 4348);
+data.setCell(8, 3, 4846);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'successfullyCreateAndDeleteNewAdmin')
+data.setCell(9, 1, 'successfullyCreateAndDeleteNewKindergartenSpecialist')
 data.setCell(9, 2, 'adminTests.CreateAndDeleteNewUser')
-data.setCell(9, 3, 4087);
+data.setCell(9, 3, 4614);
 data.setCell(10, 0, 10)
-data.setCell(10, 1, 'successfullyCreateAndDeleteNewKindergartenSpecialist')
+data.setCell(10, 1, 'successfullyCreateAndDeleteNewAdmin')
 data.setCell(10, 2, 'adminTests.CreateAndDeleteNewUser')
-data.setCell(10, 3, 3966);
+data.setCell(10, 3, 4430);
 data.setCell(11, 0, 11)
 data.setCell(11, 1, 'successfullyChangeSpecialistPassword')
 data.setCell(11, 2, 'specialistTests.UpdateSpecialistDetails')
-data.setCell(11, 3, 3844);
+data.setCell(11, 3, 3532);
 data.setCell(12, 0, 12)
 data.setCell(12, 1, 'successfullyChangeParentPassword')
 data.setCell(12, 2, 'parentTests.UpdateParentDetails')
-data.setCell(12, 3, 3322);
+data.setCell(12, 3, 3428);
 data.setCell(13, 0, 13)
 data.setCell(13, 1, 'successfullyChangeAdminPassword')
 data.setCell(13, 2, 'adminTests.UpdateAdminDetails')
-data.setCell(13, 3, 3205);
+data.setCell(13, 3, 3384);
 data.setCell(14, 0, 14)
 data.setCell(14, 1, 'unsuccessfulLogin')
 data.setCell(14, 2, 'login.AdminLoginLogout')
-data.setCell(14, 3, 1775);
+data.setCell(14, 3, 1863);
 window.suiteTableData['Tests']= { tableData: data, tableDiv: 'times-div-Tests'}
 return data;
 }
@@ -645,135 +722,139 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">unsuccessfulLogin</span>
-                <span class="method-start">4253 ms</span>
+                <span class="method-start">4307 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">6035 ms</span>
+                <span class="method-start">6180 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">adminTests.CreateAndDeleteNewUser</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">6164 ms</span>
+                <span class="method-start">6310 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">successfullyCreateAndDeleteNewAdmin</span>
-                <span class="method-start">9825 ms</span>
+                <span class="method-start">9686 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">successfullyCreateAndDeleteNewKindergartenSpecialist</span>
-                <span class="method-start">13914 ms</span>
+                <span class="method-start">14122 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">successfullyCreateAndDeleteNewParent</span>
-                <span class="method-start">17886 ms</span>
+                <span class="method-start">18741 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">22245 ms</span>
+                <span class="method-start">23601 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">parentTests.SubmitNewApplication</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">22464 ms</span>
+                <span class="method-start">23826 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">successfullySubmitNewApplication</span>
-                <span class="method-start">27317 ms</span>
+                <span class="method-start">27619 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">33239 ms</span>
+                <span class="method-start">39241 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">adminTests.UpdateAdminDetails</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">33387 ms</span>
+                <span class="method-start">39380 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">successfullyChangeAdminDetails</span>
-                <span class="method-start">36904 ms</span>
+                <span class="method-start">42399 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">successfullyChangeAdminPassword</span>
-                <span class="method-start">42354 ms</span>
+                <span class="method-start">48188 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">successfullyResetAdminPasswordToOriginal</span>
-                <span class="method-start">45561 ms</span>
+                <span class="method-start">51573 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">52130 ms</span>
+                <span class="method-start">64068 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">parentTests.UpdateParentDetails</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">52286 ms</span>
+                <span class="method-start">64235 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">successfullyChangeParentDetails</span>
-                <span class="method-start">55570 ms</span>
+                <span class="method-start">67949 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">successfullyChangeParentPassword</span>
-                <span class="method-start">62161 ms</span>
+                <span class="method-start">75329 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">successfullyResetParentPasswordToOriginal</span>
-                <span class="method-start">65484 ms</span>
+                <span class="method-start">78759 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">72183 ms</span>
+                <span class="method-start">85809 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">specialistTests.UpdateSpecialistDetails</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">72335 ms</span>
+                <span class="method-start">85944 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">successfullyChangeSpecialistDetails</span>
-                <span class="method-start">75848 ms</span>
+                <span class="method-start">89150 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">successfullyChangeSpecialistPassword</span>
-                <span class="method-start">81456 ms</span>
+                <span class="method-start">94815 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">successfullyResetSpecialistPasswordToOriginal</span>
-                <span class="method-start">85301 ms</span>
+                <span class="method-start">98348 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">92089 ms</span>
+                <span class="method-start">105180 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">parentTests.UploadMedicalDocumentPDF</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">92259 ms</span>
+                <span class="method-start">105382 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">successfullyUploadAndDeletePDF</span>
-                <span class="method-start">95635 ms</span>
+                <span class="method-start">108869 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">104671 ms</span>
+                <span class="method-start">117507 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
