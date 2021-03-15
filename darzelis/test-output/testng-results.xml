@@ -1,313 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="17" passed="12" failed="3" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-03-15T09:35:05 EET" name="Tests" finished-at="2021-03-15T09:37:03 EET" duration-ms="117833">
+  <suite started-at="2021-03-15T16:08:20 EET" name="Default suite" finished-at="2021-03-15T16:08:37 EET" duration-ms="17445">
     <groups>
       <group name="regression">
-        <method signature="AdminLoginLogout.unsuccessfulLogin()[pri:0, instance:login.AdminLoginLogout@6d3a388c]" name="unsuccessfulLogin" class="login.AdminLoginLogout"/>
-        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewAdmin()[pri:0, instance:adminTests.CreateAndDeleteNewUser@193f604a]" name="successfullyCreateAndDeleteNewAdmin" class="adminTests.CreateAndDeleteNewUser"/>
-        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewKindergartenSpecialist()[pri:0, instance:adminTests.CreateAndDeleteNewUser@193f604a]" name="successfullyCreateAndDeleteNewKindergartenSpecialist" class="adminTests.CreateAndDeleteNewUser"/>
-        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewParent()[pri:0, instance:adminTests.CreateAndDeleteNewUser@193f604a]" name="successfullyCreateAndDeleteNewParent" class="adminTests.CreateAndDeleteNewUser"/>
-        <method signature="SubmitNewApplication.successfullySubmitNewApplication()[pri:1, instance:parentTests.SubmitNewApplication@57af006c]" name="successfullySubmitNewApplication" class="parentTests.SubmitNewApplication"/>
-        <method signature="UpdateAdminDetails.successfullyChangeAdminDetails()[pri:1, instance:adminTests.UpdateAdminDetails@20f5239f]" name="successfullyChangeAdminDetails" class="adminTests.UpdateAdminDetails"/>
-        <method signature="UpdateAdminDetails.successfullyChangeAdminPassword()[pri:2, instance:adminTests.UpdateAdminDetails@20f5239f]" name="successfullyChangeAdminPassword" class="adminTests.UpdateAdminDetails"/>
-        <method signature="UpdateAdminDetails.successfullyResetAdminPasswordToOriginal()[pri:3, instance:adminTests.UpdateAdminDetails@20f5239f]" name="successfullyResetAdminPasswordToOriginal" class="adminTests.UpdateAdminDetails"/>
-        <method signature="UpdateParentDetails.successfullyChangeParentDetails()[pri:1, instance:parentTests.UpdateParentDetails@6bedbc4d]" name="successfullyChangeParentDetails" class="parentTests.UpdateParentDetails"/>
-        <method signature="UpdateParentDetails.successfullyChangeParentPassword()[pri:2, instance:parentTests.UpdateParentDetails@6bedbc4d]" name="successfullyChangeParentPassword" class="parentTests.UpdateParentDetails"/>
-        <method signature="UpdateParentDetails.successfullyResetParentPasswordToOriginal()[pri:3, instance:parentTests.UpdateParentDetails@6bedbc4d]" name="successfullyResetParentPasswordToOriginal" class="parentTests.UpdateParentDetails"/>
-        <method signature="UpdateSpecialistDetails.successfullyChangeSpecialistDetails()[pri:1, instance:specialistTests.UpdateSpecialistDetails@d29f28]" name="successfullyChangeSpecialistDetails" class="specialistTests.UpdateSpecialistDetails"/>
-        <method signature="UpdateSpecialistDetails.successfullyChangeSpecialistPassword()[pri:2, instance:specialistTests.UpdateSpecialistDetails@d29f28]" name="successfullyChangeSpecialistPassword" class="specialistTests.UpdateSpecialistDetails"/>
-        <method signature="UpdateSpecialistDetails.successfullyResetSpecialistPasswordToOriginal()[pri:3, instance:specialistTests.UpdateSpecialistDetails@d29f28]" name="successfullyResetSpecialistPasswordToOriginal" class="specialistTests.UpdateSpecialistDetails"/>
-        <method signature="UploadMedicalDocumentPDF.successfullyUploadAndDeletePDF()[pri:0, instance:parentTests.UploadMedicalDocumentPDF@932bc4a]" name="successfullyUploadAndDeletePDF" class="parentTests.UploadMedicalDocumentPDF"/>
+        <method signature="SubmitNewApplication.successfullySubmitNewApplication()[pri:1, instance:parentTests.SubmitNewApplication@1eb5174b]" name="successfullySubmitNewApplication" class="parentTests.SubmitNewApplication"/>
       </group> <!-- regression -->
-      <group name="smoke">
-        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewAdmin()[pri:0, instance:adminTests.CreateAndDeleteNewUser@193f604a]" name="successfullyCreateAndDeleteNewAdmin" class="adminTests.CreateAndDeleteNewUser"/>
-        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewKindergartenSpecialist()[pri:0, instance:adminTests.CreateAndDeleteNewUser@193f604a]" name="successfullyCreateAndDeleteNewKindergartenSpecialist" class="adminTests.CreateAndDeleteNewUser"/>
-        <method signature="CreateAndDeleteNewUser.successfullyCreateAndDeleteNewParent()[pri:0, instance:adminTests.CreateAndDeleteNewUser@193f604a]" name="successfullyCreateAndDeleteNewParent" class="adminTests.CreateAndDeleteNewUser"/>
-      </group> <!-- smoke -->
     </groups>
-    <test started-at="2021-03-15T09:35:05 EET" name="regression" finished-at="2021-03-15T09:37:03 EET" duration-ms="117833">
-      <class name="parentTests.UploadMedicalDocumentPDF">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:parentTests.UploadMedicalDocumentPDF@932bc4a]" started-at="2021-03-15T09:36:51 EET" name="setUp" finished-at="2021-03-15T09:36:54 EET" duration-ms="3487" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="successfullyUploadAndDeletePDF()[pri:0, instance:parentTests.UploadMedicalDocumentPDF@932bc4a]" started-at="2021-03-15T09:36:54 EET" name="successfullyUploadAndDeletePDF" finished-at="2021-03-15T09:37:03 EET" duration-ms="8631" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- successfullyUploadAndDeletePDF -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:parentTests.UploadMedicalDocumentPDF@932bc4a]" started-at="2021-03-15T09:37:03 EET" name="closeBrowser" finished-at="2021-03-15T09:37:03 EET" duration-ms="296" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- parentTests.UploadMedicalDocumentPDF -->
-      <class name="login.AdminLoginLogout">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:login.AdminLoginLogout@6d3a388c]" started-at="2021-03-15T09:35:05 EET" name="setUp" finished-at="2021-03-15T09:35:10 EET" duration-ms="4290" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="unsuccessfulLogin()[pri:0, instance:login.AdminLoginLogout@6d3a388c]" started-at="2021-03-15T09:35:10 EET" name="unsuccessfulLogin" finished-at="2021-03-15T09:35:12 EET" duration-ms="1863" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- unsuccessfulLogin -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:login.AdminLoginLogout@6d3a388c]" started-at="2021-03-15T09:35:12 EET" name="closeBrowser" finished-at="2021-03-15T09:35:12 EET" duration-ms="125" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- login.AdminLoginLogout -->
-      <class name="specialistTests.UpdateSpecialistDetails">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:specialistTests.UpdateSpecialistDetails@d29f28]" started-at="2021-03-15T09:36:31 EET" name="setUp" finished-at="2021-03-15T09:36:35 EET" duration-ms="3205" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="successfullyChangeSpecialistDetails()[pri:1, instance:specialistTests.UpdateSpecialistDetails@d29f28]" started-at="2021-03-15T09:36:35 EET" name="successfullyChangeSpecialistDetails" finished-at="2021-03-15T09:36:40 EET" duration-ms="5663" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- successfullyChangeSpecialistDetails -->
-        <test-method signature="successfullyChangeSpecialistPassword()[pri:2, instance:specialistTests.UpdateSpecialistDetails@d29f28]" started-at="2021-03-15T09:36:40 EET" name="successfullyChangeSpecialistPassword" finished-at="2021-03-15T09:36:44 EET" duration-ms="3532" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- successfullyChangeSpecialistPassword -->
-        <test-method signature="successfullyResetSpecialistPasswordToOriginal()[pri:3, instance:specialistTests.UpdateSpecialistDetails@d29f28]" started-at="2021-03-15T09:36:44 EET" name="successfullyResetSpecialistPasswordToOriginal" finished-at="2021-03-15T09:36:51 EET" duration-ms="6829" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- successfullyResetSpecialistPasswordToOriginal -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:specialistTests.UpdateSpecialistDetails@d29f28]" started-at="2021-03-15T09:36:51 EET" name="closeBrowser" finished-at="2021-03-15T09:36:51 EET" duration-ms="202" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- specialistTests.UpdateSpecialistDetails -->
+    <test started-at="2021-03-15T16:08:20 EET" name="Default test" finished-at="2021-03-15T16:08:37 EET" duration-ms="17445">
       <class name="parentTests.SubmitNewApplication">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:parentTests.SubmitNewApplication@57af006c]" started-at="2021-03-15T09:35:29 EET" name="setUp" finished-at="2021-03-15T09:35:33 EET" duration-ms="3793" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:parentTests.SubmitNewApplication@1eb5174b]" started-at="2021-03-15T16:08:20 EET" name="setUp" finished-at="2021-03-15T16:08:23 EET" duration-ms="3605" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="successfullySubmitNewApplication()[pri:1, instance:parentTests.SubmitNewApplication@57af006c]" started-at="2021-03-15T09:35:33 EET" name="successfullySubmitNewApplication" finished-at="2021-03-15T09:35:45 EET" duration-ms="11612" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
+        <test-method signature="successfullySubmitNewApplication()[pri:1, instance:parentTests.SubmitNewApplication@1eb5174b]" started-at="2021-03-15T16:08:23 EET" name="successfullySubmitNewApplication" finished-at="2021-03-15T16:08:37 EET" duration-ms="13638" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
             <message>
-              <![CDATA[Expected condition failed: waiting for presence of element located by: By.id: navUserNewApplication (tried for 10 second(s) with 500 milliseconds interval)]]>
+              <![CDATA[element click intercepted: Element <button type="submit" class="btn btn-primary mt-3">...</button> is not clickable at point (273, 700). Other element would receive the click: <div class="swal-overlay swal-overlay--show-modal" tabindex="-1">...</div>
+  (Session info: chrome=89.0.4389.82)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-H43V1DC', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.82, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Vardas\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:55839}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 154cea75d633a24e5bb535803bd64813]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.id: navUserNewApplication (tried for 10 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at generalMethods.GeneralMethods.clickNavButtonNewApplication(GeneralMethods.java:510)
-at generalMethods.GeneralMethods.fillInTheApplication(GeneralMethods.java:291)
-at parentTests.SubmitNewApplication.successfullySubmitNewApplication(SubmitNewApplication.java:23)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#navUserNewApplication"}
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button type="submit" class="btn btn-primary mt-3">...</button> is not clickable at point (273, 700). Other element would receive the click: <div class="swal-overlay swal-overlay--show-modal" tabindex="-1">...</div>
   (Session info: chrome=89.0.4389.82)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-H43V1DC', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.82, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Vardas\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51912}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 7b4a957a81dec92aa16de79b7d3e2b0a
-*** Element info: {Using=id, value=navUserNewApplication}
-at jdk.internal.reflect.GeneratedConstructorAccessor14.newInstance(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-at org.openqa.selenium.By$ById.findElement(By.java:188)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:182)
-at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:179)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-... 31 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- successfullySubmitNewApplication -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:parentTests.SubmitNewApplication@57af006c]" started-at="2021-03-15T09:35:45 EET" name="closeBrowser" finished-at="2021-03-15T09:35:45 EET" duration-ms="139" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- parentTests.SubmitNewApplication -->
-      <class name="adminTests.CreateAndDeleteNewUser">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:adminTests.CreateAndDeleteNewUser@193f604a]" started-at="2021-03-15T09:35:12 EET" name="setUp" finished-at="2021-03-15T09:35:15 EET" duration-ms="3376" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="successfullyCreateAndDeleteNewAdmin()[pri:0, instance:adminTests.CreateAndDeleteNewUser@193f604a]" started-at="2021-03-15T09:35:15 EET" name="successfullyCreateAndDeleteNewAdmin" finished-at="2021-03-15T09:35:19 EET" duration-ms="4430" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- successfullyCreateAndDeleteNewAdmin -->
-        <test-method signature="successfullyCreateAndDeleteNewKindergartenSpecialist()[pri:0, instance:adminTests.CreateAndDeleteNewUser@193f604a]" started-at="2021-03-15T09:35:19 EET" name="successfullyCreateAndDeleteNewKindergartenSpecialist" finished-at="2021-03-15T09:35:24 EET" duration-ms="4614" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- successfullyCreateAndDeleteNewKindergartenSpecialist -->
-        <test-method signature="successfullyCreateAndDeleteNewParent()[pri:0, instance:adminTests.CreateAndDeleteNewUser@193f604a]" started-at="2021-03-15T09:35:24 EET" name="successfullyCreateAndDeleteNewParent" finished-at="2021-03-15T09:35:29 EET" duration-ms="4846" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- successfullyCreateAndDeleteNewParent -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:adminTests.CreateAndDeleteNewUser@193f604a]" started-at="2021-03-15T09:35:29 EET" name="closeBrowser" finished-at="2021-03-15T09:35:29 EET" duration-ms="224" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- adminTests.CreateAndDeleteNewUser -->
-      <class name="adminTests.UpdateAdminDetails">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:adminTests.UpdateAdminDetails@20f5239f]" started-at="2021-03-15T09:35:45 EET" name="setUp" finished-at="2021-03-15T09:35:48 EET" duration-ms="3019" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="successfullyChangeAdminDetails()[pri:1, instance:adminTests.UpdateAdminDetails@20f5239f]" started-at="2021-03-15T09:35:48 EET" name="successfullyChangeAdminDetails" finished-at="2021-03-15T09:35:54 EET" duration-ms="5787" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- successfullyChangeAdminDetails -->
-        <test-method signature="successfullyChangeAdminPassword()[pri:2, instance:adminTests.UpdateAdminDetails@20f5239f]" started-at="2021-03-15T09:35:54 EET" name="successfullyChangeAdminPassword" finished-at="2021-03-15T09:35:57 EET" duration-ms="3384" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- successfullyChangeAdminPassword -->
-        <test-method signature="successfullyResetAdminPasswordToOriginal()[pri:3, instance:adminTests.UpdateAdminDetails@20f5239f]" started-at="2021-03-15T09:35:57 EET" name="successfullyResetAdminPasswordToOriginal" finished-at="2021-03-15T09:36:09 EET" duration-ms="12490" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for presence of element located by: By.className: btn-secondary (tried for 10 second(s) with 500 milliseconds interval)]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.className: btn-secondary (tried for 10 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at generalMethods.GeneralMethods.clickResetPasswordButton(GeneralMethods.java:489)
-at generalMethods.GeneralMethods.resetUserPassword(GeneralMethods.java:199)
-at adminTests.UpdateAdminDetails.successfullyResetAdminPasswordToOriginal(UpdateAdminDetails.java:30)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":".btn\-secondary"}
-  (Session info: chrome=89.0.4389.82)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-H43V1DC', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.82, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Vardas\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51928}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 3bf8f637314cfbfc02345d2f857b205d
-*** Element info: {Using=class name, value=btn-secondary}
-at jdk.internal.reflect.GeneratedConstructorAccessor14.newInstance(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByClassName(RemoteWebDriver.java:412)
-at org.openqa.selenium.By$ByClassName.findElement(By.java:389)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:182)
-at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:179)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-... 31 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- successfullyResetAdminPasswordToOriginal -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:adminTests.UpdateAdminDetails@20f5239f]" started-at="2021-03-15T09:36:09 EET" name="closeBrowser" finished-at="2021-03-15T09:36:10 EET" duration-ms="166" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- adminTests.UpdateAdminDetails -->
-      <class name="parentTests.UpdateParentDetails">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:parentTests.UpdateParentDetails@6bedbc4d]" started-at="2021-03-15T09:36:10 EET" name="setUp" finished-at="2021-03-15T09:36:13 EET" duration-ms="3713" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="successfullyChangeParentDetails()[pri:1, instance:parentTests.UpdateParentDetails@6bedbc4d]" started-at="2021-03-15T09:36:13 EET" name="successfullyChangeParentDetails" finished-at="2021-03-15T09:36:21 EET" duration-ms="7378" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- successfullyChangeParentDetails -->
-        <test-method signature="successfullyChangeParentPassword()[pri:2, instance:parentTests.UpdateParentDetails@6bedbc4d]" started-at="2021-03-15T09:36:21 EET" name="successfullyChangeParentPassword" finished-at="2021-03-15T09:36:24 EET" duration-ms="3428" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- successfullyChangeParentPassword -->
-        <test-method signature="successfullyResetParentPasswordToOriginal()[pri:3, instance:parentTests.UpdateParentDetails@6bedbc4d]" started-at="2021-03-15T09:36:24 EET" name="successfullyResetParentPasswordToOriginal" finished-at="2021-03-15T09:36:31 EET" duration-ms="7044" status="FAIL">
-          <exception class="org.openqa.selenium.StaleElementReferenceException">
-            <message>
-              <![CDATA[stale element reference: element is not attached to the page document
-  (Session info: chrome=89.0.4389.82)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-H43V1DC', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.82, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Vardas\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51949}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 7bc4f3e8a64eff759dfbd9cd59d85ef3]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: chrome=89.0.4389.82)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-H43V1DC', ip: '192.168.56.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.82, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Vardas\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:51949}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 7bc4f3e8a64eff759dfbd9cd59d85ef3
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.82, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Vardas\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:55839}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 154cea75d633a24e5bb535803bd64813
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -321,8 +46,8 @@ at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverComman
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
 at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-at generalMethods.GeneralMethods.doLogout(GeneralMethods.java:60)
-at parentTests.UpdateParentDetails.successfullyResetParentPasswordToOriginal(UpdateParentDetails.java:42)
+at generalMethods.GeneralMethods.fillInTheApplication(GeneralMethods.java:309)
+at parentTests.SubmitNewApplication.successfullySubmitNewApplication(SubmitNewApplication.java:39)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -353,15 +78,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- successfullyResetParentPasswordToOriginal -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:parentTests.UpdateParentDetails@6bedbc4d]" started-at="2021-03-15T09:36:31 EET" name="closeBrowser" finished-at="2021-03-15T09:36:31 EET" duration-ms="134" status="PASS">
+        </test-method> <!-- successfullySubmitNewApplication -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:parentTests.SubmitNewApplication@1eb5174b]" started-at="2021-03-15T16:08:37 EET" name="closeBrowser" finished-at="2021-03-15T16:08:37 EET" duration-ms="152" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- parentTests.UpdateParentDetails -->
-    </test> <!-- regression -->
-  </suite> <!-- Tests -->
+      </class> <!-- parentTests.SubmitNewApplication -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
