@@ -2,6 +2,7 @@ package parentTests;
 import org.testng.annotations.Test;
 
 import generalMethods.GeneralMethods;
+import parentPages.UploadMedicalDocumentPDFPage;
 
 public class UploadMedicalDocumentPDF extends GeneralMethods {
 	
@@ -40,6 +41,10 @@ public class UploadMedicalDocumentPDF extends GeneralMethods {
 	  
 	  // upload document
 	  uploadPDF();
+	  
+	  // download document
+	  UploadMedicalDocumentPDFPage uploadDocument = new UploadMedicalDocumentPDFPage(driver);
+	  uploadDocument.clickDownloadDocumentButton();
 	  
 	  // delete document
 	  deletePDF();

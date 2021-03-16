@@ -8,23 +8,18 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">17,445</td><td></td><td></td></tr>
+<tr><th colspan="8">Tests</th></tr>
+<tr><td><a href="#t0">regression</a></td><td class="num">10</td><td class="num">0</td><td class="num">0</td><td class="num attn">5</td><td class="num">129,276</td><td>regression</td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">parentTests.SubmitNewApplication</td><td><a href="#m0">successfullySubmitNewApplication</a></td><td rowspan="1">1615817303658</td><td rowspan="1">13638</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Tests</th></tr></tbody><tbody id="t0"><tr><th colspan="4">regression &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">parentTests.SubmitNewApplication</td><td><a href="#m0">successfullySubmitAndDeleteNewApplication</a></td><td rowspan="1">1615894939865</td><td rowspan="1">14246</td></tr><tr class="failedodd"><td rowspan="3">parentTests.UpdateParentDetails</td><td><a href="#m1">successfullyChangeParentDetails</a></td><td rowspan="1">1615894977470</td><td rowspan="1">12543</td></tr><tr class="failedodd"><td><a href="#m2">successfullyChangeParentPassword</a></td><td rowspan="1">1615894990015</td><td rowspan="1">18</td></tr><tr class="failedodd"><td><a href="#m3">successfullyResetParentPasswordToOriginal</a></td><td rowspan="1">1615894990034</td><td rowspan="1">10492</td></tr><tr class="failedeven"><td rowspan="1">parentTests.UploadMedicalDocumentPDF</td><td><a href="#m4">successfullyUploadAndDeletePDF</a></td><td rowspan="1">1615895027525</td><td rowspan="1">12567</td></tr><tr><th colspan="4">regression &#8212; passed</th></tr><tr class="passedeven"><td rowspan="3">adminTests.CreateAndDeleteNewUser</td><td><a href="#m5">successfullyCreateAndDeleteNewAdmin</a></td><td rowspan="1">1615894922012</td><td rowspan="1">4594</td></tr><tr class="passedeven"><td><a href="#m6">successfullyCreateAndDeleteNewKindergartenSpecialist</a></td><td rowspan="1">1615894926611</td><td rowspan="1">4360</td></tr><tr class="passedeven"><td><a href="#m7">successfullyCreateAndDeleteNewParent</a></td><td rowspan="1">1615894930977</td><td rowspan="1">4533</td></tr><tr class="passedodd"><td rowspan="3">adminTests.UpdateAdminDetails</td><td><a href="#m8">successfullyChangeAdminDetails</a></td><td rowspan="1">1615894958136</td><td rowspan="1">5663</td></tr><tr class="passedodd"><td><a href="#m9">successfullyChangeAdminPassword</a></td><td rowspan="1">1615894963801</td><td rowspan="1">3243</td></tr><tr class="passedodd"><td><a href="#m10">successfullyResetAdminPasswordToOriginal</a></td><td rowspan="1">1615894967045</td><td rowspan="1">6706</td></tr><tr class="passedeven"><td rowspan="1">login.AdminLoginLogout</td><td><a href="#m11">unsuccessfulLogin</a></td><td rowspan="1">1615894915882</td><td rowspan="1">1778</td></tr><tr class="passedodd"><td rowspan="3">specialistTests.UpdateSpecialistDetails</td><td><a href="#m12">successfullyChangeSpecialistDetails</a></td><td rowspan="1">1615895004194</td><td rowspan="1">5623</td></tr><tr class="passedodd"><td><a href="#m13">successfullyChangeSpecialistPassword</a></td><td rowspan="1">1615895009819</td><td rowspan="1">3382</td></tr><tr class="passedodd"><td><a href="#m14">successfullyResetSpecialistPasswordToOriginal</a></td><td rowspan="1">1615895013202</td><td rowspan="1">6581</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">parentTests.SubmitNewApplication#successfullySubmitNewApplication</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button type=&quot;submit&quot; class=&quot;btn btn-primary mt-3&quot;&gt;...&lt;/button&gt; is not clickable at point (273, 700). Other element would receive the click: &lt;div class=&quot;swal-overlay swal-overlay--show-modal&quot; tabindex=&quot;-1&quot;&gt;...&lt;/div&gt;
+<h2>regression</h2><h3 id="m0">parentTests.SubmitNewApplication#successfullySubmitAndDeleteNewApplication</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button id=&quot;btnDeleteApplication&quot; class=&quot;btn btn-outline-danger btn-sm btn-block&quot;&gt;...&lt;/button&gt; is not clickable at point (1241, 248). Other element would receive the click: &lt;div class=&quot;swal-overlay swal-overlay--show-modal&quot; tabindex=&quot;-1&quot;&gt;...&lt;/div&gt;
   (Session info: chrome=89.0.4389.82)
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;DESKTOP-H43V1DC&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.82, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Vardas\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:55839}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 154cea75d633a24e5bb535803bd64813
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.82, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Vardas\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:53444}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 31671e42b5a430dd0f227108a78a7c72
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -33,36 +28,104 @@ Session ID: 154cea75d633a24e5bb535803bd64813
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
 	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at generalMethods.GeneralMethods.fillInTheApplication(GeneralMethods.java:309)
-	at parentTests.SubmitNewApplication.successfullySubmitNewApplication(SubmitNewApplication.java:39)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at generalMethods.GeneralMethods.clickDeleteApplication(GeneralMethods.java:429)
+	at parentTests.SubmitNewApplication.deleteApplication(SubmitNewApplication.java:58)
+	at parentTests.SubmitNewApplication.successfullySubmitAndDeleteNewApplication(SubmitNewApplication.java:43)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:764)
-	at org.testng.TestRunner.run(TestRunner.java:585)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-	at org.testng.TestNG.runSuites(TestNG.java:1069)
-	at org.testng.TestNG.run(TestNG.java:1037)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+... Removed 32 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">parentTests.UpdateParentDetails#successfullyChangeParentDetails</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element found by By.xpath: //body/div[2]/div/div[1] to have text &quot;Naujas naudotojas buvo sėkmingai sukurtas.&quot;. Current text: &quot;Toks naudotojas jau egzistuoja!&quot; (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-H43V1DC&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.82, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Vardas\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:53477}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: ea7c94f1a6706f9be3858907f7ddee4e
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at generalMethods.GeneralMethods.userIsCreatedMessage(GeneralMethods.java:398)
+	at generalMethods.GeneralMethods.createNewParent(GeneralMethods.java:135)
+	at parentTests.UpdateParentDetails.successfullyChangeParentDetails(UpdateParentDetails.java:30)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">parentTests.UpdateParentDetails#successfullyChangeParentPassword</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*//div[3]//button&quot;}
+  (Session info: chrome=89.0.4389.82)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-H43V1DC&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.82, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Vardas\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:53477}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: ea7c94f1a6706f9be3858907f7ddee4e
+*** Element info: {Using=xpath, value=//*//div[3]//button}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy12.click(Unknown Source)
+	at pages.ChangeAndResetUserAccountFieldsAndPasswordPage.clickChangeUserPasswordButton(ChangeAndResetUserAccountFieldsAndPasswordPage.java:88)
+	at generalMethods.GeneralMethods.changeUserPassword(GeneralMethods.java:163)
+	at parentTests.UpdateParentDetails.successfullyChangeParentPassword(UpdateParentDetails.java:67)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">parentTests.UpdateParentDetails#successfullyResetParentPasswordToOriginal</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.className: btn-link (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at generalMethods.GeneralMethods.clickUserForgotPasswordButton(GeneralMethods.java:476)
+	at generalMethods.GeneralMethods.resetUserPassword(GeneralMethods.java:189)
+	at parentTests.UpdateParentDetails.successfullyResetParentPasswordToOriginal(UpdateParentDetails.java:91)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;.btn\-link&quot;}
+  (Session info: chrome=89.0.4389.82)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-H43V1DC&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.82, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Vardas\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:53477}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: ea7c94f1a6706f9be3858907f7ddee4e
+*** Element info: {Using=class name, value=btn-link}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByClassName(RemoteWebDriver.java:412)
+	at org.openqa.selenium.By$ByClassName.findElement(By.java:389)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:182)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:179)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 31 more
+... Removed 31 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">parentTests.UploadMedicalDocumentPDF#successfullyUploadAndDeletePDF</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element found by By.xpath: //body/div[2]/div/div[1] to have text &quot;Naujas naudotojas buvo sėkmingai sukurtas.&quot;. Current text: &quot;Toks naudotojas jau egzistuoja!&quot; (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-H43V1DC&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 89.0.4389.82, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\Vardas\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:53516}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 1b66e6cb783ca14488e4ae1b2cc6fc33
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at generalMethods.GeneralMethods.userIsCreatedMessage(GeneralMethods.java:398)
+	at generalMethods.GeneralMethods.createNewParent(GeneralMethods.java:135)
+	at parentTests.UploadMedicalDocumentPDF.successfullyUploadAndDeletePDF(UploadMedicalDocumentPDF.java:32)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">adminTests.CreateAndDeleteNewUser#successfullyCreateAndDeleteNewAdmin</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">adminTests.CreateAndDeleteNewUser#successfullyCreateAndDeleteNewKindergartenSpecialist</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">adminTests.CreateAndDeleteNewUser#successfullyCreateAndDeleteNewParent</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">adminTests.UpdateAdminDetails#successfullyChangeAdminDetails</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">adminTests.UpdateAdminDetails#successfullyChangeAdminPassword</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">adminTests.UpdateAdminDetails#successfullyResetAdminPasswordToOriginal</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">login.AdminLoginLogout#unsuccessfulLogin</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">specialistTests.UpdateSpecialistDetails#successfullyChangeSpecialistDetails</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m13">specialistTests.UpdateSpecialistDetails#successfullyChangeSpecialistPassword</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m14">specialistTests.UpdateSpecialistDetails#successfullyResetSpecialistPasswordToOriginal</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

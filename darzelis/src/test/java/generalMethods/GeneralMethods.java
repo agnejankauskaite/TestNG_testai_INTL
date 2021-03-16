@@ -22,7 +22,8 @@ import utilities.FileReaderUtils;
 public class GeneralMethods extends BaseTest {
 	
 	private static String adminLogins = "admin@admin.lt";
-	private static String specialistLogins = "manager@manager.lt";
+	protected static String specialistLogins = "manager@manager.lt";
+	protected static String parentLogins = "user@user.lt";
 	protected String createNewUserAdminEmail = "admin123@admin.lt";
 	protected String createNewUserSpecialistEmail = "manager123@manager.lt";
 	protected String createNewUserParentEmail = "user123@parent.lt";
@@ -150,7 +151,7 @@ public class GeneralMethods extends BaseTest {
 	public void inputUserDetails () {	   
 		// change kindergarten specialist details	
 		ChangeAndResetUserAccountFieldsAndPasswordPage changeAccountDetails = new ChangeAndResetUserAccountFieldsAndPasswordPage(driver);
-		waitForMyAccountPageToLoad();
+		assertThatMyAccountPageHasLoaded();
 		changeAccountDetails.changeUserName(changedUserName);
 		changeAccountDetails.changeUserSurname(changedUserSurname);
 		changeAccountDetails.changeUserEmail(changedUserEmail);
@@ -380,7 +381,7 @@ public class GeneralMethods extends BaseTest {
 		  	return wait.until(ExpectedConditions.textToBe(By.xpath("//h3"), "Prisijungti"));
 	}
 	
-	public Boolean waitForMyAccountPageToLoad() {
+	public Boolean assertThatMyAccountPageHasLoaded() {
 		  WebDriverWait wait = new WebDriverWait(driver, 10);
 		  	return wait.until(ExpectedConditions.textToBe(By.xpath("//div[2]//h6"), "Naudotojo prisijungimo informacija"));
 	}
