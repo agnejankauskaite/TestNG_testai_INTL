@@ -20,10 +20,11 @@ public class UploadMedicalDocumentPDF extends GeneralMethods {
 	 * 4. Login as the newly created parent
 	 * 5. Go to "Mano pazymos" page
 	 * 6. Upload pdf
-	 * 7. Delete it
-	 * 8. Logout
-	 * 9. Login as admin
-	 * 10. Delete the test user
+	 * 7. Download it
+	 * 8. Delete it
+	 * 9. Logout
+	 * 10. Login as admin
+	 * 11. Delete the test user
 	 */
   
   @Test  (groups = "regression")

@@ -69,7 +69,7 @@ public class FillAndSubmitNewApplicationPage extends AbstractObjectPage{
 	@FindBy (id= "btnEnableAdditionalGuardian")
 	public WebElement addAdditionalGuardianButton;
 	
-	@FindBy (xpath= "//*/form/div[2]//button")
+	@FindBy (xpath= "//button[@type='submit']")
 	public WebElement buttonSubmitApplication;
 	
 	// dropdown
@@ -155,21 +155,23 @@ public class FillAndSubmitNewApplicationPage extends AbstractObjectPage{
 		kindergartenPriorityOne.click();
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		js.executeScript("arguments[0].click();", kindergartenPriorityOne);
-		js.executeScript("document.getElementById('react-select-2-input').click()");
+		js.executeScript("document.getElementById('react-select-2-option-0').click()");
 	}
 	
 
-	public void clickButtonSubmitApplication () {
-		waitToClickSubmitButton();
+	public void clickButtonSubmitApplication () {		
 //		driver.manage().timeouts().setScriptTimeout(25, TimeUnit.SECONDS);
-//		JavascriptExecutor js = (JavascriptExecutor)driver;	
-//		js.executeScript("arguments[0].click();", buttonSubmitApplication);
+		JavascriptExecutor js = (JavascriptExecutor)driver;	
+//		js.executeScript("window.scrollBy(0,600)");
+		js.executeScript("arguments[0].scrollIntoView()", buttonSubmitApplication); 
+//		waitToClickSubmitButton();
+		js.executeScript("arguments[0].click();", buttonSubmitApplication);
 	}
 	
 	public void waitToClickSubmitButton () {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 			WebElement clickButton = wait.until(
-				ExpectedConditions.elementToBeClickable(By.cssSelector("div:nth-child(2) > div.col-7 > button")));
+				ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit']")));
 			clickButton.click();
 	}
 	

@@ -33,6 +33,9 @@ public class CreateAndDeleteNewUserPage extends AbstractObjectPage {
 	@FindBy (xpath = "//div[2]/div/button")
 	public WebElement okButtonUserIsCreated;
 	
+//	@FindBy (xpath = "/html/body/div[2]/div/div[2]/div/button")
+//	public WebElement userNotLoggedInButton;
+	
 	public void enterEmail (String value) {
 		inputEmail.sendKeys(value);
 	}
@@ -64,6 +67,10 @@ public class CreateAndDeleteNewUserPage extends AbstractObjectPage {
 	public void clickOKButtonUserIsCreated () {
 		okButtonUserIsCreated.click();
 	}
+	
+//	public void clickOkUserNotLoggedInButton () {
+//		userNotLoggedInButton.click();
+//	}
 		
 	// constructor
 	public CreateAndDeleteNewUserPage(WebDriver driver) {

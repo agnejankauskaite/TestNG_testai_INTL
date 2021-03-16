@@ -51,6 +51,7 @@ public class GeneralMethods extends BaseTest {
 		waitForLoginToLoad();
 		loginPage.enterUsername(adminLogins);
 		loginPage.enterPassword(adminLogins);
+		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 		loginPage.clickLoginButton();
 	 }
 	
@@ -115,6 +116,8 @@ public class GeneralMethods extends BaseTest {
 	
 	// create new parent/ guardian
 	public void createNewParent (int index) {
+		CreateAndDeleteNewUserPage createNewUserPage = new CreateAndDeleteNewUserPage(driver);
+		
 		doLoginAsAdmin();
 		verifyIfAdminIsLoggedIn();
 		
@@ -122,7 +125,6 @@ public class GeneralMethods extends BaseTest {
 		Select dropdownUserRole = new Select(driver.findElement(By.id("selRole")));
 		dropdownUserRole.selectByIndex(index);
 		
-		CreateAndDeleteNewUserPage createNewUserPage = new CreateAndDeleteNewUserPage(driver);
 		createNewUserPage.enterEmail(createNewUserParentEmail);
 		createNewUserPage.enterName(newUserName);
 		createNewUserPage.enterSurname(newUserSurname);
@@ -135,6 +137,16 @@ public class GeneralMethods extends BaseTest {
 		userIsCreatedMessage();
 		createNewUserPage.clickOKButtonUserIsCreated();
 	}
+	
+//	public void clickUserIsNotLoggedInButton() {
+//		CreateAndDeleteNewUserPage createNewUserPage = new CreateAndDeleteNewUserPage(driver);
+//		
+//		if (createNewUserPage.userNotLoggedInButton.isDisplayed()) {
+//			createNewUserPage.userNotLoggedInButton.click();
+//		} else {
+//			waitForLoginToLoad();
+//		}
+//	}
 	
 	public void deleteNewUser () {
 		clickDeleteUserButton();
@@ -306,7 +318,7 @@ public class GeneralMethods extends BaseTest {
 		// submit application
 		newApplication.clickButtonSubmitApplication();
 		
-		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+//		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//form/div[2]/div[2]/button")).click();
 	}
 	

@@ -1,6 +1,11 @@
 package parentTests;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
 import org.testng.annotations.Test;
+
+import adminPages.CreateAndDeleteNewUserPage;
 import generalMethods.GeneralMethods;
 import specialistPages.CreateAndDeleteNewKindergartenPage;
 
@@ -22,13 +27,18 @@ public class SubmitNewApplication extends GeneralMethods {
 	 */
 	
 	@Test (groups = "regression", priority = 1) 
-	  public void successfullySubmitAndDeleteNewApplication() throws IOException{
+	  public void successfullySubmitNewApplication() throws IOException{
 		  
 		successfullyCreateNewKindergarten();
-		
-		// check if registration is open (as kindergarten specialist)
+
+//		// check if registration is open (as kindergarten specialist)
 		openRegistrationIfNeeded();
 		doLogout();
+		
+//		CreateAndDeleteNewUserPage newUser = new CreateAndDeleteNewUserPage(driver);
+//		newUser.clickOkUserNotLoggedInButton();
+		
+		waitForLoginToLoad();
 		
 		// create a new user (parent) for this test
 		createNewParent(2);
@@ -40,27 +50,28 @@ public class SubmitNewApplication extends GeneralMethods {
 		waitToAgreePopUp();
 		
 		// go to parent's applications and delete it
-		deleteApplication();
+//		deleteApplication();
 		
 		// delete the kindergarten that was created for the test
-		doLogin(createNewUserSpecialistEmail, createNewUserSpecialistEmail);
-		CreateAndDeleteNewKindergartenPage createNewKindergarten = new CreateAndDeleteNewKindergartenPage(driver);
-		createNewKindergarten.searchForTheNewlyCreatedKindergarten("Žvirbliukas");
-		deleteNewKindergarten();
-		doLogout();
-		
-		// delete test user
-		doLoginAsAdmin();
-		deleteNewUser();
-		doLogout();
+//		doLogin(createNewUserSpecialistEmail, createNewUserSpecialistEmail);
+//		CreateAndDeleteNewKindergartenPage createNewKindergarten = new CreateAndDeleteNewKindergartenPage(driver);
+//		createNewKindergarten.searchForTheNewlyCreatedKindergarten("Žvirbliukas");
+//		deleteNewKindergarten();
+//		doLogout();
+//		
+//		// delete test user
+//		doLoginAsAdmin();
+//		deleteNewUser();
+//		doLogout();
 	}
 	
-	public void deleteApplication () {
-		clickNavButtonParentApplications();
-		clickDeleteApplication();
-		waitToAgreePopUp();
-		waitToPressOKPopUp();
-		doLogout();
-	}
+//	@Test (groups = "regression", priority = 2) 
+//	public void deleteApplication () {
+////		clickNavButtonParentApplications();
+//		clickDeleteApplication();
+//		waitToAgreePopUp();
+//		waitToPressOKPopUp();
+//		doLogout();
+//	}
   
 }
