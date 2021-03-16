@@ -47,10 +47,12 @@ public class SubmitNewApplication extends GeneralMethods {
 		CreateAndDeleteNewKindergartenPage createNewKindergarten = new CreateAndDeleteNewKindergartenPage(driver);
 		createNewKindergarten.searchForTheNewlyCreatedKindergarten("Žvirbliukas");
 		deleteNewKindergarten();
+		doLogout();
 		
 		// delete test user
-		// TODO
-		
+		doLoginAsAdmin();
+		deleteNewUser();
+		doLogout();
 	}
 	
 	public void deleteApplication () {

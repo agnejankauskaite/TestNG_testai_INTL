@@ -8,24 +8,10 @@
       </run>
     </groups>
     <classes>
-      <class name="adminTests.UpdateAdminDetails">
-        <methods>
-          <include name="setUp"/>
-          <include name="successfullyResetAdminPasswordToOriginal"/>
-          <include name="closeBrowser"/>
-        </methods>
-      </class> <!-- adminTests.UpdateAdminDetails -->
-      <class name="parentTests.UpdateParentDetails">
-        <methods>
-          <include name="setUp"/>
-          <include name="closeBrowser"/>
-          <include name="successfullyResetParentPasswordToOriginal"/>
-        </methods>
-      </class> <!-- parentTests.UpdateParentDetails -->
       <class name="parentTests.SubmitNewApplication">
         <methods>
           <include name="setUp"/>
-          <include name="successfullySubmitNewApplication"/>
+          <include name="successfullySubmitAndDeleteNewApplication"/>
           <include name="closeBrowser"/>
         </methods>
       </class> <!-- parentTests.SubmitNewApplication -->
