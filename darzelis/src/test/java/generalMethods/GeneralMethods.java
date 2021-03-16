@@ -14,7 +14,7 @@ import adminPages.CreateAndDeleteNewUserPage;
 import basetest.BaseTest;
 import pages.ChangeAndResetUserAccountFieldsAndPasswordPage;
 import pages.LoginPage;
-import parentPages.FillAndSubmitNewApplicationPage;
+import parentPages.SubmitNewApplicationPage;
 import parentPages.UploadMedicalDocumentPDFPage;
 import specialistPages.CreateAndDeleteNewKindergartenPage;
 import utilities.FileReaderUtils;
@@ -299,7 +299,7 @@ public class GeneralMethods extends BaseTest {
 	}
 	
 	public void fillInTheApplication () throws IOException {
-		FillAndSubmitNewApplicationPage newApplication = new FillAndSubmitNewApplicationPage(driver);		
+		SubmitNewApplicationPage newApplication = new SubmitNewApplicationPage(driver);		
 		clickNavButtonNewApplication();
 				    
 		// add additional parent/ guardian
@@ -320,8 +320,18 @@ public class GeneralMethods extends BaseTest {
 		waitToClickSubmitButton();
 	}
 	
+	public void fillInSecondChildApplication () throws IOException {
+		SubmitNewApplicationPage newApplication = new SubmitNewApplicationPage(driver);		
+		clickNavButtonNewApplication();		
+		applicationFormSecondChildDetails();
+		
+		newApplication.openKindergartenListDropdownPriorityOne();
+		newApplication.clickButtonSubmitApplication();		
+		waitToClickSubmitButton();
+	}
+	
 	public void applicationFormSecondParentDetails () throws IOException {
-		FillAndSubmitNewApplicationPage newApplication = new FillAndSubmitNewApplicationPage(driver);
+		SubmitNewApplicationPage newApplication = new SubmitNewApplicationPage(driver);
 		List<String> formData = FileReaderUtils.getTestData("src/test/resources/parentAndChildDetails.txt");
 		String secondParentName = formData.get(0);
 		String secondParentSurname = formData.get(1);
@@ -338,7 +348,7 @@ public class GeneralMethods extends BaseTest {
 	}
 		
 	public void applicationFormChildDetailsOne () throws IOException {
-		FillAndSubmitNewApplicationPage newApplication = new FillAndSubmitNewApplicationPage(driver);
+		SubmitNewApplicationPage newApplication = new SubmitNewApplicationPage(driver);
 		List<String> formData = FileReaderUtils.getTestData("src/test/resources/parentAndChildDetails.txt");
 		String childName = formData.get(6);
 		String childSurname = formData.get(7);
@@ -350,8 +360,21 @@ public class GeneralMethods extends BaseTest {
 		newApplication.inputChildDateOfBirth(childDateOfBirth);
 	}
 	
+	public void applicationFormSecondChildDetails () throws IOException {
+		SubmitNewApplicationPage newApplication = new SubmitNewApplicationPage(driver);
+		List<String> formData = FileReaderUtils.getTestData("src/test/resources/parentAndSecondChildDetails.txt");
+		String childName = formData.get(0);
+		String childSurname = formData.get(1);
+		String childPersonalCode = formData.get(2);
+		String childDateOfBirth = formData.get(3);
+		newApplication.inputChildName(childName);
+		newApplication.inputChildSurname(childSurname);
+		newApplication.inputChildPersonalCode(childPersonalCode);
+		newApplication.inputChildDateOfBirth(childDateOfBirth);
+	}
+	
 	public void checkPrioritiesAndChooseAKindergarten () throws IOException {
-		FillAndSubmitNewApplicationPage newApplication = new FillAndSubmitNewApplicationPage(driver); 
+		SubmitNewApplicationPage newApplication = new SubmitNewApplicationPage(driver); 
 		
 		// check priorities
 		newApplication.clickPriorityOne();
@@ -401,6 +424,16 @@ public class GeneralMethods extends BaseTest {
 	public Boolean applicationSuccessful() {
 		  WebDriverWait wait = new WebDriverWait(driver, 10);
 		  	return wait.until(ExpectedConditions.textToBe(By.cssSelector("div.swal-overlay.swal-overlay--show-modal > div > div.swal-text"), "Prašymas sukurtas sėkmingai"));
+	}
+	
+	public Boolean successfulFormationOfKindergartenQueue () {
+		  WebDriverWait wait = new WebDriverWait(driver, 10);
+		  	return wait.until(ExpectedConditions.textToBe(By.xpath("/html/body/div[2]/div/div[1]"), "Eilė suformuota"));
+	}
+	
+	public Boolean queueConfirmedSuccessfully () {
+		  WebDriverWait wait = new WebDriverWait(driver, 10);
+		  	return wait.until(ExpectedConditions.textToBe(By.xpath("/html/body/div[2]/div/div[1]"), "Eilė patvirtinta"));
 	}
 	
 	public Boolean userIsCreatedMessage() {

@@ -1,21 +1,16 @@
 package parentPages;
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.google.common.base.Predicate;
-
 import pages.AbstractObjectPage;
 
-public class FillAndSubmitNewApplicationPage extends AbstractObjectPage{
+public class SubmitNewApplicationPage extends AbstractObjectPage{
 
 	// input fields (additional parent info)
 	@FindBy (id= "txtAdditionalName")
@@ -72,6 +67,12 @@ public class FillAndSubmitNewApplicationPage extends AbstractObjectPage{
 	@FindBy (xpath= "//button[@type='submit']")
 	public WebElement buttonSubmitApplication;
 	
+//	@FindBy (id= "btnStopRegistration")
+//	public WebElement buttonStopRegistration;
+	
+//	@FindBy (id= "btnFormQueue")
+//	public WebElement buttonFormQueue;
+	
 	// dropdown
 	@FindBy (xpath= "//*[@id=\"selKindergartenId1\"]/input")
 	public WebElement dropdownElement;	
@@ -83,6 +84,36 @@ public class FillAndSubmitNewApplicationPage extends AbstractObjectPage{
 	public void clickAddAdditionalGuardianButton () {
 	addAdditionalGuardianButton.click();
 	}
+	
+//	public void clickStopRegistrationButton () {
+//	buttonStopRegistration.click();
+//	}
+//	
+	
+	public void waitToClickStopRegistration () {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebElement stopRegistation = wait.until(
+				ExpectedConditions.elementToBeClickable(By.id("btnStopRegistration")));
+			stopRegistation.click();
+	}
+	
+	public void waitToFormQueue () {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebElement formQueue = wait.until(
+				ExpectedConditions.elementToBeClickable(By.id("btnFormQueue")));
+			formQueue.click();
+	}
+	
+	public void waitToConfirmQueue () {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebElement confirmQueue = wait.until(
+				ExpectedConditions.elementToBeClickable(By.id("btnConfirmQueue")));
+			confirmQueue.click();
+	}
+	
+//	public void clickFormQueueButton () {
+//	buttonFormQueue.click();
+//	}
 	
 	public void inputSecondParentName (String value) {
 	secondParentName.sendKeys(value);
@@ -168,7 +199,7 @@ public class FillAndSubmitNewApplicationPage extends AbstractObjectPage{
 	}
 	
 	// constructor
-	public FillAndSubmitNewApplicationPage(WebDriver driver) {
+	public SubmitNewApplicationPage(WebDriver driver) {
 		super(driver);
 	}
 
