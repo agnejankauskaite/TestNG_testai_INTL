@@ -3,10 +3,14 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import adminPages.CreateAndDeleteNewUserPage;
 import generalMethods.GeneralMethods;
+import pages.LoginPage;
 import specialistPages.CreateAndDeleteNewKindergartenPage;
 
 public class SubmitNewApplication extends GeneralMethods {
@@ -35,10 +39,15 @@ public class SubmitNewApplication extends GeneralMethods {
 		openRegistrationIfNeeded();
 		doLogout();
 		
-//		CreateAndDeleteNewUserPage newUser = new CreateAndDeleteNewUserPage(driver);
-//		newUser.clickOkUserNotLoggedInButton();
-		
 		waitForLoginToLoad();
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.enterUsername(adminLogins);
+		loginPage.enterPassword(adminLogins);
+		
+		CreateAndDeleteNewUserPage newUser = new CreateAndDeleteNewUserPage(driver);
+		newUser.clickOkUserNotLoggedInButton();
+		
+		loginPage.clickLoginButton();
 		
 		// create a new user (parent) for this test
 		createNewParent(2);
@@ -47,31 +56,41 @@ public class SubmitNewApplication extends GeneralMethods {
 	
 		// fill in the application and submit it
 		fillInTheApplication();
-		waitToAgreePopUp();
-		
-		// go to parent's applications and delete it
-//		deleteApplication();
-		
-		// delete the kindergarten that was created for the test
-//		doLogin(createNewUserSpecialistEmail, createNewUserSpecialistEmail);
-//		CreateAndDeleteNewKindergartenPage createNewKindergarten = new CreateAndDeleteNewKindergartenPage(driver);
-//		createNewKindergarten.searchForTheNewlyCreatedKindergarten("Žvirbliukas");
-//		deleteNewKindergarten();
-//		doLogout();
-//		
-//		// delete test user
-//		doLoginAsAdmin();
-//		deleteNewUser();
-//		doLogout();
+//		waitToPressOKPopUp();
+		clickOkButton();
+		doLogout();
 	}
 	
-//	@Test (groups = "regression", priority = 2) 
-//	public void deleteApplication () {
-////		clickNavButtonParentApplications();
-//		clickDeleteApplication();
-//		waitToAgreePopUp();
-//		waitToPressOKPopUp();
-//		doLogout();
-//	}
-  
+	@Test (groups = "regression", priority = 2) 
+	public void deleteApplication () {
+//		clickNavButtonParentApplications();
+		
+		waitForLoginToLoad();
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.enterUsername(createNewUserParentEmail);
+		loginPage.enterPassword(createNewUserParentEmail);
+		
+		CreateAndDeleteNewUserPage newUser = new CreateAndDeleteNewUserPage(driver);
+		newUser.clickOkUserNotLoggedInButton();
+		
+		loginPage.clickLoginButton();
+		
+		clickDeleteApplication();
+		waitToAgreePopUp();
+		clickOkButton();
+		doLogout();
+		
+		// delete the kindergarten that was created for the test
+		doLogin(specialistLogins, specialistLogins);
+		CreateAndDeleteNewKindergartenPage createNewKindergarten = new CreateAndDeleteNewKindergartenPage(driver);
+		createNewKindergarten.searchForTheNewlyCreatedKindergarten("123 Testinis");
+		deleteNewKindergarten();
+		doLogout();
+		
+		// delete test user
+		doLoginAsAdmin();
+		verifyIfAdminIsLoggedIn();
+		deleteNewUser();
+		doLogout();
+	}
 }

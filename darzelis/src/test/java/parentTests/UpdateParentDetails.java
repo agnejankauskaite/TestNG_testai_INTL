@@ -27,6 +27,7 @@ public class UpdateParentDetails extends GeneralMethods {
 	@Test (groups = "regression", priority = 1) 
 	public void successfullyChangeParentDetails() {
 		// create a new user (parent) for this test
+		doLoginAsAdmin();
 		createNewParent(2);
 		doLogout();
 		doLogin(createNewUserParentEmail, createNewUserParentEmail);

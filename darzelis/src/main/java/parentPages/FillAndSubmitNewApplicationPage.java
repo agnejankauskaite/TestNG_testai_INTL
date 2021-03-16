@@ -157,22 +157,14 @@ public class FillAndSubmitNewApplicationPage extends AbstractObjectPage{
 		js.executeScript("arguments[0].click();", kindergartenPriorityOne);
 		js.executeScript("document.getElementById('react-select-2-option-0').click()");
 	}
-	
 
 	public void clickButtonSubmitApplication () {		
 //		driver.manage().timeouts().setScriptTimeout(25, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor)driver;	
-//		js.executeScript("window.scrollBy(0,600)");
+		js.executeScript("window.scrollBy(0,400)");
 		js.executeScript("arguments[0].scrollIntoView()", buttonSubmitApplication); 
 //		waitToClickSubmitButton();
 		js.executeScript("arguments[0].click();", buttonSubmitApplication);
-	}
-	
-	public void waitToClickSubmitButton () {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-			WebElement clickButton = wait.until(
-				ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit']")));
-			clickButton.click();
 	}
 	
 	// constructor

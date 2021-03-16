@@ -21,7 +21,7 @@ import utilities.FileReaderUtils;
 
 public class GeneralMethods extends BaseTest {
 	
-	private static String adminLogins = "admin@admin.lt";
+	protected static String adminLogins = "admin@admin.lt";
 	protected static String specialistLogins = "manager@manager.lt";
 	protected static String parentLogins = "user@user.lt";
 	protected String createNewUserAdminEmail = "admin123@admin.lt";
@@ -51,7 +51,6 @@ public class GeneralMethods extends BaseTest {
 		waitForLoginToLoad();
 		loginPage.enterUsername(adminLogins);
 		loginPage.enterPassword(adminLogins);
-		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 		loginPage.clickLoginButton();
 	 }
 	
@@ -118,7 +117,7 @@ public class GeneralMethods extends BaseTest {
 	public void createNewParent (int index) {
 		CreateAndDeleteNewUserPage createNewUserPage = new CreateAndDeleteNewUserPage(driver);
 		
-		doLoginAsAdmin();
+//		doLoginAsAdmin();
 		verifyIfAdminIsLoggedIn();
 		
 		// select user role
@@ -244,7 +243,7 @@ public class GeneralMethods extends BaseTest {
 	      // input new kindergarten details     
 	      CreateAndDeleteNewKindergartenPage createNewKindergarten = new CreateAndDeleteNewKindergartenPage(driver);
 	      createNewKindergarten.inputKindergartenID("000000001");
-	      createNewKindergarten.inputkindergartenName("Žvirbliukas");
+	      createNewKindergarten.inputkindergartenName("123 Testinis");
 	      createNewKindergarten.inputkindergartenAddress("Adreso g. 5");
 	      Select dropdownUserRole = new Select(driver.findElement(By.id("elderate")));
 		  dropdownUserRole.selectByIndex(5);
@@ -256,14 +255,14 @@ public class GeneralMethods extends BaseTest {
 		  createNewKindergarten.clickOKPopUp();
 		  
 		  // search for the newly created kindergarten
-		  createNewKindergarten.searchForTheNewlyCreatedKindergarten("Žvirbliukas");
+		  createNewKindergarten.searchForTheNewlyCreatedKindergarten("123 Testinis");
 		  
 		  // assert that the new kindergarten is found in the searched list
 		  createNewKindergarten.newKindergartenSearchResult();
 		  
 		  // update and save the kindergarten details
 		  createNewKindergarten.clickButtonUpdateKindergarten();
-		  createNewKindergarten.updateNewKindergartenName("Žvirbliukas (testinis darželis)");
+		  createNewKindergarten.updateNewKindergartenName("123 Testinis darželis");
 		  createNewKindergarten.updateKindergartenNumberCapacity3to6("0");
 		  createNewKindergarten.clickSaveUpdatedKindergarten();
 	  }
@@ -273,7 +272,7 @@ public class GeneralMethods extends BaseTest {
 		createNewKindergarten.clickButtonDeleteKindergarten();
 		createNewKindergarten.clickButtonAgreeToDeleteKindergarten();
 		createNewKindergarten.assertKindergartenWasDeletedSuccesfully();
-		createNewKindergarten.clickOkKindergartenIsDeletedPopup();
+		waitToPressOKPopUp();
 	}
 	
 	// REGISTRATION TO KINDERGARTEN METHODS
@@ -318,8 +317,7 @@ public class GeneralMethods extends BaseTest {
 		// submit application
 		newApplication.clickButtonSubmitApplication();
 		
-//		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-		driver.findElement(By.xpath("//form/div[2]/div[2]/button")).click();
+		waitToClickSubmitButton();
 	}
 	
 	public void applicationFormSecondParentDetails () throws IOException {
@@ -434,6 +432,13 @@ public class GeneralMethods extends BaseTest {
 	
 	// WAIT TO CLICK BUTTONS
 	
+	public void waitToClickSubmitButton () {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+			WebElement clickButton = wait.until(
+				ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit']")));
+			clickButton.click();
+	}
+	
 	public void clickDeleteApplication () {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 			WebElement delete = wait.until(
@@ -479,8 +484,13 @@ public class GeneralMethods extends BaseTest {
 	public void waitToPressOKPopUp() {
 		 WebDriverWait wait = new WebDriverWait(driver, 10);
 		  WebElement popUpClickOK = wait.until(
-				  ExpectedConditions.presenceOfElementLocated(By.cssSelector("div.swal-overlay.swal-overlay--show-modal > div > div.swal-footer > div > button")));
+				  ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@class='swal-button swal-button--confirm']")));
 		  popUpClickOK.click();
+	}
+	
+	public void clickOkButton() {
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click();", driver.findElement(By.xpath("//button[@class='swal-button swal-button--confirm']")));
 	}
 	
 	public void clickUserForgotPasswordButton () {

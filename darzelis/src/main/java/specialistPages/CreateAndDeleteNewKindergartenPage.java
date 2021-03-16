@@ -91,7 +91,7 @@ public class CreateAndDeleteNewKindergartenPage extends AbstractObjectPage {
 	
 	public Boolean newKindergartenSearchResult () {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		return wait.until(ExpectedConditions.textToBe(By.xpath("//*//td[1]"), "Žvirbliukas"));
+		return wait.until(ExpectedConditions.textToBe(By.xpath("//*//td[1]"), "123 Testinis"));
 	}
 	
 	public void clickButtonUpdateKindergarten () {
@@ -123,13 +123,6 @@ public class CreateAndDeleteNewKindergartenPage extends AbstractObjectPage {
 	public Boolean assertKindergartenWasDeletedSuccesfully () {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		return wait.until(ExpectedConditions.textToBe(By.xpath("//body/div[2]/div/div[1]"), "Darželis ištrintas sėkmingai"));
-	}
-	
-	public void clickOkKindergartenIsDeletedPopup() {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		WebElement popUpDeleteKindergartenClickOK = wait.until(
-				  ExpectedConditions.presenceOfElementLocated(By.xpath("//div[2]/div/div[2]/div/button")));
-		popUpDeleteKindergartenClickOK.click();
 	}
 	
 	// constructor

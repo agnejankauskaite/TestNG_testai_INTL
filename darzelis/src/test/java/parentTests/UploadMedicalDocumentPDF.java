@@ -30,6 +30,7 @@ public class UploadMedicalDocumentPDF extends GeneralMethods {
   @Test  (groups = "regression")
   public void successfullyUploadAndDeletePDF() {
 	  // create test user (parent)
+	  doLoginAsAdmin();
 	  createNewParent(2);
 	  doLogout();
 	  doLogin(createNewUserParentEmail, createNewUserParentEmail);
