@@ -55,8 +55,6 @@ public class AdminLoginLogout extends GeneralMethods {
 	     doLogin("adminNeteisingas@admin.lt", "adminNeteisingas@admin.lt");
 	     
 	     // check if an error message appears 
-	     checkErrorMessage();
-	     
-	     
+	     checkErrorMessage(); 
 	 }
 }

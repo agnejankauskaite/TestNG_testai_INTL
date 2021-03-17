@@ -1,18 +1,8 @@
 package parentTests;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-
-import adminPages.CreateAndDeleteNewUserPage;
 import generalMethods.GeneralMethods;
 import pages.LoginPage;
-import parentPages.SubmitNewApplicationPage;
 import specialistPages.CreateAndDeleteNewKindergartenPage;
 
 public class SubmitNewApplication extends GeneralMethods {
@@ -38,23 +28,13 @@ public class SubmitNewApplication extends GeneralMethods {
 	  public void successfullySubmitNewApplication() throws IOException {		  
 		successfullyCreateNewKindergarten();
 		doLogout();
-		
-//		// check if registration is open (as kindergarten specialist)
-//		openRegistrationIfNeeded();
-		
+	
 		waitForLoginToLoad();
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.enterUsername(adminLogins);
 		loginPage.enterPassword(adminLogins);
 		
-		CreateAndDeleteNewUserPage newUser = new CreateAndDeleteNewUserPage(driver);
-		
-		if (newUser.userNotLoggedInButton.isDisplayed()) {
-			newUser.clickOkUserNotLoggedInButton();
-			loginPage.clickLoginButton();
-		} else {
-			loginPage.clickLoginButton();
-		}
+		userNotLoggedInPopUp();
 		
 		// create a new user (parent) for this test
 		createNewParent(2);

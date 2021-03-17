@@ -7,6 +7,7 @@
         <methods>
           <include name="setUp"/>
           <include name="deleteApplication"/>
+          <include name="successfullySubmitNewApplication"/>
           <include name="closeBrowser"/>
         </methods>
       </class> <!-- parentTests.SubmitNewApplication -->

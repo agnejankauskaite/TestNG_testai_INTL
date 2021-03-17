@@ -3,7 +3,6 @@ package parentTests;
 import org.testng.annotations.Test;
 
 import generalMethods.GeneralMethods;
-import pages.ChangeAndResetUserAccountFieldsAndPasswordPage;
 import parentPages.UpdateParentDetailsPage;
 
 public class UpdateParentDetails extends GeneralMethods {

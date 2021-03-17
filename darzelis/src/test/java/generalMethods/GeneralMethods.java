@@ -93,6 +93,17 @@ public class GeneralMethods extends BaseTest {
 		createNewUserPage.clickOKButtonUserIsCreated();
 	}
 	
+	public void userNotLoggedInPopUp () {
+		CreateAndDeleteNewUserPage newUser = new CreateAndDeleteNewUserPage(driver);
+		LoginPage loginPage = new LoginPage(driver);
+		
+		if (newUser.userNotLoggedInButton.isDisplayed()) {
+			newUser.clickOkUserNotLoggedInButton();
+			loginPage.clickLoginButton();
+		} else {
+			loginPage.clickLoginButton();
+		}}
+	
 	// create new kindergarten specialist
 	public void createNewKindergartenSpecialist (int index) {
 		doLoginAsAdmin();
@@ -275,8 +286,6 @@ public class GeneralMethods extends BaseTest {
 	    	driver.findElement(By.id("btnStartRegistration")).click();
 	    	doLogout();
 		} else {
-			driver.findElement(By.id("btnStopRegistration")).click();
-			driver.findElement(By.id("btnStartRegistration")).click();
 			doLogout();
 		}
 	}

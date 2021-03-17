@@ -1,8 +1,6 @@
 package adminTests;
 
 import org.testng.annotations.Test;
-
-import adminPages.CreateAndDeleteNewUserPage;
 import generalMethods.GeneralMethods;
 
 public class CreateAndDeleteNewUser extends GeneralMethods {
