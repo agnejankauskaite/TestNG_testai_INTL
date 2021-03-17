@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -42,7 +43,6 @@ public class SubmitNewApplication extends GeneralMethods {
 
 //		// check if registration is open (as kindergarten specialist)
 		openRegistrationIfNeeded();
-		doLogout();
 		
 		waitForLoginToLoad();
 		LoginPage loginPage = new LoginPage(driver);
@@ -50,9 +50,16 @@ public class SubmitNewApplication extends GeneralMethods {
 		loginPage.enterPassword(adminLogins);
 		
 		CreateAndDeleteNewUserPage newUser = new CreateAndDeleteNewUserPage(driver);
-		newUser.clickOkUserNotLoggedInButton();
+//		newUser.clickOkUserNotLoggedInButton();
 		
-		loginPage.clickLoginButton();
+		if (newUser.userNotLoggedInButton.isDisplayed()) {
+			newUser.clickOkUserNotLoggedInButton();
+			loginPage.clickLoginButton();
+		} else {
+			loginPage.clickLoginButton();
+		}
+		
+//		loginPage.clickLoginButton();
 		
 		// create a new user (parent) for this test
 		createNewParent(2);
@@ -61,63 +68,27 @@ public class SubmitNewApplication extends GeneralMethods {
 	
 		// fill in the application and submit it
 		fillInTheApplication();
-//		waitToPressOKPopUp();
+		applicationSuccessful();
 		clickOkButton();
+		doLogout();
 	}
+	
 	
 	@Test (groups = "regression", priority = 2) 
-	public void submitSecondChildApplicationCheckQueue () throws IOException {
-		
-		doLogin(createNewUserParentEmail, createNewUserParentEmail);
-		
-		fillInSecondChildApplication();
-//		waitToPressOKPopUp();
-		clickOkButton();
-//		driver.findElement(By.xpath("//button[@class='swal-button swal-button--confirm']")).click();
-		doLogout();
-		
-		// login as kindergarten specialist to form a queue
-		doLogin(specialistLogins, specialistLogins);
-		clickNavButtonApplicationQueue();
-		SubmitNewApplicationPage submitApplication = new SubmitNewApplicationPage(driver);
-		
-		// stop registration
-		submitApplication.waitToClickStopRegistration();
-		
-		// form queue
-		submitApplication.waitToFormQueue();
-		successfulFormationOfKindergartenQueue();
-		waitToPressOKPopUp();
-		
-		// confirm the formed queue
-		submitApplication.waitToConfirmQueue();
-		waitToAgreePopUp();
-		queueConfirmedSuccessfully();
-		clickOkButton();
-		
-		doLogout();
-		
-		// login as parent to check which kid got the place at his chosen kindergarten
-		doLogin(createNewUserParentEmail, createNewUserParentEmail);
-		
-		// check if first child got in
-		
-	}
-	
-	
-	@Test (groups = "regression", priority = 3) 
 	public void deleteApplication () {
+		
 //		clickNavButtonParentApplications();
 		
 		waitForLoginToLoad();
-		LoginPage loginPage = new LoginPage(driver);
-		loginPage.enterUsername(createNewUserParentEmail);
-		loginPage.enterPassword(createNewUserParentEmail);
-		
-		CreateAndDeleteNewUserPage newUser = new CreateAndDeleteNewUserPage(driver);
-		newUser.clickOkUserNotLoggedInButton();
-		
-		loginPage.clickLoginButton();
+		doLogin(createNewUserParentEmail, createNewUserParentEmail);
+//		LoginPage loginPage = new LoginPage(driver);
+//		loginPage.enterUsername(createNewUserParentEmail);
+//		loginPage.enterPassword(createNewUserParentEmail);
+//		
+//		CreateAndDeleteNewUserPage newUser = new CreateAndDeleteNewUserPage(driver);
+//		newUser.clickOkUserNotLoggedInButton();
+//		
+//		loginPage.clickLoginButton();
 		
 		clickDeleteApplication();
 		waitToAgreePopUp();

@@ -194,7 +194,6 @@ public class SubmitNewApplicationPage extends AbstractObjectPage{
 		JavascriptExecutor js = (JavascriptExecutor)driver;	
 		js.executeScript("window.scrollBy(0,400)");
 		js.executeScript("arguments[0].scrollIntoView()", buttonSubmitApplication); 
-//		waitToClickSubmitButton();
 		js.executeScript("arguments[0].click();", buttonSubmitApplication);
 	}
 	

@@ -284,14 +284,15 @@ public class GeneralMethods extends BaseTest {
 	    // check if registration is open
 	    if (registrationClosed()) {
 	    	driver.findElement(By.id("btnStartRegistration")).click();
-	    } else {
-	    	driver.findElement(By.id("navManagerApplicationQueue")).click();
-	    }
+	    	doLogout();
+		} else {
+			doLogout();
+		}
 	}
 	
 	public boolean registrationClosed () {
 	    try {
-	        driver.findElement(By.id("btnStartRegistration"));
+	        driver.findElement(By.id("btnStartRegistration")).isDisplayed();
 	        return true;
 	    } catch (org.openqa.selenium.NoSuchElementException e) {
 	        return false;
@@ -316,7 +317,6 @@ public class GeneralMethods extends BaseTest {
 		
 		// submit application
 		newApplication.clickButtonSubmitApplication();
-		
 		waitToClickSubmitButton();
 	}
 	
@@ -327,7 +327,7 @@ public class GeneralMethods extends BaseTest {
 		
 		newApplication.openKindergartenListDropdownPriorityOne();
 		newApplication.clickButtonSubmitApplication();		
-		waitToClickSubmitButton();
+//		waitToClickSubmitButton();
 	}
 	
 	public void applicationFormSecondParentDetails () throws IOException {
@@ -419,11 +419,11 @@ public class GeneralMethods extends BaseTest {
 		  	return wait.until(ExpectedConditions.textToBe(By.xpath("//div[2]//h6"), "Naudotojo prisijungimo informacija"));
 	}
 	
-	// WAIT TO ASSERT MESSAGES
+	// WAIT TO ASSERT MESSAGE
 	
 	public Boolean applicationSuccessful() {
 		  WebDriverWait wait = new WebDriverWait(driver, 10);
-		  	return wait.until(ExpectedConditions.textToBe(By.cssSelector("div.swal-overlay.swal-overlay--show-modal > div > div.swal-text"), "Prašymas sukurtas sėkmingai"));
+		  	return wait.until(ExpectedConditions.textToBe(By.xpath("/html/body/div[2]/div/div[1]"), "Prašymas sukurtas sėkmingai"));
 	}
 	
 	public Boolean successfulFormationOfKindergartenQueue () {
@@ -517,7 +517,7 @@ public class GeneralMethods extends BaseTest {
 	public void waitToPressOKPopUp() {
 		 WebDriverWait wait = new WebDriverWait(driver, 10);
 		  WebElement popUpClickOK = wait.until(
-				  ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@class='swal-button swal-button--confirm']")));
+				  ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='swal-button swal-button--confirm']")));
 		  popUpClickOK.click();
 	}
 	
