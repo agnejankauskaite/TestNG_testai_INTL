@@ -94,7 +94,6 @@ public class UpdateParentDetails extends GeneralMethods {
    	// delete user after successful user details change
    	doLoginAsAdmin();
    	deleteNewUser();
-   	doLogout();
     }
     
 }

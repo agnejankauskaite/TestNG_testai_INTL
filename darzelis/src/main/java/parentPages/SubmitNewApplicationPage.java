@@ -67,12 +67,6 @@ public class SubmitNewApplicationPage extends AbstractObjectPage{
 	@FindBy (xpath= "//button[@type='submit']")
 	public WebElement buttonSubmitApplication;
 	
-//	@FindBy (id= "btnStopRegistration")
-//	public WebElement buttonStopRegistration;
-	
-//	@FindBy (id= "btnFormQueue")
-//	public WebElement buttonFormQueue;
-	
 	// dropdown
 	@FindBy (xpath= "//*[@id=\"selKindergartenId1\"]/input")
 	public WebElement dropdownElement;	
@@ -84,11 +78,6 @@ public class SubmitNewApplicationPage extends AbstractObjectPage{
 	public void clickAddAdditionalGuardianButton () {
 	addAdditionalGuardianButton.click();
 	}
-	
-//	public void clickStopRegistrationButton () {
-//	buttonStopRegistration.click();
-//	}
-//	
 	
 	public void waitToClickStopRegistration () {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -110,10 +99,6 @@ public class SubmitNewApplicationPage extends AbstractObjectPage{
 				ExpectedConditions.elementToBeClickable(By.id("btnConfirmQueue")));
 			confirmQueue.click();
 	}
-	
-//	public void clickFormQueueButton () {
-//	buttonFormQueue.click();
-//	}
 	
 	public void inputSecondParentName (String value) {
 	secondParentName.sendKeys(value);
@@ -190,7 +175,6 @@ public class SubmitNewApplicationPage extends AbstractObjectPage{
 	}
 
 	public void clickButtonSubmitApplication () {		
-//		driver.manage().timeouts().setScriptTimeout(25, TimeUnit.SECONDS);
 		JavascriptExecutor js = (JavascriptExecutor)driver;	
 		js.executeScript("window.scrollBy(0,400)");
 		js.executeScript("arguments[0].scrollIntoView()", buttonSubmitApplication); 

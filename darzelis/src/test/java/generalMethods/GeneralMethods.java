@@ -57,7 +57,7 @@ public class GeneralMethods extends BaseTest {
 	public void doLogout() {
 		  WebDriverWait wait = new WebDriverWait(driver, 10);
 		  WebElement logoutElement = wait.until(
-				  ExpectedConditions.presenceOfElementLocated(By.id("btnLogout")));
+				  ExpectedConditions.elementToBeClickable(By.id("btnLogout")));
 		  logoutElement.click();  
 	 }
 	
@@ -116,8 +116,6 @@ public class GeneralMethods extends BaseTest {
 	// create new parent/ guardian
 	public void createNewParent (int index) {
 		CreateAndDeleteNewUserPage createNewUserPage = new CreateAndDeleteNewUserPage(driver);
-		
-//		doLoginAsAdmin();
 		verifyIfAdminIsLoggedIn();
 		
 		// select user role
@@ -132,20 +130,11 @@ public class GeneralMethods extends BaseTest {
 		createNewUserPage.enterAddress("Adreso g. 8");
 		
 		createNewUserPage.clickCreateButton();
+		
 		// check success message
 		userIsCreatedMessage();
 		createNewUserPage.clickOKButtonUserIsCreated();
 	}
-	
-//	public void clickUserIsNotLoggedInButton() {
-//		CreateAndDeleteNewUserPage createNewUserPage = new CreateAndDeleteNewUserPage(driver);
-//		
-//		if (createNewUserPage.userNotLoggedInButton.isDisplayed()) {
-//			createNewUserPage.userNotLoggedInButton.click();
-//		} else {
-//			waitForLoginToLoad();
-//		}
-//	}
 	
 	public void deleteNewUser () {
 		clickDeleteUserButton();
@@ -286,6 +275,8 @@ public class GeneralMethods extends BaseTest {
 	    	driver.findElement(By.id("btnStartRegistration")).click();
 	    	doLogout();
 		} else {
+			driver.findElement(By.id("btnStopRegistration")).click();
+			driver.findElement(By.id("btnStartRegistration")).click();
 			doLogout();
 		}
 	}
@@ -310,7 +301,7 @@ public class GeneralMethods extends BaseTest {
 		applicationFormSecondParentDetails();
 				
 		// fill in child details into the form
-		applicationFormChildDetailsOne();
+		applicationFormChildDetails();
 		
 		// child priorities and first kindergarten priority
 		checkPrioritiesAndChooseAKindergarten();
@@ -320,15 +311,6 @@ public class GeneralMethods extends BaseTest {
 		waitToClickSubmitButton();
 	}
 	
-	public void fillInSecondChildApplication () throws IOException {
-		SubmitNewApplicationPage newApplication = new SubmitNewApplicationPage(driver);		
-		clickNavButtonNewApplication();		
-		applicationFormSecondChildDetails();
-		
-		newApplication.openKindergartenListDropdownPriorityOne();
-		newApplication.clickButtonSubmitApplication();		
-//		waitToClickSubmitButton();
-	}
 	
 	public void applicationFormSecondParentDetails () throws IOException {
 		SubmitNewApplicationPage newApplication = new SubmitNewApplicationPage(driver);
@@ -347,26 +329,13 @@ public class GeneralMethods extends BaseTest {
 		newApplication.inputSecondParentAddress(secondParentAddress);
 	}
 		
-	public void applicationFormChildDetailsOne () throws IOException {
+	public void applicationFormChildDetails () throws IOException {
 		SubmitNewApplicationPage newApplication = new SubmitNewApplicationPage(driver);
 		List<String> formData = FileReaderUtils.getTestData("src/test/resources/parentAndChildDetails.txt");
 		String childName = formData.get(6);
 		String childSurname = formData.get(7);
 		String childPersonalCode = formData.get(8);
 		String childDateOfBirth = formData.get(9);
-		newApplication.inputChildName(childName);
-		newApplication.inputChildSurname(childSurname);
-		newApplication.inputChildPersonalCode(childPersonalCode);
-		newApplication.inputChildDateOfBirth(childDateOfBirth);
-	}
-	
-	public void applicationFormSecondChildDetails () throws IOException {
-		SubmitNewApplicationPage newApplication = new SubmitNewApplicationPage(driver);
-		List<String> formData = FileReaderUtils.getTestData("src/test/resources/parentAndSecondChildDetails.txt");
-		String childName = formData.get(0);
-		String childSurname = formData.get(1);
-		String childPersonalCode = formData.get(2);
-		String childDateOfBirth = formData.get(3);
 		newApplication.inputChildName(childName);
 		newApplication.inputChildSurname(childSurname);
 		newApplication.inputChildPersonalCode(childPersonalCode);
@@ -386,7 +355,6 @@ public class GeneralMethods extends BaseTest {
 		// choose a kindergarten from the list
 		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 		newApplication.openKindergartenListDropdownPriorityOne();
-//		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 	}
 	
 	// UPLOAD USER MEDICAL DOCUMENTS (PDF)
@@ -424,16 +392,6 @@ public class GeneralMethods extends BaseTest {
 	public Boolean applicationSuccessful() {
 		  WebDriverWait wait = new WebDriverWait(driver, 10);
 		  	return wait.until(ExpectedConditions.textToBe(By.xpath("/html/body/div[2]/div/div[1]"), "Prašymas sukurtas sėkmingai"));
-	}
-	
-	public Boolean successfulFormationOfKindergartenQueue () {
-		  WebDriverWait wait = new WebDriverWait(driver, 10);
-		  	return wait.until(ExpectedConditions.textToBe(By.xpath("/html/body/div[2]/div/div[1]"), "Eilė suformuota"));
-	}
-	
-	public Boolean queueConfirmedSuccessfully () {
-		  WebDriverWait wait = new WebDriverWait(driver, 10);
-		  	return wait.until(ExpectedConditions.textToBe(By.xpath("/html/body/div[2]/div/div[1]"), "Eilė patvirtinta"));
 	}
 	
 	public Boolean userIsCreatedMessage() {
@@ -543,7 +501,7 @@ public class GeneralMethods extends BaseTest {
 	public void clickResetPasswordButton () {
 		 WebDriverWait wait = new WebDriverWait(driver, 10);
 		  WebElement clickResetPassword = wait.until(
-				  ExpectedConditions.presenceOfElementLocated(By.className("btn-secondary")));
+				  ExpectedConditions.elementToBeClickable(By.className("btn-secondary")));
 		  clickResetPassword.click();
 	}
 	
@@ -583,6 +541,4 @@ public class GeneralMethods extends BaseTest {
 			ExpectedConditions.presenceOfElementLocated(By.xpath("//div[3]/input")));
 		 enterUserEmail.sendKeys(value);
 	}
-	
-	
 }
