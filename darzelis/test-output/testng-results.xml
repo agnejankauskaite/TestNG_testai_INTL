@@ -1,73 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="5" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-03-17T13:37:37 EET" name="Tests" finished-at="2021-03-17T13:38:10 EET" duration-ms="32592">
+  <suite started-at="2021-03-17T18:20:32 EET" name="Default suite" finished-at="2021-03-17T18:20:54 EET" duration-ms="22288">
     <groups>
-      <group name="smoke">
-        <method signature="AdminLoginLogout.successfulLoginAndLogout()[pri:0, instance:login.AdminLoginLogout@550ee7e5]" name="successfulLoginAndLogout" class="login.AdminLoginLogout"/>
-        <method signature="CheckIfAdminPagesWork.openAndAssertAllAdminPages()[pri:0, instance:smokeTests.CheckIfAdminPagesWork@5f9b2141]" name="openAndAssertAllAdminPages" class="smokeTests.CheckIfAdminPagesWork"/>
-        <method signature="CheckIfKindergartenSpecialistPagesWork.openAndAssertAllSpecialistPages()[pri:0, instance:smokeTests.CheckIfKindergartenSpecialistPagesWork@247d8ae]" name="openAndAssertAllSpecialistPages" class="smokeTests.CheckIfKindergartenSpecialistPagesWork"/>
-        <method signature="CheckIfParentPagesWork.openAndAssertAllParentPages()[pri:0, instance:smokeTests.CheckIfParentPagesWork@48974e45]" name="openAndAssertAllParentPages" class="smokeTests.CheckIfParentPagesWork"/>
-      </group> <!-- smoke -->
+      <group name="regression">
+        <method signature="SubmitNewApplication.deleteApplication()[pri:2, instance:parentTests.SubmitNewApplication@a3d8174]" name="deleteApplication" class="parentTests.SubmitNewApplication"/>
+        <method signature="SubmitNewApplication.successfullySubmitNewApplication()[pri:1, instance:parentTests.SubmitNewApplication@a3d8174]" name="successfullySubmitNewApplication" class="parentTests.SubmitNewApplication"/>
+      </group> <!-- regression -->
     </groups>
-    <test started-at="2021-03-17T13:37:37 EET" name="smoke" finished-at="2021-03-17T13:38:10 EET" duration-ms="32592">
-      <class name="smokeTests.CheckIfParentPagesWork">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:smokeTests.CheckIfParentPagesWork@48974e45]" started-at="2021-03-17T13:37:59 EET" name="setUp" finished-at="2021-03-17T13:38:07 EET" duration-ms="8231" status="PASS">
+    <test started-at="2021-03-17T18:20:32 EET" name="Default test" finished-at="2021-03-17T18:20:54 EET" duration-ms="22288">
+      <class name="parentTests.SubmitNewApplication">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:parentTests.SubmitNewApplication@a3d8174]" started-at="2021-03-17T18:20:32 EET" name="setUp" finished-at="2021-03-17T18:20:36 EET" duration-ms="4121" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="openAndAssertAllParentPages()[pri:0, instance:smokeTests.CheckIfParentPagesWork@48974e45]" started-at="2021-03-17T13:38:07 EET" name="openAndAssertAllParentPages" finished-at="2021-03-17T13:38:10 EET" duration-ms="2777" status="PASS">
+        <test-method signature="successfullySubmitNewApplication()[pri:1, instance:parentTests.SubmitNewApplication@a3d8174]" started-at="2021-03-17T18:20:36 EET" name="successfullySubmitNewApplication" finished-at="2021-03-17T18:20:49 EET" duration-ms="13173" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- openAndAssertAllParentPages -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:smokeTests.CheckIfParentPagesWork@48974e45]" started-at="2021-03-17T13:38:10 EET" name="closeBrowser" finished-at="2021-03-17T13:38:10 EET" duration-ms="233" status="PASS">
+        </test-method> <!-- successfullySubmitNewApplication -->
+        <test-method signature="deleteApplication()[pri:2, instance:parentTests.SubmitNewApplication@a3d8174]" started-at="2021-03-17T18:20:49 EET" name="deleteApplication" finished-at="2021-03-17T18:20:54 EET" duration-ms="4821" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- smokeTests.CheckIfParentPagesWork -->
-      <class name="smokeTests.CheckIfAdminPagesWork">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:smokeTests.CheckIfAdminPagesWork@5f9b2141]" started-at="2021-03-17T13:37:45 EET" name="setUp" finished-at="2021-03-17T13:37:49 EET" duration-ms="4108" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="openAndAssertAllAdminPages()[pri:0, instance:smokeTests.CheckIfAdminPagesWork@5f9b2141]" started-at="2021-03-17T13:37:49 EET" name="openAndAssertAllAdminPages" finished-at="2021-03-17T13:37:52 EET" duration-ms="2783" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openAndAssertAllAdminPages -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:smokeTests.CheckIfAdminPagesWork@5f9b2141]" started-at="2021-03-17T13:37:52 EET" name="closeBrowser" finished-at="2021-03-17T13:37:52 EET" duration-ms="121" status="PASS">
+        </test-method> <!-- deleteApplication -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:parentTests.SubmitNewApplication@a3d8174]" started-at="2021-03-17T18:20:54 EET" name="closeBrowser" finished-at="2021-03-17T18:20:54 EET" duration-ms="121" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- smokeTests.CheckIfAdminPagesWork -->
-      <class name="login.AdminLoginLogout">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:login.AdminLoginLogout@550ee7e5]" started-at="2021-03-17T13:37:38 EET" name="setUp" finished-at="2021-03-17T13:37:43 EET" duration-ms="5556" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="successfulLoginAndLogout()[pri:0, instance:login.AdminLoginLogout@550ee7e5]" started-at="2021-03-17T13:37:43 EET" name="successfulLoginAndLogout" finished-at="2021-03-17T13:37:44 EET" duration-ms="1402" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- successfulLoginAndLogout -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:login.AdminLoginLogout@550ee7e5]" started-at="2021-03-17T13:37:44 EET" name="closeBrowser" finished-at="2021-03-17T13:37:45 EET" duration-ms="184" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- login.AdminLoginLogout -->
-      <class name="smokeTests.CheckIfKindergartenSpecialistPagesWork">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:smokeTests.CheckIfKindergartenSpecialistPagesWork@247d8ae]" started-at="2021-03-17T13:37:52 EET" name="setUp" finished-at="2021-03-17T13:37:56 EET" duration-ms="4298" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="openAndAssertAllSpecialistPages()[pri:0, instance:smokeTests.CheckIfKindergartenSpecialistPagesWork@247d8ae]" started-at="2021-03-17T13:37:56 EET" name="openAndAssertAllSpecialistPages" finished-at="2021-03-17T13:37:59 EET" duration-ms="2646" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openAndAssertAllSpecialistPages -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:smokeTests.CheckIfKindergartenSpecialistPagesWork@247d8ae]" started-at="2021-03-17T13:37:59 EET" name="closeBrowser" finished-at="2021-03-17T13:37:59 EET" duration-ms="189" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- smokeTests.CheckIfKindergartenSpecialistPagesWork -->
-    </test> <!-- smoke -->
-  </suite> <!-- Tests -->
+      </class> <!-- parentTests.SubmitNewApplication -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

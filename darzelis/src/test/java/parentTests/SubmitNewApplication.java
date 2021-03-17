@@ -71,6 +71,5 @@ public class SubmitNewApplication extends GeneralMethods {
 		doLoginAsAdmin();
 		verifyIfAdminIsLoggedIn();
 		deleteNewUser();
-		doLogout();
 	}
 }
